@@ -1,0 +1,48 @@
+body{
+    background-color: aliceblue;
+}
+
+.container{
+    background-color: white;
+}
+
+.row{
+    text-align: center;
+    margin: auto;
+}
+
+#justify{
+    text-align: justify;
+    margin-left: 20px;
+}
+
+#menu{
+    background-color: blue;
+}
+
+#centreMenu:hover{
+    background-color: rgb(22, 111, 184);
+}
+
+#centreMenu{
+    height: 2.3em; /* hauteur du parent */
+    line-height: 2.3em; /* hauteur de ligne (identique) */
+    white-space: nowrap; /* interdiction de passer à la ligne */
+}
+
+h3{
+    margin-top: 10px;
+}
+
+h4{
+    margin-left: 30px;
+}
+
+h6{
+    margin-left: 30px;
+}
+
+.basPage{
+    background-color: rgb(65, 56, 56);
+    color: white;
+}
