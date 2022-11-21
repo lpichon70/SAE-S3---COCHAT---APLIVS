@@ -1,55 +1,153 @@
+*, ::before, ::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-	margin-left:auto; 
-    margin-right:auto;
-	width:1000px;
-	text-align:justify;
-	font-size:12px;
-	border : 1px solid black;
-    background-color: white;
+  background: #333;
+  font-family: Arial, Helvetica, sans-serif;
+  height: 100vh;
+  background: url('../Images/stade.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-size: contain;
+  position: relative;
+  overflow-x: hidden;
 }
 
 html {
-    background-color:rgb(189, 205, 153);
-    
+  background: linear-gradient(rgb(136, 136, 212), rgb(34, 30, 52));
+  height: 325%;
 }
 
 
-.logo{
-    object-fit: contain;
-    margin-top: 30px;
-    margin-bottom: 30px;
+.l1 {
+  width: 250px;
+  height: 3px;
+  background: #f1f1f1;
+  border-radius: 5px;
 }
+.l2 {
+  width: 140px;
+  height: 3px;
+  background: #f1f1f1;
+  border-radius: 5px;
+  position: relative;
+  top: 20px;
+}
+
+.l3{
+  width: 90%;
+  height: 3px;
+  background: #f1f1f1;
+  border-radius: 5px;
+  position: absolute;
+  left: 5%;
+  margin-top: 20%;
+}
+
+.lignes {
+  position: absolute;
+  top: 6%;
+  left: 5%;
+}
+
+a{
+  color: #fff;
+}
+
+.lien{
+  font-size: x-large;
+  margin-left: 16%;
+  border: 2px solid #f1f1f1;
+  outline: none;
+  background: transparent;
+  font-size: 30px;
+  padding: 20px;
+  width: 300px;
+  color: #f1f1f1;
+  cursor: pointer;
+}
+
+.lien:nth-child(1){
+  margin-right: 30px;
+}
+
+.lien:hover {
+  transition: all 0.3s ease-in-out;
+  background:#333;
+}
+
+
 
 #logoDDCS
 {
-    margin-left: 50px;
+    margin-left: 70%;
+    object-fit: contain;
+    margin-top: 5%;
+    margin-bottom: 9%;
 }
 
-#logoGouv{
-    margin-left: 450px;
-}
 
 
 h1 {
-    text-decoration: underline;
-    text-align: center;
-    margin-top: 25px;
+    text-transform: uppercase;
+    color: #f1f1f1;
+    font-family: Abril fatface, sans-serif; 
+    margin-top: 18%;
+    font-size: 45px;
+}
+
+.container-first {
+  position: absolute;
+  top: 10px;
+  left: 5%;
+}
+
+#formulaire{
+  margin-left: 18%;
+}
+
+.lignesForm{
+  width: 30%;
+  height: 3px;
+  background: #f1f1f1;
+  border-radius: 5px;
+  position: absolute;
+  margin-left: 5%;
 }
 
 h2{
-    text-decoration: underline;
+    
+    margin-left: 50px;
+    color: #f1f1f1;
+    
 }
 
 fieldset{
+  margin-top: 20px;
     margin-left: 20px;
     margin-right: 20px;
     margin-bottom: 20px;
+    border-color: rgb(255, 255, 255);
+    background-color: rgb(67, 64, 64);
+    border-radius: 10px;
+    width: 60%;
+    
 }
 
 label,input{
     margin-left: 10px;
     margin-top: 15px;
+
 }
+
+input {
+  border-radius: 5px;
+  border: 3px solid;
+}
+
 
 
 button{
@@ -58,6 +156,7 @@ button{
 }
 
 .text{
+    margin-top: 23%;
     margin-left: 30px;
     text-decoration: underline;
 }
@@ -69,6 +168,9 @@ button{
     text-align: center;
 }
 
+legend{
+  margin-left: 20px;
+}
 
 /*Réalisation d'un pop up pour afficher les conditions générales d'utilisations -------------------------------------------------------*/
 

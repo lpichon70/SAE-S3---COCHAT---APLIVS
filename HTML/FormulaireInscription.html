@@ -13,33 +13,64 @@
 
     <body>
 
-        <h1>Formulaire d'incription à la DDCS</h1>
-
-
-        
-        <div id="gridContain">
-            <img id="logoDDCS" src="Images/DDCS.jpg" width="25%" height="25%" class="logo" alt="logo DDCS"/>
-            <img id="logoGouv" src="Images/logoGouv.jpg" width="15%" height="15%" class="logo" alt="logo gouvernement"/>
+        <div class="lignes">
+            <div class="l1"></div>
+            <div class="l2"></div>
         </div>
-       
+
+
+
+        <div class="container-first">
+            <h1><span>Formulaire</span> <span>d'incription</span> <span>à</span> <span>la</span> <span>DDCS</span></h1>
+        </div>
+
         
+        <div id="LesImages">
+            <img id="logoDDCS" src="Images/DDCS.jpg" width="25%" height="25%" class="logo" alt="logo DDCS"/>
+        </div>
+    
+
+        <div >      
+            <label class="lien">    
+                <a href="../index.html">Accueil</a>
+            </label>  
         
+            <label class="lien">
+                <a href="">à remplir</a>
+            </label>
+                
+
+            <label class="lien">
+                <a href=""> à remplir </a> 
+            </label>
+        </div>        
+        
+                           
+               
+        
+        <div class="l3"></div>
+    
+        
+
 
         <p class="text">Ce formulaire doit impérativement être validé et/ou rempli par le président du club !</p>
-
+        
+<fieldset id="formulaire">        
+    </br>
+    </br>
 
         <form action="PHP/FormulaireInscription/FormulaireInscription.php" method="POST">
 	
-		    <fieldset>
+		    
                 <legend><h2>Informations générales</h2></legend>
+                <div class="lignesForm"></div>
                 
                 <fieldset>
                     <legend><h3>Situation</h3></legend>
+
                     <p>
                         <label for="nomClub">Nom du club :</label>
-                        <input type="text" name="nomClub" required />
-
-                    
+                        <input type="text" name="nomClub" required />                   
                     </p>
 
                     <p>
@@ -137,9 +168,8 @@
                 </fieldset>
                 
                 </br>
-            </fieldset>
         
-            <fieldset>
+            
                 <legend><h2>Informations administratives</h2></legend>
 
                 
@@ -200,7 +230,6 @@
 
                 <br/>
 
-            </fieldset>
 
 
             <p>
@@ -209,7 +238,7 @@
             <p>
                 <input type="checkbox" required/>
                 <label for="valideInscription">Je déclare que l'assemblée générale du club a pris connaissance de l'existence 
-                    de cette demande d'inscription <br class="retourLigne"/> à la DDCS et déclare que ce document a été validé et/ou rempli par 
+                    de cette demande d'inscription <br class="retourLigne"/>à la DDCS et déclare que ce document a été validé et/ou rempli par 
                     le président de l'association sportive.                       
                 </label>
                 
@@ -228,7 +257,7 @@
                 <div>
                     <input type="checkbox" required/>
                     <label>
-                        Je déclare avoir lu et accepté <a href="#popup" >les conditions générales d'utilisation. </a>                      
+                        Je déclare avoir lu et accepté <a href="#popup" id="conditions" >les conditions générales d'utilisation. </a>                      
                     </label>
                 </div>
 
@@ -258,6 +287,10 @@
 
             
         </form>
+</fieldset>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+        <script src="Js/FormulaireInscription/Animation.js"></script>
     </body>
 
 </html>
