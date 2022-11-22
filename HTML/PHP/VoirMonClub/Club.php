@@ -26,28 +26,28 @@
 
         public function __construct($data)
         {
-            $this->setNomClub($data['']);
-            $this->setSigle($data['']);
-            $this->setVille($data['']);
-            $this->setRue($data['']);
-            $this->setComplementRue($data['']);
-            $this->setCodePostal($data['']);
-            $this->setNumAgrement($data['']);
-            $this->setFederation($data['']);
-            $this->setStatut($data['']);
-            $this->setSiret($data['']);
-            $this->setMailClub($data['']);
-            $this->setSiteClub($data['']);
-            $this->setReseau($data['']);
-            $this->setTelFixeClub($data['']);
-            $this->setTelPortableClub($data['']);
-            $this->setCivilitePres($data['']);
-            $this->setNomPres($data['']);
-            $this->setPrenomPres($data['']);
-            $this->setMailPres($data['']);
-            $this->setTelPres($data['']);
-            $this->setMailSecret($data['']);
-            $this->setTelSecret($data['']);
+            $this->setNomClub($data['nom_club']);
+            $this->setSigle($data['sigle_club']);
+            $this->setVille($data['ville']);
+            $this->setRue($data['rue']);
+            $this->setComplementRue($data['complement_rue']);
+            $this->setCodePostal($data['code_postal']);
+            $this->setNumAgrement($data['num_agrement']);
+            $this->setFederation($data['fede_affiliation']);
+            $this->setStatut($data['statut_asso']);
+            $this->setSiret($data['num_siret']);
+            $this->setMailClub($data['mail_club']);
+            $this->setSiteClub($data['web_site']);
+            $this->setReseau($data['social_club']);
+            $this->setTelFixeClub($data['tel_fixe']);
+            $this->setTelPortableClub($data['tel_portable']);
+            $this->setCivilitePres($data['civil_pres']);
+            $this->setNomPres($data['nom_pres']);
+            $this->setPrenomPres($data['prenom_pres']);
+            $this->setMailPres($data['mail_pres']);
+            $this->setTelPres($data['tel_pres']);
+            $this->setMailSecret($data['mail_secretariat']);
+            $this->setTelSecret($data['tel_secretariat']);
         }
 
         public function getNomClub()

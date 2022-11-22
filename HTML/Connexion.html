@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Connexion</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="Images/icon_ballon.png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="CSS/Connexion.css">
+  </head>
+
+  <body>
+
+    
+    <div class="lignes">
+        <div class="l1"></div>
+        <div class="l2"></div>
+    </div>
+
+    <div class="container-first">
+        <h1><span>Page</span> <span>de</span> <span>connexion</span></h1>
+    </div>
+
+
+    <div id="LesImages">
+        <img id="logoDDCS" src="Images/DDCS.jpg" width="25%" height="25%" class="logo" alt="logo DDCS"/>
+    </div>
+
+
+    <fieldset>
+        <form action="PHP/PageConnexion/Index.php" method="post">
+            <h2>Connexion</h2>
+
+            <label  for="nomUtilisateur">Identifiant :</label>
+            <br>
+            <div class="element">
+              <input class="container" type="text" name="nomUtilisateur" required/>
+              <div class="lignesElement"></div> 
+            </div>
+                     
+            <br>
+            <label for="Mdp" >Mot de passe :</label>
+            <br>
+            <div class="element">
+              <input class="container" type="password" name="Mdp"  required/>
+              <div class="lignesElement"></div>
+            </div>
+             
+            <br>
+            <input id="btn-connexion" type="submit" value="Me connecter"/>
+            <br>
+
+            <a href="./FormulaireInscription.html">Je ne suis pas encore inscrit</a>
+        </form>
+        
+    </fieldset>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+    <script src="Js/Animation.js"></script>
+  </body>
+
+
+</html>
