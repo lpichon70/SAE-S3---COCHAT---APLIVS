@@ -21,36 +21,32 @@
         <h1><span>Page</span> <span>de</span> <span>connexion</span></h1>
     </div>
 
-
-    <div id="LesImages">
-        <img id="logoDDCS" src="Images/DDCS.jpg" width="25%" height="25%" class="logo" alt="logo DDCS"/>
-    </div>
-
-
-    <fieldset>
+  
+    <fieldset id="blockConnexion">
         <form action="PHP/PageConnexion/Index.php" method="post">
             <h2>Connexion</h2>
 
+            <div class="element">
             <label  for="nomUtilisateur">Identifiant :</label>
             <br>
-            <div class="element">
+            
               <input class="container" type="text" name="nomUtilisateur" required/>
               <div class="lignesElement"></div> 
             </div>
                      
             <br>
+            <div class="element">
             <label for="Mdp" >Mot de passe :</label>
             <br>
-            <div class="element">
               <input class="container" type="password" name="Mdp"  required/>
               <div class="lignesElement"></div>
             </div>
-             
+            
             <br>
             <input id="btn-connexion" type="submit" value="Me connecter"/>
             <br>
 
-            <a href="./FormulaireInscription.html">Je ne suis pas encore inscrit</a>
+            <a id="inscription" href="./FormulaireInscription.html">Je ne suis pas encore inscrit</a>
         </form>
         
     </fieldset>
