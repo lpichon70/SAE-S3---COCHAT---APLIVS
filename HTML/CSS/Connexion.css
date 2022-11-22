@@ -1,23 +1,12 @@
-*, ::before, ::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-
 body{
-  background: rgb(100, 88, 88);
-  font-family: Arial, Helvetica, sans-serif;
-  height: 100vh;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-size: contain;
-  position: relative;
-  overflow-x: hidden;
-}
-
-html{
-    height: 325%;
+    background: rgb(100, 88, 88);
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-size: contain;
+    position: relative;
+    overflow-x: hidden;
 }
 
 .lignes{
@@ -60,22 +49,39 @@ h1{
     margin-left: 70%;
     object-fit: contain;
     margin-top: 5%;
-    margin-bottom: 9%;
-}
-
-fieldset{
-    margin-left: 40%;
-    background-color: black;
-    border-radius: 3px;
-    width: 30%;
-    height: 30%;
-    border-radius: 10px;
-    border : solid rgb(234, 2, 2);
     
 }
 
-input{
-    border :solid rgb(234, 2, 2);
-    border-bottom: hidden;
-    border-left: hidden;
+fieldset{
+    margin-left: 30%;
+    background: whitesmoke;
+    border-radius: 3px;
+    width: 30%;
+    height: 55%;
+    border-radius: 5px;
+    border : solid rgb(10, 10, 10);
 }
+
+.container{
+    border: none;
+    width: 50%;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0a0a0a;
+    background-
+}
+
+.lignesElement{
+    width: 60%;
+    height: 1px;
+    background: #0a0a0a;
+    margin-top: 1px;
+    overflow: hidden;
+}
+
+.element{
+    object-position: unset;
+    margin-left: 20%;
+}
+
+

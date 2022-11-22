@@ -31,11 +31,21 @@
         <form action="PHP/PageConnexion/Index.php" method="post">
             <h2>Connexion</h2>
 
-            <label for="nomUtilisateur">Nom d'utilisateur :</label>
-            <input type="text" name="nomUtilisateur" required/>
+            <label  for="nomUtilisateur">Identifiant :</label>
+            <br>
+            <div class="element">
+              <input class="container" type="text" name="nomUtilisateur" required/>
+              <div class="lignesElement"></div> 
+            </div>
+                     
             <br>
             <label for="Mdp" >Mot de passe :</label>
-            <input type="text" name="Mdp" src="Images/logoMdp.png" required/>
+            <br>
+            <div class="element">
+              <input class="container" type="password" name="Mdp"  required/>
+              <div class="lignesElement"></div>
+            </div>
+             
             <br>
             <input id="btn-connexion" type="submit" value="Me connecter"/>
             <br>
