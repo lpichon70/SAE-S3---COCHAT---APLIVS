@@ -18,15 +18,15 @@ require_once("President.php");
         
         public function add($club,$president,$secretaria)
         {
-            $req = $this->_db->prepare("INSERT INTO Inscription (Nom_Club,Sigle_club,Rue,Complement_Rue,Ville,
-            Code_Postal,Num_Agrement,Federation,Statut,Siret,Mail,Adresse_Site,Reseau_social,
+            $req = $this->_db->prepare("INSERT INTO formulaire_inscription (Nom_Club,Sigle_club,Rue,Complement_Rue,Ville,
+            Code_Postal,Num_Agrement,fede_affiliation,Statut_asso,num_Siret,Mail_club,web_Site,social_club,
             Tel_Fixe,Tel_Portable,
-            Civilite_Pres,Nom_Pres,Prenom_Pres,Mail_Pres,Tel_Pres,
+            Civil_Pres,Nom_Pres,Prenom_Pres,Mail_Pres,Tel_Pres,
             Mail_Secretariat,Tel_Secretariat) 
             VALUES (:Nom_Club,:Sigle_club,:Rue,:Complement_Rue,:Ville,
-            :Code_Postal,:Num_Agrement,:Federation,:Statut,:Siret,:Mail,:Adresse_Site,:Reseau_social,
+            :Code_Postal,:Num_Agrement,:fede_affiliation,:Statut_asso,:num_Siret,:Mail_club,:web_Site,:social_club,
             :Tel_Fixe,:Tel_Portable,
-            :Civilite_Pres,:Nom_Pres,:Prenom_Pres,:Mail_Pres,:Tel_Pres,
+            :Civil_Pres,:Nom_Pres,:Prenom_Pres,:Mail_Pres,:Tel_Pres,
             :Mail_Secretariat,:Tel_Secretariat)");
 
             $req->execute(array(
@@ -38,18 +38,18 @@ require_once("President.php");
                 'Ville'=> $club-> getVilleClub(),
                 'Code_Postal'=> $club-> getCodePostal(),
                 'Num_Agrement' => $club->getNumAgrement(),
-                'Federation' => $club->getFedAffiliation(),
-                'Statut' => $club->getStatutAsso(),
-                'Siret' => getNumSiret(),
-                'Mail'=> $club-> getMailClub(),
-                'Adresse_Site'=> $club-> getSiteClub(),
-                'Reseau_social'=> $club-> getResauSocial(),
+                'fede_affiliation' => $club->getFedAffiliation(),
+                'Statut_asso' => $club->getStatutAsso(),
+                'num_Siret' => $club->getNumSiret(),
+                'Mail_club'=> $club-> getMailClub(),
+                'web_Site'=> $club-> getSiteClub(),
+                'social_club'=> $club-> getResauSocial(),
                 'Tel_Fixe'=> $club-> getTelFixe(),
                 'Tel_Portable'=> $club-> getTelPortable(),
 
 
                 //Les informations liées au président
-                'Civilite_Pres' => $president->getMail(),
+                'Civil_Pres' => $president->getMail(),
                 'Nom_Pres' => $president->getNom(),
                 'Prenom_Pres' => $president->getPrenom(),
                 'Mail_Pres' => $president->getMail(),

@@ -1,3 +1,11 @@
+<?php
+    require_once("PHP/VoirMonClub/Club.php");  
+    require_once("PHP/VoirMonClub/BDDManager.php");
+    $db = new PDO('mysql:host=localhost;dbname=grp-254_s3_sae', 'grp-254', '0k6zqrrr');
+    $manager = new BDDManager($db);
+    //$club = $manager->get();
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -9,7 +17,7 @@
 
 <body>
 
-    <form method="post">
+    <form>
 
     <div id="banniere">
 
@@ -17,12 +25,12 @@
 
         <div>
 
-            <div id="infoPartie1"></div>
+            <div id="infoPartie1">
 
                 <p>Infomations du club: </p>
                 <p>
                     Nom du club: 
-                    <input id="nomClub" name="nomClub" type="text">
+                    <input id="nomClub" name="nomClub" type="text" value="">
                 </p>
                 <p>
                     Téléphone: 
@@ -90,3 +98,4 @@
 </form>
 
 </body>
+

@@ -41,20 +41,19 @@
             echo "</br>"."</br>"."<h2>Informations secrétariat :</h2>"."</br>".$secretaria->__toString();
 
 
-            //Connection à la base de données (cette connection est fausse pur l'instant il faut la changer) !!!
-            /*
+            //Connection à la base de données 
+          
             try {
-                $bdd = new PDO('mysql:host=localhost;dbname=grp-234_s3_progweb',
-                'grp-234',
-                'kbqsmrmb'
-                , array(PDO::ATTR_ERRMODE =>
-                PDO::ERRMODE_EXCEPTION));
+                $bdd = new PDO('mysql:host=localhost;dbname=grp-254_s3_sae', 'grp-254', '0k6zqrrr');
                 }
                 catch (Exception $e)
                 {
                     die('Erreur : ' . $e->getMessage());
                 }
-                */
+
+            $manager = new FormInscriptionManager($bdd);
+            $manager->add($club, $president, $secretaria);
+                
         ?> 
         
         </br>
