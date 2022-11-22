@@ -3,7 +3,7 @@
     require_once("PHP/VoirMonClub/BDDManager.php");
     $db = new PDO('mysql:host=localhost;dbname=grp-254_s3_sae', 'grp-254', '0k6zqrrr');
     $manager = new BDDManager($db);
-    //$club = $manager->get();
+    $club = $manager->get(1);
 ?>
 
 <!DOCTYPE html>
@@ -29,24 +29,19 @@
 
                 <p>Infomations du club: </p>
                 <p>
-                    Nom du club: 
-                    <input id="nomClub" name="nomClub" type="text" value="">
+                    Nom du club: <?php echo $club->getNomClub(); ?>
                 </p>
                 <p>
-                    Téléphone: 
-                    <input id="telephone" name="telephone" type="tel">
+                    Téléphone: <?php echo $club->getTelFixeClub(); ?>                  
                 </p>
                 <p>
                     Email:
-                    <input id="mail" name="mail" type="email">
                 </p>
                 <p>
                     Siège social:
-                    <input id="siege" name="siege" type="text">
                 </p>
                 <p>
                     Fédération: 
-                    <input id="federation" name="federation" type="tel">
                 </p>
             </div>
             <div id="infoPartie2">
