@@ -1,5 +1,5 @@
 <?php
-    require_once("Club.php");
+    require_once("Conn.php");
     class BDDManager
     {
         private $_db;
@@ -13,10 +13,17 @@
             $this->_db = $db;
         }
 
-        public function get($connexion){
-            $q = $this->_db->query("SELECT * FROM formulaire_inscription WHERE id_club = $club");
+        public function get($conn){
+            $q = $this->_db->query("SELECT * FROM connexion WHERE Identifiant = $conn");
             $donnees = $q->fetch(PDO::FETCH_ASSOC);
-            return new Club($donnees);
+            if ($donnees)
+            {
+                return new Conn($donnees);
+            }
+            else 
+            {
+                return null;
+            }
         }
     }
 ?>
