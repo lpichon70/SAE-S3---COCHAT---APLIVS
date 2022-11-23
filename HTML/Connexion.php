@@ -1,8 +1,31 @@
 <?php
-  $db = new PDO('mysql:host=localhost;dbname=grp-254_s3_sae', 'grp-254', '0k6zqrrr');
+  session_start();
+
+  require_once("PHP/PageConnexion/FabriqueSession.php");
+  require_once("PHP/PageConnexion/Conn.php");
+  require_once("PHP/PageConnexion/BDDManager.php");
+
+  @$valider = $_POST['submit'];
+  @$identifiant = $_POST['nomUtilisateur'];
+  @$mdp = $_POST['Mdp'];
+
+  if (isset($valider))
+  {
+    $db = new PDO('mysql:host=localhost;dbname=grp-254_s3_sae', 'grp-254', '0k6zqrrr');
+    $manager = new BDDManager($db);
+    $conn = $manager->get($identifiant);
+    if ($conn == null)
+    {
+      header("Location:Connexion.php");
+      $error = "Identifiant ou mot de passe invalide !";
+    }
+    else
+    {
+      header("Location:FormulaireInscription.html");
+    }
+  }
+
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -38,6 +61,7 @@
             
               <input class="container" type="text" name="nomUtilisateur" required/>
               <div class="lignesElement"></div> 
+              <label class="error"><?$error?></label>
             </div>
                     
             <br>
@@ -47,15 +71,16 @@
               <br>
               <input class="container" type="password" name="Mdp"  required/>
               <div class="lignesElement"></div>
+              <label class="error"><?$error?></label>
             </div>
             
             <br>
 
-            <input id="btn-connexion" type="submit" value="Me connecter"/>
+            <input id="btn-connexion" type="submit" name="submit" value="Me connecter"/>
             
             <br>
 
-            <a id="inscription" href="./FormulaireInscription.html">Je ne suis pas encore inscrit</a>
+            <a id="inscription" href="./FormulaireInscription.html"  >Je ne suis pas encore inscrit</a>
         </form>
         
     </fieldset>
