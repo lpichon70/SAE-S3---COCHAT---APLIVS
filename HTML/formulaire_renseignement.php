@@ -1,3 +1,10 @@
+<?php
+
+
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -8,7 +15,7 @@
 </head>
 
 <body>
-	<script type="text/javascript" src="formulaire_renseignement.js"></script>
+    <script type="text/javascript" src="formulaire_renseignement.js"></script>
 	<form action="formulaire_renseignement.php" method="POST">
 
 		<fieldset id="club">
