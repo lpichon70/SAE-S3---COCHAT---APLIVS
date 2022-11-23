@@ -58,7 +58,7 @@
     <br>
 
 
-    <form action="PHP/FormulaireInscription/FormulaireInscription.php" method="POST">
+    <form action="PHP/FormulaireInscription/FormulaireInscription.php" method="POST" enctype="multipart/form-data">
         <div class="p1">
             <div class="title">
                 <legend>
@@ -80,7 +80,7 @@
 
                     <p>
                         <label for="sigleClub">Sigle du club :</label>
-                        <input type="text" name="sigleClub" required class="input_text" />
+                        <input type="file" name="sigleClub" />
                     </p>
 
 

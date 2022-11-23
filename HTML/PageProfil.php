@@ -3,7 +3,7 @@
     require_once("PHP/VoirMonClub/BDDManager.php");
     $db = new PDO('mysql:host=localhost;dbname=grp-254_s3_sae', 'grp-254', '0k6zqrrr');
     $manager = new BDDManager($db);
-    $club = $manager->get(3);
+    $club = $manager->get(10);
 ?>
 
 <!DOCTYPE html>
@@ -21,12 +21,11 @@
 
     <div id="banniere">
 
-        <input id="sigle" name="sigle" type="file">
-
         <div>
 
             <div id="infoPartie1">
 
+                <?php echo "<img src=".$club->getSigle()." alt=sigle>" ; ?>
                 <p>Infomations du club : </p>
                 <p>
                     Nom du club : <?php echo $club->getNomClub(); ?>

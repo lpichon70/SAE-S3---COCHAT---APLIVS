@@ -87,7 +87,6 @@
         public function __toString()
         {
             return "Nom du club : " . $this->getNomClub() . "</br> </br>" .
-            "Sigle du club : " . $this->getSigleClub() . "</br> </br>" .
             "Adresse du club : " . $this->getAdresseClub() . "</br> </br>" .
             "Complément d'adresse du club : " . $this->getComplementAdresse() . "</br> </br>" .
             "Ville du club : " . $this->getVilleClub() . "</br> </br>" .
