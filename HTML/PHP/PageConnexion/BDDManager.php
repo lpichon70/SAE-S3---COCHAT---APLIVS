@@ -13,21 +13,51 @@
             $this->_db = $db;
         }
 
-        public function get($conn){
-            $q = $this->_db->query("SELECT * FROM connexion WHERE Identifiant = '$conn'");
-            $donnees = $q->fetch(PDO::FETCH_ASSOC);
-            /*var_dump($q);
-            echo '<br>';
-            var_dump($donnees);*/
-            if ($donnees != false)
+        public function get($id, $mdp)
+        {
+            if ($this->getIdentifiant($id)!=null)
             {
-                return new Conn($donnees);
+                if ($this->getPasswordById($id) == $mdp)
+                {
+                    return true;
+                }
+                else 
+                {
+                    return false;
+                }
+            }
+            else 
+            {
+                return false;
+            }
+        }
+
+        public function getIdentifiant($id){
+            $q = $this->_db->query("SELECT Identifiant FROM connexion WHERE Identifiant = '$id'");
+            $identifiant = $q->fetch(PDO::FETCH_ASSOC);
+            if ($identifiant != false)
+            {
+                return $identifiant['Identifiant'];
             }
             else 
             {
                 return null;
             }
     
+        }
+        
+        public function getPasswordById($id)
+        {
+            $q = $this->_db->query("SELECT Mdp FROM connexion WHERE Identifiant = '$id'");
+            $password = $q->fetch(PDO::FETCH_ASSOC);
+            if ($password != false)
+            {
+                return $password['Mdp'];
+            }
+            else 
+            {
+                return null;
+            }
         }
     }
 ?>

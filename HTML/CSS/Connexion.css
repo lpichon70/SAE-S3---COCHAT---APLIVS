@@ -2,16 +2,13 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     height: 100vh;
     background-repeat: no-repeat;
-    
+    background-size: cover;
     background-size: contain;
     position: relative;
     overflow-x: hidden;
     background-image: url(../Images/stade.jpg);
 }
 
-#erreur{
-    color: red;
-}
 
 
 .lignes{
