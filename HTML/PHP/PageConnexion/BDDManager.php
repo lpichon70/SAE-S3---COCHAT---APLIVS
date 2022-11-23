@@ -14,9 +14,12 @@
         }
 
         public function get($conn){
-            $q = $this->_db->query("SELECT * FROM connexion WHERE Identifiant = $conn");
+            $q = $this->_db->query("SELECT * FROM connexion WHERE Identifiant = '$conn'");
             $donnees = $q->fetch(PDO::FETCH_ASSOC);
-            if ($donnees)
+            /*var_dump($q);
+            echo '<br>';
+            var_dump($donnees);*/
+            if ($donnees != false)
             {
                 return new Conn($donnees);
             }
@@ -24,6 +27,7 @@
             {
                 return null;
             }
+    
         }
     }
 ?>

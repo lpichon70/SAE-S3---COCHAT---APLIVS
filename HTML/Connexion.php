@@ -1,13 +1,14 @@
 <?php
-  session_start();
-
-  require_once("PHP/PageConnexion/FabriqueSession.php");
+  //session_start();
+  //require_once("PHP/PageConnexion/FabriqueSession.php");
   require_once("PHP/PageConnexion/Conn.php");
   require_once("PHP/PageConnexion/BDDManager.php");
+  
 
   @$valider = $_POST['submit'];
   @$identifiant = $_POST['nomUtilisateur'];
   @$mdp = $_POST['Mdp'];
+  $error = "";
 
   if (isset($valider))
   {
@@ -16,7 +17,6 @@
     $conn = $manager->get($identifiant);
     if ($conn == null)
     {
-      header("Location:Connexion.php");
       $error = "Identifiant ou mot de passe invalide !";
     }
     else
@@ -33,6 +33,7 @@
   <head>
     <meta charset="utf-8">
     <title>Connexion</title>
+    
     <link rel="icon" type="image/png" sizes="16x16" href="Images/icon_ballon.png">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="CSS/Connexion.css">
@@ -52,7 +53,7 @@
 
   
     <fieldset id="blockConnexion">
-        <form action="PHP/PageConnexion/Index.php" method="post">
+        <form action="#" method="post">
             <h2>Connexion</h2>
 
             <div class="element">
@@ -61,7 +62,7 @@
             
               <input class="container" type="text" name="nomUtilisateur" required/>
               <div class="lignesElement"></div> 
-              <label class="error"><?$error?></label>
+              <label class="erreur"><?=$error?></label>
             </div>
                     
             <br>
@@ -71,7 +72,7 @@
               <br>
               <input class="container" type="password" name="Mdp"  required/>
               <div class="lignesElement"></div>
-              <label class="error"><?$error?></label>
+              <label class="erreur"><?=$error?></label>
             </div>
             
             <br>

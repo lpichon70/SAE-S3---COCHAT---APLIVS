@@ -9,7 +9,7 @@
         {
             $this->setIdentifiant($data['Identifiant']);
             $this->setMdp($data['Mdp']);
-            $this->setStatus($data['Statut']);
+            $this->setStatut($data['Statut']);
         }
 
         public function getIdentifiant(){return $this->_identifiant;}
@@ -19,6 +19,6 @@
         public function setMdp($var){$this->_mdp = $var;}
 
         public function getStatut(){return $this->_statut;}
-        public function setStatus($var){return $this->_statut = $var;}
+        public function setStatut($var){$this->_statut = $var;}
     }
 ?>
