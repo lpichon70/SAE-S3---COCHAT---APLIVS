@@ -80,7 +80,7 @@ fieldset{
     width: 30%;
     height: 65%;
     border-radius: 5px;
-    border : solid rgb(10, 10, 10) 1px;
+    border : solid rgb(0, 0, 0) 1px;
     box-shadow: .5rem .5rem 0 var(--color-shadow, currentColor);
     position: absolute;
 
