@@ -25,18 +25,25 @@ h1 {
     font-family: Abril fatface, sans-serif;
     margin-top: 18%;
     font-size: 35px;
+    text-shadow: black 0.1em 0.1em 0.2em;
 }
 
 h2 {
     margin-left: 50px;
-    color: black
+    margin-top: 2%;
+    color: black;
+    font-size: 35px;
+}
+
+.ombreText{
+    text-shadow: black 0.1em 0.1em 0.2em;
 }
 
 .l1 {
     width: 250px;
     height: 3px;
     border-radius: 5px;
-  }
+}
 
 .container{
     position: absolute;
@@ -47,8 +54,8 @@ h2 {
 .lien {
     background-image: linear-gradient(to right, #77A1D3 0%, #79CBCA 51%, #77A1D3 100%);
     padding: 15px 45px;
-    margin-left: 500px;
-    margin-right: 500px;
+    margin-left: 700px;
+    margin-right: 700px;
     text-align: center;
     text-transform: uppercase;
     transition: 0.25s;
@@ -60,18 +67,28 @@ h2 {
     font-size: large;
   }
 
-  #logoDDCS {
+  #logoDDCS{
     margin-left: 70%;
     object-fit: contain;
     margin-top: 5%;
     margin-bottom: 9%;
-  }
+}
+
+.pagePartie1, .pagePartie2{
+    border-color: black;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 10px 7px 10px 1px black;
+    width: 60%;
+    margin: auto;
+    margin-bottom: 2%;
+}
 
 .row{
     text-align: center;
     margin: auto;
-    padding-left: 10%;
-    padding-right: 10%;
+    padding-left: 5%;
+    padding-right: 5%;
 }
 
 .justify{
@@ -80,9 +97,8 @@ h2 {
 }
 
 .page{
-    margin-top: 10%;
+    margin-top: 11%;
     margin-left: 30px;
-    text-decoration: underline;
 }
 
 .gras{
@@ -105,6 +121,7 @@ h2 {
 
 h3{
     margin-top: 10px;
+    font-size: 25px;
 }
 
 h4{
