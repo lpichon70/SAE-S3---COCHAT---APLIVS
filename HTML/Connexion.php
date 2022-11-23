@@ -1,3 +1,9 @@
+<?php
+  $db = new PDO('mysql:host=localhost;dbname=grp-254_s3_sae', 'grp-254', '0k6zqrrr');
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -27,23 +33,26 @@
             <h2>Connexion</h2>
 
             <div class="element">
-            <label  for="nomUtilisateur">Identifiant :</label>
-            <br>
+              <label  for="nomUtilisateur">Identifiant :</label>
+              <br>
             
               <input class="container" type="text" name="nomUtilisateur" required/>
               <div class="lignesElement"></div> 
             </div>
-                     
+                    
             <br>
+
             <div class="element">
-            <label for="Mdp" >Mot de passe :</label>
-            <br>
+              <label for="Mdp" >Mot de passe :</label>
+              <br>
               <input class="container" type="password" name="Mdp"  required/>
               <div class="lignesElement"></div>
             </div>
             
             <br>
+
             <input id="btn-connexion" type="submit" value="Me connecter"/>
+            
             <br>
 
             <a id="inscription" href="./FormulaireInscription.html">Je ne suis pas encore inscrit</a>
