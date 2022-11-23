@@ -227,7 +227,7 @@
 
         public function setPrenomPres($var)
         {
-            $this->_renomPres = $var;
+            $this->_prenomPres = $var;
         }
 
         public function getMailPres()

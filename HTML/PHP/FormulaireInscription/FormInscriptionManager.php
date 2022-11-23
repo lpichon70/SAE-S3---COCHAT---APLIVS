@@ -49,7 +49,7 @@ require_once("President.php");
 
 
                 //Les informations liées au président
-                'Civil_Pres' => $president->getMail(),
+                'Civil_Pres' => $president->getCivilite(),
                 'Nom_Pres' => $president->getNom(),
                 'Prenom_Pres' => $president->getPrenom(),
                 'Mail_Pres' => $president->getMail(),
