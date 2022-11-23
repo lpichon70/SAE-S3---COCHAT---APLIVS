@@ -11,13 +11,43 @@
 
 <head>
 	<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-	<link rel="stylesheet" href=".css" type="text/css">
+	<link rel="stylesheet" href="CSS/PageProfil.css" type="text/css">
 	<title>Page de profil</title>
 </head>
 
 <body>
 
+    <div class="lignes">
+        <div class="l1"></div>
+        <div class="l2"></div>
+    </div>
 
+    <div class="container-first">
+        <h1><span>Page</span> <span>de</span> <span>profil</span> <span>du</span> <span>club</span></h1>
+    </div>
+
+    <div id="LesImages">
+        <img id="logoDDCS" src="Images/DDCS.jpg" width="25%" height="25%" class="logo" alt="logo DDCS" />
+    </div>
+
+    <div>
+        <label class="lien">
+            <a href="../index.html">Accueil</a>
+        </label>
+
+        <label class="lien">
+            <a href="">à remplir</a>
+        </label>
+
+
+        <label class="lien">
+            <a href="">à remplir</a>
+        </label>
+    </div>
+
+    <div class="l3"></div>
+
+    <br>
 
     <div id="banniere">
 
@@ -106,7 +136,10 @@
         </div>
 
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+    <script src="Js/Animation.js"></script>
 
 
 </body>
+</html>
 
