@@ -139,3 +139,30 @@ body {
     color: black
   
   }
+
+
+  .lien {
+    background-image: linear-gradient(to right, #77A1D3 0%, #79CBCA 51%, #77A1D3 100%);
+    padding: 15px 45px;
+    margin-left: 700px;
+    margin-right: 700px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.25s;
+    background-size: 200% auto;
+    color: white;
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    display: block;
+    font-size: large;
+  }
+
+  .ombreText{
+    text-shadow: black 0.1em 0.1em 0.2em;
+}
+
+.container{
+  position: absolute;
+  top: 10px;
+  left: 5%;
+}
