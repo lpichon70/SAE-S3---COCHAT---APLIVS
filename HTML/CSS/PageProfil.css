@@ -111,6 +111,12 @@ h1 {
 label {
   margin-left: 10px;
   margin-top: 15px;
-
 }
 
+.imageProfil{
+  margin-left: 20%;
+}
+
+p{
+  color: white;
+}
