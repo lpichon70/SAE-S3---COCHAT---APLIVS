@@ -21,7 +21,7 @@
 
 
     <div class="container-first">
-        <h1><span>Formulaire</span> <span>d'incription</span> <span>à</span> <span>la</span> <span>DDCS</span></h1>
+        <h1 class="ombreText gras"><span>Formulaire</span> <span>d'incription</span> <span>à</span> <span>la</span> <span>DDCS</span></h1>
     </div>
 
 
@@ -31,11 +31,15 @@
 
 
     <div>
-        <label class="lien">
+        <label class="lien ombreText">
             <a href="../index.html">Accueil</a>
         </label>
 
-        <label class="lien">
+        <label class="lien ombreText">
+            <a href="#">Inscription</a>
+        </label>
+
+        <label class="lien ombreText">
             <a href="formulaire_renseignement.html">Signalement</a>
         </label>
     </div>
@@ -251,11 +255,11 @@
         </div>
         <div id="p3">
             <p>
-            <h4 class="text">Confidentialité et Consentement</h4>
+            <h4>Confidentialité et Consentement</h4>
             </p>
             <p>
-                <input type="checkbox" required />
-                <label for="valideInscription">Je déclare que l'assemblée générale du club a pris connaissance de
+                <input type="checkbox" id="declare" required />
+                <label for="declare">Je déclare que l'assemblée générale du club a pris connaissance de
                     l'existence
                     de cette demande d'inscription <br class="retourLigne" />à la DDCS et déclare que ce document a
                     été
@@ -266,7 +270,7 @@
                 <br />
                 <br />
 
-                <input type="checkbox" required />
+                <input type="checkbox" id="valideInscription" required />
                 <label for="valideInscription">
                     Je déclare avoir pris connaissance et relu les informations données de sorte à ce qu'elles ne
                     soient
@@ -278,8 +282,8 @@
 
 
             <div>
-                <input type="checkbox" required />
-                <label>
+                <input type="checkbox" id="accepte" required />
+                <label for="accepte">
                     Je déclare avoir lu et accepté <a href="#popup" id="conditions">les conditions générales
                         d'utilisation. </a>
                 </label>
