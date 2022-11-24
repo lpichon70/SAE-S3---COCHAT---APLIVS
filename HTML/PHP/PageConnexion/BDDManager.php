@@ -59,5 +59,12 @@
                 return null;
             }
         }
+
+        public function getStatutByID($id)
+        {
+            $q = $this->_db->query("SELECT Statut FROM connexion WHERE Identifiant = '$id'");
+            $statut = $q->fetch(PDO::FETCH_ASSOC);
+            return $statut['Statut'];
+        }
     }
 ?>

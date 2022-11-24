@@ -1,27 +1,37 @@
 <?php
-  //session_start();
-  //require_once("PHP/PageConnexion/FabriqueSession.php");
+  session_start();
+  $_SESSION['statut']='';
   require_once("PHP/PageConnexion/Conn.php");
   require_once("PHP/PageConnexion/BDDManager.php");
   
 
+  //Récupère les données saisies pas l'utilisateur sur la page
   @$valider = $_POST['submit'];
   @$identifiant = $_POST['nomUtilisateur'];
   @$mdp = $_POST['Mdp'];
   $error = "";
 
+  //Si l'utilisateur valide son identifiant et son mot de passe (Me connecter)
   if (isset($valider))
   {
+    //Connextion à la base de données
     $db = new PDO('mysql:host=localhost;dbname=grp-254_s3_sae', 'grp-254', '0k6zqrrr');
     $manager = new BDDManager($db);
+    /*Permet de vérifier si le mot de passe et l'identifiant sont dans la base de donnée
+    et sont cohérents (mot de passe ratacher à l'indentifiant*/
     $conn = $manager->get($identifiant,$mdp);
     if ($conn == false )
     {
+      //Si les informations rentré par l'utilisateur sont érronés, alors on reste sur la page 
+      //De connexion et on affiche un message d'erreur
       $error = "Identifiant ou mot de passe invalide !";
     }
     else
     {
-      header("Location:FormulaireInscription.html");
+      //Dans le cas ou l'utilisateur à réussi à se connecter
+      //On lui attribu un statut
+      $_SESSION['statut']=$manager->getStatutByID($identifiant);
+      header("Location:./PHP/Accessibilite/Index.php");
     }
   }
 
