@@ -95,104 +95,33 @@
 
     <div>
         <?php echo '<img class="imageProfil" src="'.$club->getSigle().'" alt=sigle>' ; ?>
-        <p>
-            Nom du club :
-            <?php echo $club->getNomClub(); ?>
-        </p>
+        <?php echo '<p>'.$club->getNomClub().'<p>'; ?>
     </div>
 
-    <div id="infoPartie1">
+    <div>
 
 
         <p>Infomations du club : </p>
 
-        <p>
-            Ville :
-            <?php echo $club->getVille(); ?>
-        </p>
-        <p>
-            Rue :
-            <?php echo $club->getRue(); ?>
-        </p>
-        <p>
-            Complement de rue :
-            <?php echo $club->getComplementRue(); ?>
-        </p>
-        <p>
-            Code postal :
-            <?php echo $club->getCodePostal(); ?>
-        </p>
-        <p>
-            Numéro d'agrément :
-            <?php echo $club->getNumAgrement(); ?>
-        </p>
-        <p>
-            Fédération :
-            <?php echo $club->getFederation(); ?>
-        </p>
-        <p>
-            Statut :
-            <?php echo $club->getStatut(); ?>
-        </p>
-        <p>
-            Siret :
-            <?php echo $club->getSiret(); ?>
-        </p>
-        <p>
-            Email :
-            <?php echo $club->getMailClub(); ?>
-        </p>
-        <p>
-            Site internet :
-            <?php echo $club->getSiteClub(); ?>
-        </p>
-        <p>
-            Réseau social :
-            <?php echo $club->getReseau(); ?>
-        </p>
-        <p>
-            Téléphone fixe :
-            <?php echo $club->getTelFixeClub(); ?>
-        </p>
-        <p>
-            Téléphone portable :
-            <?php echo $club->getTelPortableClub(); ?>
-        </p>
-    </div>
-    <div id="infoPartie2">
-        <p>
-            Président :
-            <?php echo $club->getCivilitePres()." ".$club->getNomPres()." ".$club->getPrenomPres(); ?>
-        </p>
-        <p>
-            Téléphone du président :
-            <?php echo $club->getTelPres(); ?>
-        </p>
-        <p>
-            Email du président :
-            <?php echo $club->getMailPres(); ?>
-        </p>
-        <p>
-            Téléphone secrétariat :
-            <?php echo $club->getTelSecret(); ?>
-        </p>
-        <p>
-            Mail secrétariat :
-            <?php echo $club->getMailSecret(); ?>
-        </p>
+        <?php echo '<p> Ville : '.$club->getVille().'<p>'; ?>
+        <?php echo '<p> Rue : '.$club->getRue().'<p>'; ?>
+        <?php echo '<p> Complement de rue : '.$club->getComplementRue().'<p>'; ?>
+        <?php echo '<p> Code postal : '.$club->getCodePostal().'<p>'; ?>
+        <?php echo '<p> Numéro d\'agrément : '.$club->getNumAgrement().'<p>'; ?>
+        <?php echo '<p> Fédération : '.$club->getFederation().'<p>'; ?>
+        <?php echo '<p> Statut : '.$club->getStatut().'<p>'; ?>
+        <?php echo '<p> Siret : '.$club->getSiret().'<p>'; ?>
+        <?php echo '<p> Mail du club : '.$club->getMailClub().'<p>'; ?>
+        <?php echo '<p> Site : '.$club->getSiteClub().'<p>'; ?>
+        <?php echo '<p> Réseau social : '.$club->getReseau().'<p>'; ?>
+        <?php echo '<p> Tel fixe du club : '.$club->getTelFixeClub().'<p>'; ?>
+        <?php echo '<p> Tel portable du club : '.$club->getTelPortableClub().'<p>'; ?>
+        <?php echo '<p> Président : '.$club->getCivilitePres()." ".$club->getNomPres()." ".$club->getPrenomPres().'<p>'; ?>
+        <?php echo '<p> Tel du président : '.$club->getTelPres().'<p>'; ?>
+        <?php echo '<p> Mail du président : '.$club->getMailPres().'<p>'; ?>
+        <?php echo '<p> Tel du secrétariat : '.$club->getTelSecret().'<p>'; ?>
+        <?php echo '<p> Mail du secrétariat : '.$club->getMailSecret().'<p>'; ?>
 
-
-
-    </div>
-
-    <div id="Description">
-        <p>Descrpition du club : </p>
-        <p><textarea id="description" name="description"></textarea></p>
-    </div>
-
-    <div id="ListeMembre">
-        <p>Liste des membres : </p>
-        <p><textarea id="listeMembre" name="listeMembre"></textarea></p>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
