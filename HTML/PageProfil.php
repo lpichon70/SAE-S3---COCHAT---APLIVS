@@ -3,7 +3,51 @@
     require_once("PHP/VoirMonClub/BDDManager.php");
     $db = new PDO('mysql:host=localhost;dbname=grp-254_s3_sae', 'grp-254', '0k6zqrrr');
     $manager = new BDDManager($db);
-    $club = $manager->get(10);
+    $id = 10;
+    $club = $manager->get($id);
+
+    if(!empty($_POST))
+    {
+        $sigle = "";
+        if(empty($_POST['sigleClub']))
+        {
+            $sigle = $club->getSigle();
+        }
+        else
+        {
+            $sigle = "Images/Sigle/".$_FILES["sigleClub"]['name'];
+            move_uploaded_file($_FILES['sigleClub']['tmp_name'], $sigle);
+        }
+        
+        $data = 
+        [
+            $_POST['nomClub'],
+            $sigle,
+            $_POST['villeClub'],
+            $_POST['adresseClub'],
+            $_POST['complementAdresseClub'],
+            $_POST['codePostalClub'],
+            $_POST['numAgrement'],
+            $_POST['fedAffiliation'],
+            $_POST['statutAsso'],
+            $_POST['numSiret'],
+            $_POST['mailClub'],
+            $_POST['siteClub'],
+            $_POST['reseauSocialClub'],
+            $_POST['telFixeClub'],
+            $_POST['telPortableClub'],
+            $_POST['civilitePresident'],
+            $_POST['nomPresident'],
+            $_POST['prenomPresident'],
+            $_POST['emailPresident'],
+            $_POST['telPresident'],
+            $_POST['emailSecretariat'],
+            $_POST['telSecretariat']
+        ];
+        $manager->set($data, $id);
+    }
+
+    $club = $manager->get($id);
 ?>
 
 <!DOCTYPE html>
