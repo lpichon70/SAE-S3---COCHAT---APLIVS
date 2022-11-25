@@ -19,8 +19,8 @@ body {
   }
 
   html {
-    background: linear-gradient(#e0c3fc, #8ec5fc);
     height: 230%;
+    background: rgb(141, 141, 240);
   }
 
   .l1 {
@@ -45,9 +45,8 @@ body {
     height: 3px;
     background: #f1f1f1;
     border-radius: 5px;
-    position: absolute;
-    left: 5%;
     margin-top: 20%;
+    margin-bottom: 30px;
   }
   
   .lignes {
@@ -115,11 +114,10 @@ body {
     left: 5%;
   }
   
-  #formulaire {
-    text-align: center;
-    width: 80%;
-  }
   
+#btn-accueil{
+  margin-bottom: 20%;
+}
   
   
   .field:hover{
@@ -160,11 +158,89 @@ body {
   }
 
   .ombreText{
-    text-shadow: black 0.1em 0.1em 0.2em;
+    text-shadow: rgb(16, 2, 50) 0.1em 0.1em 0.2em;
 }
 
 .container{
   position: absolute;
   top: 10px;
   left: 5%;
+}
+
+/*Contien le formulaire -> permet d'aligner au centre de la page le formulaire*/
+#container-formulaire{
+  border: solid 3px black;
+}
+
+/*Contien les données à rentrer (méthode FORM)*/
+#formulaire{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  width: 50%;
+  
+}
+
+
+#club-receveur{
+  border : solid 1px black;
+  box-shadow: .5rem .5rem 0 var(--color-shadow, currentColor);
+  background-image: url(../Images/background.png);
+  background-size: cover;
+
+}
+
+#club{
+  border : solid 1px black;
+  box-shadow: .5rem .5rem 0 var(--color-shadow, currentColor);
+  background-image: url(../Images/background.png);
+  background-size: cover;
+}
+
+#ddcs{
+  border : solid 1px black;
+  box-shadow: .5rem .5rem 0 var(--color-shadow, currentColor);
+  background-image: url(../Images/background.png);
+  background-size: cover;
+}
+
+#police{
+  border : solid 1px black;
+  box-shadow: .5rem .5rem 0 var(--color-shadow, currentColor);
+  background-image: url(../Images/background.png);
+  background-size: cover;
+}
+
+/*Mise en forme des input*/
+input{
+  border: none;
+  outline : transparent;
+  background-color: #727ee8;
+  color:white;
+}
+
+label{
+  font-family: system-ui;
+  color: #f1f1f1;
+}
+
+
+h3{
+  font-family: system-ui;
+  color: #f1f1f1;
+  margin-top: 30px;
+  margin-bottom: 40px;
+  margin-left: 32%;
+}
+
+.ligne-input{
+  border: 0.1px solid #fff;
+  background-color: #fff;
+  overflow: hidden;
+  margin-top: 1px;
+}
+
+.elements-input{
+  margin-left: 35%;
+  width: 194px;
 }
