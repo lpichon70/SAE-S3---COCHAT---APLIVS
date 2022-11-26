@@ -1,5 +1,35 @@
 <?php
+	session_start();
+	$voirClub = "d-none";
+	$voirPolice = "d-none";
+	$voirDDCS = "d-none";
 
+	if ($_SESSION['statut'] != "" && $_SESSION['statut'] != null)	
+	{
+		switch ($_SESSION['statut']) {
+			case 'POLICE':
+				$voirPolice = "";
+			break;
+			
+			case 'DDCS':
+				$voirDDCS = "";
+			break;
+
+			case 'ADMIN':
+				$voirClub = "";
+				$voirDDCS = "";
+				$voirPolice = "";
+			break;
+
+			case 'CLUB':
+				$voirClub = "";
+			break;
+				
+		}
+	}
+	else {
+		header("Location:../index.html");
+	}
 ?>
 
 
@@ -56,7 +86,7 @@
 
 	<form id="formulaire" action="formulaire_renseignement.php" method="POST">
 
-		<fieldset id="club-receveur">
+		<fieldset id="club-receveur" class="<?=$voirClub?>">
 			<h3>
 				Partie club receveur
 			</h3>
@@ -368,7 +398,7 @@
 		<br>
 
 
-		<fieldset id="club">
+		<fieldset id="club" class="<?=$voirClub?>">
 			<h3>
 				Partie club visiteur
 			</h3>
@@ -528,7 +558,7 @@
 		<br />
 
 
-		<fieldset id="ddcs">
+		<fieldset id="ddcs" class="<?=$voirDDCS?>">
 			<h3>
 				Partie DDCS
 			</h3>
@@ -569,7 +599,7 @@
 		</br>
 
 
-		<fieldset id="police">
+		<fieldset id="police" class="<?=$voirPolice?>">
 			<h3>
 				Partie Force de l'ordre
 			</h3>

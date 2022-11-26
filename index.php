@@ -1,3 +1,12 @@
+<?php
+  session_start();
+  if (@$_SESSION['statut'] == null || @$_SESSION['statut'] == "")
+  {
+    @$_SESSION['statut'] = "";
+  }
+?>
+
+
 <!DOCTYPE html>
 <html lang="fr">
 
