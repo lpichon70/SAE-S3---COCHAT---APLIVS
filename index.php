@@ -49,8 +49,12 @@
           <a href="HTML/formulaire_renseignement.php">Signaler</a>
       </p>
       <p class="lien ombreText">
+        <a href="PHP/Rechercher/indexRechercher.html">Rechercher</a>
+</p>
+      <p class="lien ombreText">
         <a href="HTML/Connexion.php">Se connecter</a>
     </p>
+    
     </div>
 
     <div class="page">
