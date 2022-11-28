@@ -103,10 +103,39 @@ $club = $manager->get($id);
 
     </div>
 
-    <form action = "verif-form.php" method = "get">
-        <input type = "search" name = "terme">
-        <input type = "submit" name = "s" value = "Rechercher">
-       </form>
+    <div>
+        <?php echo '<img class="imageProfil" src="'.$club->getSigle().'" alt=sigle>' ; ?>
+        <?php echo '<p>'.$club->getNomClub().'<p>'; ?>
+    </div>
+
+    <div>
+
+
+        <p>Infomations du club : </p>
+
+        <?php echo '<p> Ville : '.$club->getVille().'<p>'; ?>
+        <?php echo '<p> Rue : '.$club->getRue().'<p>'; ?>
+        <?php echo '<p> Complement de rue : '.$club->getComplementRue().'<p>'; ?>
+        <?php echo '<p> Code postal : '.$club->getCodePostal().'<p>'; ?>
+        <?php echo '<p> Numéro d\'agrément : '.$club->getNumAgrement().'<p>'; ?>
+        <?php echo '<p> Fédération : '.$club->getFederation().'<p>'; ?>
+        <?php echo '<p> Statut : '.$club->getStatut().'<p>'; ?>
+        <?php echo '<p> Siret : '.$club->getSiret().'<p>'; ?>
+        <?php echo '<p> Mail du club : '.$club->getMailClub().'<p>'; ?>
+        <?php echo '<p> Site : '.$club->getSiteClub().'<p>'; ?>
+        <?php echo '<p> Réseau social : '.$club->getReseau().'<p>'; ?>
+        <?php echo '<p> Tel fixe du club : '.$club->getTelFixeClub().'<p>'; ?>
+        <?php echo '<p> Tel portable du club : '.$club->getTelPortableClub().'<p>'; ?>
+        <?php echo '<p> Président : '.$club->getCivilitePres()." ".$club->getNomPres()." ".$club->getPrenomPres().'<p>'; ?>
+        <?php echo '<p> Tel du président : '.$club->getTelPres().'<p>'; ?>
+        <?php echo '<p> Mail du président : '.$club->getMailPres().'<p>'; ?>
+        <?php echo '<p> Tel du secrétariat : '.$club->getTelSecret().'<p>'; ?>
+        <?php echo '<p> Mail du secrétariat : '.$club->getMailSecret().'<p>'; ?>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+    <script src="../../Js/Animation.js"></script>
 
 </body>
 
