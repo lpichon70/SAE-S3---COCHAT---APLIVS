@@ -85,9 +85,9 @@
                         <input type="file" name="sigleClub"/>
                     </p>
 
-                    <p>
-                        <?php echo '<img class="imageProfil" src="'.$club->getSigle().'" alt=sigle>' ; ?>
-                    </p>
+                    <div>
+                        <?php echo '<img class="pp" src="'.$club->getSigle().'" alt=sigle>' ; ?>
+                    </div>
 
                     <p>
                         <label for="adresseClub">Rue :</label>

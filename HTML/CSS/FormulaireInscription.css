@@ -300,3 +300,8 @@ legend {
   color: #fff;
   text-decoration: none;
 }
+
+.pp{
+  max-width : 15%;
+  height : auto;
+}

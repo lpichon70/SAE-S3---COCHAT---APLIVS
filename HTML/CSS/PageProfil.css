@@ -118,5 +118,35 @@ label {
 }
 
 p{
-  color: white;
+  color: black;
+}
+
+.pp{
+  max-width: 15%;
+  height: auto;
+  margin-top: 5%;
+  position: absolute;
+  margin-left: 10%
+}
+
+.info{
+  background-color: white;
+  margin: 7%;
+  border: solid 3px black;
+  border-radius: 20px;
+}
+
+#nomClub{
+  font-size: 100px;
+  margin-left: 45%;
+}
+
+#en-tete{
+  margin-bottom: 10%;
+}
+
+.resume{
+  margin-left: 15%;
+  margin-bottom: 5%;
+  font-size: 25px;
 }
