@@ -3,7 +3,7 @@
     require_once("PHP/VoirMonClub/BDDManager.php");
     $db = new PDO('mysql:host=localhost;dbname=grp-254_s3_sae', 'grp-254', '0k6zqrrr');
     $manager = new BDDManager($db);
-    $id = 10;
+    $id = 15;
     $club = $manager->get($id);
 
     if(!empty($_POST))
