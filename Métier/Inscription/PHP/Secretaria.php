@@ -1,5 +1,7 @@
 <?php
 
+    //Cette classe Secretariat regroupe toutes les données dont un secretariat à besoins
+    //Elle est utiliser pour mieux se repérer lors de l'insersion de données (inscription) au autres requêtes.
     class Secretaria
     {
         private $_mail;

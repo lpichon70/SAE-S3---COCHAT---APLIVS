@@ -15,7 +15,7 @@
         </h1>
 
         <?php
-
+            //Permet de faire un récapitulatif suite à l'incription d'un club
             require_once("Club.php");
             require_once("President.php");
             require_once("Secretaria.php");

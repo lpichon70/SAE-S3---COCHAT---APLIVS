@@ -5,6 +5,8 @@
         private string $_mdp;
         private string $_statut;
 
+
+        //Constructeur de la classe
         public function __construct($data)
         {
             $this->setIdentifiant($data['Identifiant']);
@@ -12,6 +14,7 @@
             $this->setStatut($data['Statut']);
         }
 
+        //get et set
         public function getIdentifiant(){return $this->_identifiant;}
         public function setIdentifiant($var){$this->_identifiant = $var;}
 

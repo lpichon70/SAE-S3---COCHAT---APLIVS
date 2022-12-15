@@ -6,6 +6,9 @@ class FabriqueSession
     private $_police = "POLICE";
     private $_club = "CLUB";
 
+    //Constructeur de la classe
+    //Permet de donner un statut via une variable de cession à un utilisateur en fonction de son status initialiser dans la base 
+    //de donnéds lors de l'inscription
     public function __construct($statut)
     {
         switch($statut)

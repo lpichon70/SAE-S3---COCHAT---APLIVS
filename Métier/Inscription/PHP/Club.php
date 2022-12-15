@@ -3,6 +3,8 @@
     class Club
     {
 
+        //Cette classe Club regroupe toutes les données dont un club à besoins
+        //Elle est utiliser pour mieux se repérer lors de l'insersion de données (inscription) au autres requêtes.
         private $_nomClub;
         public function setNomClub($nc) { $this->_nomClub = $nc; }
         public function getNomClub() {return  $this->_nomClub; }

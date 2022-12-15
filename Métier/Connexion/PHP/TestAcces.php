@@ -1,5 +1,6 @@
 <?php
     session_start();
+    //Permet d'affichier la page de redirection de l'utiliateur en fonction de son grade.
     $statut = $_SESSION['statut'];
 ?>
 
