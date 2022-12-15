@@ -1,8 +1,8 @@
 <?php
   session_start();
   $_SESSION['statut']='';
-  require_once("PHP/PageConnexion/Conn.php");
-  require_once("PHP/PageConnexion/BDDManager.php");
+  require_once("PHP/Conn.php");
+  require_once("PHP/BDDManager.php");
   
 
   //Récupère les données saisies pas l'utilisateur sur la page
@@ -31,7 +31,7 @@
       //Dans le cas ou l'utilisateur à réussi à se connecter
       //On lui attribu un statut
       $_SESSION['statut']=$manager->getStatutByID($identifiant);
-      header("Location:./PHP/Accessibilite/Index.php");
+      header("Location:./PHP/Index.php");
     }
   }
 
@@ -91,13 +91,13 @@
             
             <br>
 
-            <a id="inscription" href="./FormulaireInscription.html"  >Je ne suis pas encore inscrit</a>
+            <a id="inscription" href="../Inscription/FormulaireInscription.html"  >Je ne suis pas encore inscrit</a>
         </form>
         
     </fieldset>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
-    <script src="Js/Animation.js"></script>
+    <script src="../../index/JS/Animation.js"></script>
   </body>
 
 

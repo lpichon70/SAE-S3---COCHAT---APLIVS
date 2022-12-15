@@ -1,6 +1,6 @@
 <?php
-    require_once("PHP/VoirMonClub/Club.php");  
-    require_once("PHP/VoirMonClub/BDDManager.php");
+    require_once("Club.php");  
+    require_once("BDDManager.php");
     $db = new PDO('mysql:host=localhost;dbname=grp-254_s3_sae', 'grp-254', '0k6zqrrr');
     $manager = new BDDManager($db);
     $club = $manager->get(15);
@@ -14,7 +14,7 @@
 
 <head>
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-    <link rel="stylesheet" href="CSS/FormulaireInscription.css" type="text/css">
+    <link rel="stylesheet" href="../CSS/FormulaireInscription.css" type="text/css">
     <title>Fiche d'inscription à la DDCS</title>
 </head>
 
@@ -35,17 +35,17 @@
 
 
     <div id="LesImages">
-        <img id="logoDDCS" src="Images/DDCS.jpg" width="25%" height="25%" class="logo" alt="logo DDCS" />
+        <img id="logoDDCS" src="../../Images/DDCS.jpg" width="25%" height="25%" class="logo" alt="logo DDCS" />
     </div>
 
 
     <div>
         <label class="lien">
-            <a href="../index.html">Accueil</a>
+            <a href="../../index.php">Accueil</a>
         </label>
 
         <label class="lien">
-            <a href="formulaire_renseignement.php">Signalement</a>
+            <a href="../../Métier/Signalementformulaire_renseignement.php">Signalement</a>
         </label>
     </div>
 
@@ -57,7 +57,7 @@
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 
-    <form action="./PageProfil.php" method="POST" enctype="multipart/form-data">
+    <form action="../PageProfil.php" method="POST" enctype="multipart/form-data">
         <div class="p1">
             <div class="title">
                 <legend>
@@ -275,7 +275,7 @@
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
-    <script src="Js/Animation.js"></script>
+    <script src="../../index/Js/Animation.js"></script>
 </body>
 
 </html>

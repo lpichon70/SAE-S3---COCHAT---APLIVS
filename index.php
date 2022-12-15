@@ -15,7 +15,7 @@
     <title>APPLIVS</title>
     <link rel="icon" type="image/png" sizes="16x16" href="Images/icon_ballon.png">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="HTML/CSS/Accueil_css.css">
+    <link rel="stylesheet" href="index/CSS/Accueil_css.css">
   </head>
 
   <body>
@@ -23,7 +23,7 @@
     <div class="row"><hr></div>
 
     <div class="l1">
-      <img src="HTML/Images/logo.gif" alt="logo DDCS">
+      <img src="Images/logo.gif" alt="logo DDCS">
     </div>
 
     <div class="container">
@@ -35,7 +35,7 @@
     </div>
 
     <div id="LesImages">
-      <img id="logoDDCS" src="./HTML/Images/DDCS.jpg" width="25%" height="25%" class="logo" alt="logo DDCS" />
+      <img id="logoDDCS" src="Images/DDCS.jpg" width="25%" height="25%" class="logo" alt="logo DDCS" />
     </div>
 
     <div>
@@ -43,16 +43,16 @@
           <a href="#">Accueil</a>
       </p>
       <p class="lien ombreText">
-          <a href="HTML/FormulaireInscription.html">Inscription</a>
+          <a href="Métier/Inscription/FormulaireInscription.html">Inscription</a>
       </p>
       <p class="lien ombreText">
-          <a href="HTML/formulaire_renseignement.php">Signaler</a>
+          <a href="Métier/Signalement/formulaire_renseignement.php">Signaler</a>
       </p>
       <p class="lien ombreText">
-        <a href="PHP/Rechercher/indexRechercher.html">Rechercher</a>
+        <a href="#">Rechercher</a>
 </p>
       <p class="lien ombreText">
-        <a href="HTML/Connexion.php">Se connecter</a>
+        <a href="Métier/Connexion/Connexion.php">Se connecter</a>
     </p>
     
     </div>
@@ -106,6 +106,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
-  <script src="./HTML/Js/Animation.js"></script>
+  <script src="index/JS/Animation.js"></script>
   </body>
 </html>

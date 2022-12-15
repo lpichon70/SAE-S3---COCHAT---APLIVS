@@ -1,8 +1,8 @@
 <?php
-    require_once("rencontre.php");
-    require_once("risque.php");
-    require_once("clubs.php");
-    require_once("declarant.php");
+    require_once("Rencontre.php");
+    require_once("Risque.php");
+    require_once("Clubs.php");
+    require_once("Declarant.php");
     require_once("BDDManager.php");
     $db = new PDO('mysql:host=localhost;dbname=grp-254_s3_sae', 'grp-254', '0k6zqrrr');
     $manager = new BDDManager($db);

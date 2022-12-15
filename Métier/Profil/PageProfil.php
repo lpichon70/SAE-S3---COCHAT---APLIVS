@@ -1,6 +1,6 @@
 <?php
-    require_once("PHP/VoirMonClub/Club.php");  
-    require_once("PHP/VoirMonClub/BDDManager.php");
+    require_once("PHP/Club.php");  
+    require_once("PHP/BDDManager.php");
     $db = new PDO('mysql:host=localhost;dbname=grp-254_s3_sae', 'grp-254', '0k6zqrrr');
     $manager = new BDDManager($db);
     $id = 15;
@@ -71,21 +71,21 @@
     </div>
 
     <div id="LesImages">
-        <img id="logoDDCS" src="Images/DDCS.jpg" width="25%" height="25%" class="logo" alt="logo DDCS" />
+        <img id="logoDDCS" src="../Images/DDCS.jpg" width="25%" height="25%" class="logo" alt="logo DDCS" />
     </div>
 
     <div>
         <label class="lien">
-            <a href="../index.html">Accueil</a>
+            <a href="../index.php">Accueil</a>
         </label>
 
         <label class="lien">
-            <a href="">à remplir</a>
+            <a href="#">à remplir</a>
         </label>
 
 
         <label class="lien">
-            <a href="">à remplir</a>
+            <a href="#">à remplir</a>
         </label>
     </div>
 
@@ -126,7 +126,7 @@
         </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
-    <script src="Js/Animation.js"></script>
+    <script src="../index/Js/Animation.js"></script>
 
 
 </body>

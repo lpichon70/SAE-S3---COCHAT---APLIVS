@@ -28,7 +28,7 @@
 		}
 	}
 	else {
-		header("Location:../index.html");
+		header("Location:../../index.php");
 	}
 ?>
 
@@ -68,13 +68,13 @@
 
 
 	<div id="LesImages">
-		<img id="logoDDCS" src="./Images/DDCS.jpg" width="25%" height="25%" class="logo" alt="logo DDCS" />
+		<img id="logoDDCS" src="../../Images/DDCS.jpg" width="25%" height="25%" class="logo" alt="logo DDCS" />
 	</div>
 
 
 	<div id="btn-accueil">
 		<p class="lien ombreText">
-			<a href="./index.html">Accueil</a>
+			<a href="../../index.php">Accueil</a>
 		</p>
 	</div>
 
@@ -84,7 +84,7 @@
 
 
 
-	<form id="formulaire" action="formulaire_renseignement.php" method="POST">
+	<form id="formulaire" action="PHP/formulaire_renseignement.php" method="POST">
 
 		<fieldset id="club-receveur" class="<?=$voirClub?>">
 			<h3>
