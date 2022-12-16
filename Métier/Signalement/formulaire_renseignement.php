@@ -49,7 +49,7 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-	<script src="./Js./FormulaireRenseignement./formulaire_renseignement.js"></script>
+	<script src="./Js/formulaire_renseignement.js"></script>
 	<link rel="stylesheet" href="./CSS/formulaire_renseignement.css" type="text/css">
 	<title>Fiche de signalement de rencontres à risques</title>
 </head>
