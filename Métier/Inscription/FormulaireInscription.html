@@ -34,14 +34,6 @@
         <label class="lien ombreText">
             <a href="../../index.php">Accueil</a>
         </label>
-
-        <label class="lien ombreText">
-            <a href="#">Inscription</a>
-        </label>
-
-        <label class="lien ombreText">
-            <a href="../Signalement/formulaire_renseignement.php">Signalement</a>
-        </label>
     </div>
 
 
@@ -79,7 +71,12 @@
 
                     <p>
                         <label for="sigleClub">Sigle du club :</label>
-                        <input type="file" name="sigleClub" />
+                        <input type="text" name="sigleClub" required class="input_text" />
+                    </p>
+
+                    <p>
+                        <label for="logo">Logo du club :</label>
+                        <input type="file" name="logo" />
                     </p>
 
 

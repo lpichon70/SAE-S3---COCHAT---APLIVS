@@ -1,28 +1,32 @@
 <?php
-    require_once("PHP/Club.php");  
-    require_once("PHP/BDDManager.php");
+    require_once("./PHP/Club.php");  
+    require_once("./PHP/BDDManager.php");
     $db = new PDO('mysql:host=localhost;dbname=grp-254_s3_sae', 'grp-254', '0k6zqrrr');
     $manager = new BDDManager($db);
-    $id = 15;
+    $id = 98;
+    //on récupère le club
     $club = $manager->get($id);
 
+    //vérifie si on provient de ModifierProfil.php
     if(!empty($_POST))
     {
-        $sigle = "";
-        if(empty($_POST['sigleClub']))
+        $logo = "";
+        if(empty($_POST['logoClub']))
         {
-            $sigle = $club->getSigle();
+            $logo = $club->getLogo();
         }
         else
         {
-            $sigle = "Images/Sigle/".$_FILES["sigleClub"]['name'];
-            move_uploaded_file($_FILES['sigleClub']['tmp_name'], $sigle);
+            //on change le chemin du logo s'il était vide
+            $logo = "../../Images/logo_club/".$_FILES["logoClub"]['name'];
+            move_uploaded_file($_FILES['logoClub']['tmp_name'], $logo);
         }
         
         $data = 
         [
             $_POST['nomClub'],
-            $sigle,
+            $_POST['sigleClub'],
+            $logo,
             $_POST['villeClub'],
             $_POST['adresseClub'],
             $_POST['complementAdresseClub'],
@@ -44,9 +48,11 @@
             $_POST['emailSecretariat'],
             $_POST['telSecretariat']
         ];
+        //si on vient de la modification, lors on change les données
         $manager->set($data, $id);
     }
 
+    //on récupère les données au cas ou elles ont été modifiées
     $club = $manager->get($id);
 ?>
 
@@ -80,12 +86,7 @@
         </label>
 
         <label class="lien">
-            <a href="#">à remplir</a>
-        </label>
-
-
-        <label class="lien">
-            <a href="#">à remplir</a>
+            <a href="./PHP/ModifierProfil.php">Modifier le profil</a>
         </label>
     </div>
 
@@ -94,13 +95,14 @@
     <br><br><br><br><br><br>
     <div class="info">
         <div id="en-tete">
-            <?php echo '<img class="pp" src="'.$club->getSigle().'" alt=sigle>' ; ?>
+            <?php echo '<img class="pp" src="../../'.$club->getLogo().'" alt=logo>' ; ?>
             <br><br><br><br><br><br><br>
             <?php echo '<span id="nomClub">'.$club->getNomClub().'</span>'; ?>
         </div>
 
         <div class="resume">
 
+            <?php echo '<p> Sigle : '.$club->getSigle().'<p>'; ?>
             <?php echo '<p> Localisation : '.$club->getVille().', '.$club->getRue().'<p>'; ?>
             <?php echo '<p> Complement de rue : '.$club->getComplementRue().'<p>'; ?>
             <?php echo '<p> Code postal : '.$club->getCodePostal().'<p>'; ?>

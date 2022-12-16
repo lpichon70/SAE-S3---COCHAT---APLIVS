@@ -3,7 +3,8 @@
     require_once("BDDManager.php");
     $db = new PDO('mysql:host=localhost;dbname=grp-254_s3_sae', 'grp-254', '0k6zqrrr');
     $manager = new BDDManager($db);
-    $club = $manager->get(15);
+    //on récupère le club
+    $club = $manager->get(98);
 ?>
 
 
@@ -14,8 +15,8 @@
 
 <head>
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-    <link rel="stylesheet" href="../CSS/FormulaireInscription.css" type="text/css">
-    <title>Fiche d'inscription à la DDCS</title>
+    <link rel="stylesheet" href="../../Inscription/CSS/FormulaireInscription.css" type="text/css">
+    <title>Modification de profil</title>
 </head>
 
 
@@ -46,6 +47,10 @@
 
         <label class="lien">
             <a href="../../Métier/Signalementformulaire_renseignement.php">Signalement</a>
+        </label>
+
+        <label class="lien">
+            <a href="../PageProfil.php">Profil</a>
         </label>
     </div>
 
@@ -82,11 +87,16 @@
 
                     <p>
                         <label for="sigleClub">Sigle du club :</label>
-                        <input type="file" name="sigleClub"/>
+                        <?php echo '<input type="text" name="sigleClub" required class="input_text" value="'.$club->getSigle().'"/>'; ?>
+                    </p>
+
+                    <p>
+                        <label for="logoClub">Logo du club :</label>
+                        <input type="file" name="logoClub"/>
                     </p>
 
                     <div>
-                        <?php echo '<img class="pp" src="'.$club->getSigle().'" alt=sigle>' ; ?>
+                        <?php echo '<img class="pp" src="../../../'.$club->getLogo().'" alt=logo>' ; ?>
                     </div>
 
                     <p>
