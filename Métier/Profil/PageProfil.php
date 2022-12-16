@@ -1,28 +1,29 @@
 <?php
-    require_once("PHP/Club.php");  
-    require_once("PHP/BDDManager.php");
+    require_once("./PHP/Club.php");  
+    require_once("./PHP/BDDManager.php");
     $db = new PDO('mysql:host=localhost;dbname=grp-254_s3_sae', 'grp-254', '0k6zqrrr');
     $manager = new BDDManager($db);
-    $id = 15;
+    $id = 129;
     $club = $manager->get($id);
 
     if(!empty($_POST))
     {
-        $sigle = "";
-        if(empty($_POST['sigleClub']))
+        $logo = "";
+        if(empty($_POST['logoClub']))
         {
-            $sigle = $club->getSigle();
+            $logo = $club->getLogo();
         }
         else
         {
-            $sigle = "Images/Sigle/".$_FILES["sigleClub"]['name'];
-            move_uploaded_file($_FILES['sigleClub']['tmp_name'], $sigle);
+            $logo = "../../Images/logo_club/".$_FILES["logoClub"]['name'];
+            move_uploaded_file($_FILES['logoClub']['tmp_name'], $logo);
         }
         
         $data = 
         [
             $_POST['nomClub'],
-            $sigle,
+            $_POST['sigleClub'],
+            $logo,
             $_POST['villeClub'],
             $_POST['adresseClub'],
             $_POST['complementAdresseClub'],
@@ -94,13 +95,14 @@
     <br><br><br><br><br><br>
     <div class="info">
         <div id="en-tete">
-            <?php echo '<img class="pp" src="'.$club->getSigle().'" alt=sigle>' ; ?>
+            <?php echo '<img class="pp" src="../../'.$club->getLogo().'" alt=logo>' ; ?>
             <br><br><br><br><br><br><br>
             <?php echo '<span id="nomClub">'.$club->getNomClub().'</span>'; ?>
         </div>
 
         <div class="resume">
 
+            <?php echo '<p> Sigle : '.$club->getSigle().'<p>'; ?>
             <?php echo '<p> Localisation : '.$club->getVille().', '.$club->getRue().'<p>'; ?>
             <?php echo '<p> Complement de rue : '.$club->getComplementRue().'<p>'; ?>
             <?php echo '<p> Code postal : '.$club->getCodePostal().'<p>'; ?>

@@ -14,6 +14,8 @@
             Récapitulatif de votre inscription
         </h1>
 
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
         <?php
             //Permet de faire un récapitulatif suite à l'incription d'un club
             require_once("Club.php");
@@ -22,9 +24,9 @@
 
             require_once("FormInscriptionManager.php");
 
-            move_uploaded_file($_FILES['sigleClub']['tmp_name'], "../../Images/Sigle/".$_FILES["sigleClub"]['name']);
+            move_uploaded_file($_FILES['logo']['tmp_name'], "../../../Images/logo_club/".$_FILES["logo"]['name']);
 
-            $club = new Club($_POST["nomClub"],"Images/Sigle/".$_FILES["sigleClub"]['name'],$_POST["adresseClub"],
+            $club = new Club($_POST["nomClub"], $_POST["sigleClub"],"Images/logo_club/".$_FILES["logo"]['name'],$_POST["adresseClub"],
             $_POST["complementAdresseClub"],$_POST["villeClub"],$_POST["codePostalClub"],
             $_POST["numAgrement"],$_POST["fedAffiliation"],$_POST["satutAsso"],$_POST["numSiret"],
             $_POST["mailClub"],$_POST["siteClub"],$_POST["reseauSocialClub"],$_POST["telFixeClub"],
@@ -35,7 +37,7 @@
 
             $secretaria = new Secretaria($_POST["emailSecretaria"], $_POST["telSecretaria"]);
 
-            echo "<img src=../../".$club->getSigleClub()." alt=sigle>";
+            echo "<img src=../../../".$club->getLogo()." alt=logo>";
             
             echo "</br>"."</br>"."<h2>Informations du club :</h2>"."</br>".$club->__toString();
             

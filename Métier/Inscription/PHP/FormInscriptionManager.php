@@ -29,12 +29,12 @@ require_once("President.php");
             Code_Postal,Num_Agrement,fede_affiliation,Statut_asso,num_Siret,Mail_club,web_Site,social_club,
             Tel_Fixe,Tel_Portable,
             Civil_Pres,Nom_Pres,Prenom_Pres,Mail_Pres,Tel_Pres,
-            Mail_Secretariat,Tel_Secretariat) 
+            Mail_Secretariat,Tel_Secretariat,logo) 
             VALUES (:Nom_Club,:Sigle_club,:Rue,:Complement_Rue,:Ville,
             :Code_Postal,:Num_Agrement,:fede_affiliation,:Statut_asso,:num_Siret,:Mail_club,:web_Site,:social_club,
             :Tel_Fixe,:Tel_Portable,
             :Civil_Pres,:Nom_Pres,:Prenom_Pres,:Mail_Pres,:Tel_Pres,
-            :Mail_Secretariat,:Tel_Secretariat)");
+            :Mail_Secretariat,:Tel_Secretariat,:logo)");
 
             $req->execute(array(
                 //Les informations liées au club :
@@ -53,7 +53,7 @@ require_once("President.php");
                 'social_club'=> $club-> getResauSocial(),
                 'Tel_Fixe'=> $club-> getTelFixe(),
                 'Tel_Portable'=> $club-> getTelPortable(),
-
+                'logo'=> $club-> getLogo(),
 
                 //Les informations liées au président
                 'Civil_Pres' => $president->getCivilite(),
