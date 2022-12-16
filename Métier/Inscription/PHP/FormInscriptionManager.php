@@ -9,8 +9,10 @@ require_once("President.php");
         //Attribut qui permet de se connecter à la base de données.
         private PDO $_db;
 
+        
         //initialise l'attribut PDO
         public function setDB($db) { $this->_db = $db;}
+
 
         //Constructeur de la classe
         public function __construct($db)
@@ -18,6 +20,7 @@ require_once("President.php");
             $this->setDB($db);
         }
         
+
         //Permet d'ajouter à la base de données des 3 objets suivants: un club (Club.php), un président (President.php) et un 
         //Secrétariat (secretariat.php);
         public function add($club,$president,$secretaria)

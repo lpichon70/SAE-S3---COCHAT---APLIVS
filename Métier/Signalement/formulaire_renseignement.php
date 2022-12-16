@@ -4,15 +4,25 @@
 	$voirPolice = "d-none";
 	$voirDDCS = "d-none";
 
+	$requiredPolice = "required";
+	$requiredClub = "required";
+	$requiredDDCS = "required";
+
 	if ($_SESSION['statut'] != "" && $_SESSION['statut'] != null)	
 	{
 		switch ($_SESSION['statut']) {
 			case 'POLICE':
 				$voirPolice = "";
+
+				$requiredClub = "";
+				$requiredDDCS = "";
 			break;
 			
 			case 'DDCS':
 				$voirDDCS = "";
+
+				$requiredPolice = "";
+				$requiredClub = "";
 			break;
 
 			case 'ADMIN':
@@ -23,6 +33,9 @@
 
 			case 'CLUB':
 				$voirClub = "";
+
+				$requiredPolice = "";
+				$requiredDDCS = "";
 			break;
 				
 		}
@@ -94,7 +107,7 @@
 					<div class="elements-input">
 						<label class="label-text" for="nomClub">Nom du club :</label>
 						<br>
-						<input type="text" name="nomClub" required />
+						<input type="text" name="nomClub" <?=$requiredClub?> />
 						<div class="ligne-input"></div>
 					</div>
 					
@@ -104,7 +117,7 @@
 					<div class="elements-input">
 						<label class="label-text" for="NumMatch">Numéro du match :</label>
 						<br>
-						<input type="text" name="NumMatch" required />
+						<input type="text" name="NumMatch" <?=$requiredClub?> />
 						<div class="ligne-input"></div>
 					</div>
 					
@@ -112,7 +125,7 @@
 				<p>
 					<div class="elements-input">
 						<label class="label-text" for="Catégorie">Catégorie :</label>
-						<input type="text" name="Catégorie" required />
+						<input type="text" name="Catégorie" <?=$requiredClub?> />
 						<div class="ligne-input"></div>
 					</div>
 					
@@ -120,7 +133,7 @@
 				<p>
 					<div class="elements-input">
 						<label class="label-text" for="Date">Date :</label>
-						<input type="text" name="Date" required />
+						<input type="text" name="Date" <?=$requiredClub?> />
 						<div class="ligne-input"></div>
 					</div>
 					
@@ -128,7 +141,7 @@
 				<p>
 					<div class="elements-input">
 						<label class="label-text" for="Lieu">Lieu :</label>
-						<input type="text" name="Lieu" required />
+						<input type="text" name="Lieu" <?=$requiredClub?> />
 						<div class="ligne-input"></div>
 					</div>
 					
@@ -136,7 +149,7 @@
 				<p>
 					<div class="elements-input">
 						<label class="label-text" for="Horaires">Horaires :</label>
-						<input type="text" name="Horaires" required />
+						<input type="text" name="Horaires" <?=$requiredClub?> />
 						<div class="ligne-input"></div>
 					</div>
 					
@@ -145,9 +158,9 @@
 			<p>
 				<label class="label-text" for="Délégués">Envoi de délégués :</label>
 				<label name="oui">Oui</label>
-				<input type="radio" name="Délégués" id="DeleguesOui" required onchange="showDelegues()" />
+				<input type="radio" name="Délégués" id="DeleguesOui" <?=$requiredClub?> onchange="showDelegues()" />
 				<label name="non">Non</label>
-				<input type="radio" name="Délégués" required onchange="showDelegues()" /><br>
+				<input type="radio" name="Délégués" <?=$requiredClub?> onchange="showDelegues()" /><br>
 			<div class="d-none" id="deleg">
 				<div class="elements-input">
 					<label class="label-text" for="nomDélégué">Nom du délégué :</label>
@@ -168,9 +181,9 @@
 			<p>
 				<label class="label-text" for="Arbitres">Envoi d'arbitres :</label>
 				<label name="oui">Oui</label>
-				<input type="radio" name="Arbitres" id="ArbitresOui" required onchange="showArbitres()" />
+				<input type="radio" name="Arbitres" id="ArbitresOui" <?=$requiredClub?> onchange="showArbitres()" />
 				<label name="non">Non</label>
-				<input type="radio" name="Arbitres" required onchange="showArbitres()" /><br>
+				<input type="radio" name="Arbitres" <?=$requiredClub?> onchange="showArbitres()" /><br>
 				<div id="arb" class="d-none">
 					<div class="elements-input">
 						<label class="label-text" for="nbArbitre">Nombre d'arbitres :</label>
@@ -183,9 +196,9 @@
 			<p>
 				<label class="label-text" for="Terrain">Changement de terrain :</label>
 				<label name="oui">Oui</label>
-				<input type="radio" name="Terrain" id="TerrainsOui" required onchange="showTerrains()" />
+				<input type="radio" name="Terrain" id="TerrainsOui" <?=$requiredClub?> onchange="showTerrains()" />
 				<label name="non">Non</label>
-				<input type="radio" name="Terrain" required onchange="showTerrains()" /><br>
+				<input type="radio" name="Terrain" <?=$requiredClub?> onchange="showTerrains()" /><br>
 				<div id="terr" class="d-none">
 					<div class="elements-input">
 						<label class="label-text" for="NvTerrain">Adresse du nouveau terrain :</label>
@@ -212,9 +225,9 @@
 			<p>
 				<label class="label-text" for="Report">Report du match :</label>
 				<label name="oui">Oui</label>
-				<input type="radio" name="Report" id="ReportOui" required onchange="showReport()" />
+				<input type="radio" name="Report" id="ReportOui" <?=$requiredClub?> onchange="showReport()" />
 				<label name="non">Non</label>
-				<input type="radio" name="Report" required onchange="showReport()" /><br>
+				<input type="radio" name="Report" <?=$requiredClub?> onchange="showReport()" /><br>
 			<div id="rep" class="d-none">
 				<div class="elements-input">
 					<label class="label-text" for="NvTerrain">Adresse du nouveau terrain :</label>
@@ -240,24 +253,24 @@
 			<p>
 				<label class="label-text" for="ContactDistrict">Contact du district :</label>
 				<label name="oui">Oui</label>
-				<input type="radio" name="ContactDistrict" required />
+				<input type="radio" name="ContactDistrict" <?=$requiredClub?> />
 				<label name="non">Non</label>
-				<input type="radio" name="ContactDistrict" required />
+				<input type="radio" name="ContactDistrict" <?=$requiredClub?> />
 			</p>
 			<p>
 				<label class="label-text" for="ContactPolice">Contact des forces de l'ordre :</label>
 				<label name="oui">Oui</label>
-				<input type="radio" name="ContactPolice" required />
+				<input type="radio" name="ContactPolice" <?=$requiredClub?> />
 				<label name="non">Non</label>
-				<input type="radio" name="ContactPolice" required />
+				<input type="radio" name="ContactPolice" <?=$requiredClub?> />
 			</p>
 			<fieldset>
 				<legend>
 					<label for="IncidentRec">Si incident :</label>
 					<label name="oui">Oui</label>
-					<input type="radio" name="IncidentRec" id="IncidentOui1" required onchange="showIncident1()" />
+					<input type="radio" name="IncidentRec" id="IncidentOui1" <?=$requiredClub?> onchange="showIncident1()" />
 					<label name="non">Non</label>
-					<input type="radio" name="IncidentRec" required onchange="showIncident1()" />
+					<input type="radio" name="IncidentRec" <?=$requiredClub?> onchange="showIncident1()" />
 				</legend>
 				<div id="incident1" class="d-none">
 					<p>
@@ -413,9 +426,9 @@
 				<legend>
 					<label for="IncidentRec">Si incident :</label>
 					<label name="oui">Oui</label>
-					<input type="radio" name="IncidentRec" id="IncidentOui2" required onchange="showIncident2()" />
+					<input type="radio" name="IncidentRec" id="IncidentOui2" <?=$requiredClub?> onchange="showIncident2()" />
 					<label name="non">Non</label>
-					<input type="radio" name="IncidentRec" required onchange="showIncident2()" />
+					<input type="radio" name="IncidentRec" <?=$requiredClub?> onchange="showIncident2()" />
 				</legend>
 				<div id="incident2" class="d-none">
 					<p>
@@ -566,9 +579,9 @@
 			<p>
 				<label for="ContactReceveur">Personne contactée du club receveur :</label>
 				<label name="oui">Oui</label>
-				<input type="radio" name="ContactReceveur" id="ContactOui1" required onchange="showContact1()" />
+				<input type="radio" name="ContactReceveur" id="ContactOui1" <?=$requiredDDCS?> onchange="showContact1()" />
 				<label name="non">Non</label>
-				<input type="radio" name="ContactReceveur" required onchange="showContact1()" />
+				<input type="radio" name="ContactReceveur" <?=$requiredDDCS?> onchange="showContact1()" />
 			</p>
 			<div id="contact1" class="d-none">
 				<p>
@@ -579,9 +592,9 @@
 			<p>
 				<label for="ContactVisiteur">Personne contactée du club visiteur :</label>
 				<label name="oui">Oui</label>
-				<input type="radio" name="ContactVisiteur" id="ContactOui2" required onchange="showContact2()" />
+				<input type="radio" name="ContactVisiteur" id="ContactOui2" <?=$requiredDDCS?> onchange="showContact2()" />
 				<label name="non">Non</label>
-				<input type="radio" name="ContactVisiteur" required onchange="showContact2()" />
+				<input type="radio" name="ContactVisiteur" <?=$requiredDDCS?> onchange="showContact2()" />
 			</p>
 			<div id="contact2" class="d-none">
 				<p>
