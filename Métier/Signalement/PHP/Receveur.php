@@ -91,10 +91,6 @@
         public function getAtteinteBiensArbitres(){return $this->atteinteBiensArbitres ;}
         public function setAtteinteBiensArbitres(?string $var){$this->atteinteBiensArbitres = $var;}
 
-        private ?string $atteinteBiensDelegue;
-        public function getAtteinteBiensDelegue(){return $this->atteinteBiensDelegue ;}
-        public function setAtteinteBiensDelegue(?string $var){$this->atteinteBiensDelegue = $var;}
-
         private ?string $atteinteBiensDirigeants;
         public function getAtteinteBiensDirigeants(){return $this->atteinteBiensDirigeants ;}
         public function setAtteinteBiensDirigeants(?string $var){$this->atteinteBiensDirigeants = $var;}
@@ -113,14 +109,12 @@
         public function getAgressionVerbaleArbitres(){return $this->agressionVerbaleArbitres ;}
         public function setAgressionVerbaleArbitres(?string $var){$this->agressionVerbaleArbitres = $var;}
 
-        private ?string $agressionVerbaleDelegue;
-        public function getAgressionVerbaleDelegue(){return $this->agressionVerbaleDelegue ;}
-        public function setAgressionVerbaleDelegue(?string $var){$this->agressionVerbaleDelegue = $var;}
 
         private ?string $agressionVerbaleDirigeants;
         public function getAgressionVerbaleDirigeants(){return $this->agressionVerbaleDirigeants ;}
         public function setAgressionVerbaleDirigeants(?string $var){$this->agressionVerbaleDirigeants = $var;}
 
+        
         private ?string $agressionVerbaleSpectateurs;
         public function getAgressionVerbaleSpectateurs(){return $this->agressionVerbaleSpectateurs ;}
         public function setAgressionVerbaleSpectateurs(?string $var){$this->agressionVerbaleSpectateurs = $var;}
