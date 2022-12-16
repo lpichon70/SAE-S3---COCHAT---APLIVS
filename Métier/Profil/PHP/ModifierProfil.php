@@ -4,7 +4,7 @@
     $db = new PDO('mysql:host=localhost;dbname=grp-254_s3_sae', 'grp-254', '0k6zqrrr');
     $manager = new BDDManager($db);
     //on récupère le club
-    $club = $manager->get(129);
+    $club = $manager->get(98);
 ?>
 
 
@@ -47,6 +47,10 @@
 
         <label class="lien">
             <a href="../../Métier/Signalementformulaire_renseignement.php">Signalement</a>
+        </label>
+
+        <label class="lien">
+            <a href="../PageProfil.php">Profil</a>
         </label>
     </div>
 

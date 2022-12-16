@@ -3,7 +3,7 @@
     require_once("./PHP/BDDManager.php");
     $db = new PDO('mysql:host=localhost;dbname=grp-254_s3_sae', 'grp-254', '0k6zqrrr');
     $manager = new BDDManager($db);
-    $id = 129;
+    $id = 98;
     //on récupère le club
     $club = $manager->get($id);
 
@@ -86,12 +86,7 @@
         </label>
 
         <label class="lien">
-            <a href="#">à remplir</a>
-        </label>
-
-
-        <label class="lien">
-            <a href="#">à remplir</a>
+            <a href="./PHP/ModifierProfil.php">Modifier le profil</a>
         </label>
     </div>
 
