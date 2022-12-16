@@ -115,41 +115,41 @@
 				<p>		
 					
 					<div class="elements-input">
-						<label class="label-text" for="NumMatch">Numéro du match :</label>
+						<label class="label-text" for="numMatch">Numéro du match :</label>
 						<br>
-						<input type="text" name="NumMatch" <?=$requiredClub?> />
+						<input type="text" name="numMatch" <?=$requiredClub?> />
 						<div class="ligne-input"></div>
 					</div>
 					
 				</p>
 				<p>
 					<div class="elements-input">
-						<label class="label-text" for="Catégorie">Catégorie :</label>
-						<input type="text" name="Catégorie" <?=$requiredClub?> />
+						<label class="label-text" for="categorie">Catégorie :</label>
+						<input type="text" name="categorie" <?=$requiredClub?> />
 						<div class="ligne-input"></div>
 					</div>
 					
 				</p>
 				<p>
 					<div class="elements-input">
-						<label class="label-text" for="Date">Date :</label>
-						<input type="text" name="Date" <?=$requiredClub?> />
+						<label class="label-text" for="date">Date :</label>
+						<input type="text" name="date" <?=$requiredClub?> />
 						<div class="ligne-input"></div>
 					</div>
 					
 				</p>
 				<p>
 					<div class="elements-input">
-						<label class="label-text" for="Lieu">Lieu :</label>
-						<input type="text" name="Lieu" <?=$requiredClub?> />
+						<label class="label-text" for="lieu">Lieu :</label>
+						<input type="text" name="lieu" <?=$requiredClub?> />
 						<div class="ligne-input"></div>
 					</div>
 					
 				</p>
 				<p>
 					<div class="elements-input">
-						<label class="label-text" for="Horaires">Horaires :</label>
-						<input type="text" name="Horaires" <?=$requiredClub?> />
+						<label class="label-text" for="horaires">Horaires :</label>
+						<input type="text" name="horaires" <?=$requiredClub?> />
 						<div class="ligne-input"></div>
 					</div>
 					
@@ -163,15 +163,15 @@
 				<input type="radio" name="Délégués" <?=$requiredClub?> onchange="showDelegues()" /><br>
 			<div class="d-none" id="deleg">
 				<div class="elements-input">
-					<label class="label-text" for="nomDélégué">Nom du délégué :</label>
-					<input type="text" name="nomDélégué" />
+					<label class="label-text" for="nomDelegue">Nom du délégué :</label>
+					<input type="text" name="nomDelegue" />
 					<div class="ligne-input"></div>
 				</div>
 				
 				<br>
 				<div class="elements-input">
-					<label class="label-text" for="telDélégué">Téléphone du délégué :</label>
-					<input type="text" name="telDélégué" />
+					<label class="label-text" for="telDelegue">Téléphone du délégué :</label>
+					<input type="text" name="telDelegue" />
 					<div class="ligne-input"></div>
 				</div>
 				
@@ -201,22 +201,22 @@
 				<input type="radio" name="Terrain" <?=$requiredClub?> onchange="showTerrains()" /><br>
 				<div id="terr" class="d-none">
 					<div class="elements-input">
-						<label class="label-text" for="NvTerrain">Adresse du nouveau terrain :</label>
-						<input type="text" name="NvTerrain" />
+						<label class="label-text" for="adresseTerrain">Adresse du nouveau terrain :</label>
+						<input type="text" name="adresseTerrain" />
 						<div class="ligne-input"></div>
 					</div>
 					
 				<br>
 					<div class="elements-input">
-						<label class="label-text" for="DateRencontre">Nouvelle date pour la rencontre :</label>
-						<input type="text" name="DateRencontre" />
+						<label class="label-text" for="dateRencontre">Nouvelle date pour la rencontre :</label>
+						<input type="text" name="dateRencontre" />
 						<div class="ligne-input"></div>
 					</div>
 					
 				<br>
 					<div class="elements-input">
-						<label class="label-text" for="HeureRencontre">Nouvelle heure de la rencontre :</label>
-						<input type="text" name="HeureRencontre" />
+						<label class="label-text" for="heureRencontre">Nouvelle heure de la rencontre :</label>
+						<input type="text" name="heureRencontre" />
 						<div class="ligne-input"></div>
 					</div>
 					
@@ -230,39 +230,39 @@
 				<input type="radio" name="Report" <?=$requiredClub?> onchange="showReport()" /><br>
 			<div id="rep" class="d-none">
 				<div class="elements-input">
-					<label class="label-text" for="NvTerrain">Adresse du nouveau terrain :</label>
-					<input type="text" name="NvTerrain" />
+					<label class="label-text" for="adresseTerrain">Adresse du nouveau terrain :</label>
+					<input type="text" name="adresseTerrain" />
 					<div class="ligne-input"></div>
 				</div>
 				<br>
 				<div class="elements-input">
-					<label class="label-text" for="DateRencontre">Nouvelle date pour la rencontre :</label>
-					<input type="text" name="DateRencontre" />
+					<label class="label-text" for="dateRencontre">Nouvelle date pour la rencontre :</label>
+					<input type="text" name="dateRencontre" />
 					<div class="ligne-input"></div>
 				</div>
 				
 				<br>
 				<div class="elements-input">
-					<label class="label-text" for="HeureRencontre">Nouvelle heure de la rencontre :</label>
-					<input type="text" name="HeureRencontre" />
+					<label class="label-text" for="heureRencontre">Nouvelle heure de la rencontre :</label>
+					<input type="text" name="heureRencontre" />
 					<div class="ligne-input"></div>
 				</div>
 				
 			</div>
 			</p>
 			<p>
-				<label class="label-text" for="ContactDistrict">Contact du district :</label>
+				<label class="label-text" for="contactDistrict">Contact du district :</label>
 				<label name="oui">Oui</label>
-				<input type="radio" name="ContactDistrict" <?=$requiredClub?> />
+				<input type="radio" name="contactDistrict" <?=$requiredClub?> />
 				<label name="non">Non</label>
-				<input type="radio" name="ContactDistrict" <?=$requiredClub?> />
+				<input type="radio" name="contactDistrict" <?=$requiredClub?> />
 			</p>
 			<p>
-				<label class="label-text" for="ContactPolice">Contact des forces de l'ordre :</label>
+				<label class="label-text" for="contactPolice">Contact des forces de l'ordre :</label>
 				<label name="oui">Oui</label>
-				<input type="radio" name="ContactPolice" <?=$requiredClub?> />
+				<input type="radio" name="contactPolice" <?=$requiredClub?> />
 				<label name="non">Non</label>
-				<input type="radio" name="ContactPolice" <?=$requiredClub?> />
+				<input type="radio" name="contactPolice" <?=$requiredClub?> />
 			</p>
 			<fieldset>
 				<legend>
@@ -278,131 +278,132 @@
 					</p>
 					<p>
 						<label for="titre">Violence à personne(s) :</label><br>
-						<input type="checkbox" name="joueurs" value="yes">
-						<label for="joueurs"> Sur joueurs</label><br>
-						<input type="checkbox" name="arbitres" value="yes">
-						<label for="arbitres"> Sur arbitres</label><br>
-						<input type="checkbox" name="délégué" value="yes">
-						<label for="délégué"> Sur délégué</label><br>
-						<input type="checkbox" name="dirigeants" value="yes">
-						<label for="dirigeants"> Sur dirigeants</label><br>
-						<input type="checkbox" name="spectateurs" value="yes">
-						<label for="spectateurs"> Sur spectateurs</label><br>
+						<input type="checkbox" name="violencePersonnesJoueurs" value="yes">
+						<label for="violencePersonnesJoueurs"> Sur joueurs</label><br>
+						<input type="checkbox" name="violencePersonnesArbitres" value="yes">
+						<label for="violencePersonnesArbitres"> Sur arbitres</label><br>
+						<input type="checkbox" name="violencePersonnesDelegue" value="yes">
+						<label for="violencePersonnesDelegue"> Sur délégué</label><br>
+						<input type="checkbox" name="violencePersonnesDirigeants" value="yes">
+						<label for="violencePersonnesDirigeants"> Sur dirigeants</label><br>
+						<input type="checkbox" name="violencePersonnesSpectateurs" value="yes">
+						<label for="violencePersonnesSpectateurs"> Sur spectateurs</label><br>
 					</p>
 					<p>
 						<label for="titre">Atteinte aux biens :</label><br>
-						<input type="checkbox" name="joueurs" value="yes">
-						<label for="joueurs"> Sur joueurs</label><br>
-						<input type="checkbox" name="arbitres" value="yes">
-						<label for="arbitres"> Sur arbitres</label><br>
-						<input type="checkbox" name="dirigeants" value="yes">
-						<label for="dirigeants"> Sur dirigeants</label><br>
-						<input type="checkbox" name="spectateurs" value="yes">
-						<label for="spectateurs"> Sur spectateurs</label><br>
+						<input type="checkbox" name="atteinteBiensJoueurs" value="yes">
+						<label for="atteinteBiensJoueurs"> Sur joueurs</label><br>
+						<input type="checkbox" name="atteinteBiensArbitres" value="yes">
+						<label for="atteinteBiensArbitres"> Sur arbitres</label><br>
+						<input type="checkbox" name="atteinteBiensDirigeants" value="yes">
+						<label for="atteinteBiensDirigeants"> Sur dirigeants</label><br>
+						<input type="checkbox" name="atteinteBiensSpectateurs" value="yes">
+						<label for="atteinteBiensSpectateurs"> Sur spectateurs</label><br>
 					</p>
 					<p>
 						<label for="titre">Agression verbale :</label><br>
-						<input type="checkbox" name="joueurs" value="yes">
-						<label for="joueurs"> Sur joueurs</label><br>
-						<input type="checkbox" name="arbitres" value="yes">
-						<label for="arbitres"> Sur arbitres</label><br>
-						<input type="checkbox" name="dirigeants" value="yes">
-						<label for="dirigeants"> Sur dirigeants</label><br>
-						<input type="checkbox" name="spectateurs" value="yes">
-						<label for="spectateurs"> Sur spectateurs</label><br>
+						<input type="checkbox" name="agressionVerbaleJoueurs" value="yes">
+						<label for="agressionVerbaleJoueurs"> Sur joueurs</label><br>
+						<input type="checkbox" name="agressionVerbaleArbitres" value="yes">
+						<label for="agressionVerbaleArbitres"> Sur arbitres</label><br>
+						<input type="checkbox" name="agressionVerbaleDirigeants" value="yes">
+						<label for="agressionVerbaleDirigeants"> Sur dirigeants</label><br>
+						<input type="checkbox" name="agressionVerbaleSpectateurs" value="yes">
+						<label for="agressionVerbaleSpectateurs"> Sur spectateurs</label><br>
 					</p>
 					<p>
 						<label for="titre">Envahissement de terrain avec violence :</label><br>
 						<label name="oui">Oui</label>
-						<input type="radio" name="violence"/>
+						<input type="radio" name="envahissementTerrainViolence"/>
 						<label name="non">Non</label>
-						<input type="radio" name="violence"/>
+						<input type="radio" name="envahissementTerrainViolence"/>
 					</p>
 					<p>
 						<label for="titre">Victime(s) concernée(s) :</label><br>
-						<input type="checkbox" name="joueurs" value="yes">
-						<label for="joueurs"> Sur joueurs</label><br>
-						<input type="checkbox" name="éducateurs" value="yes">
-						<label for="éducateurs">Sur éducateurs</label><br>
-						<input type="checkbox" name="dirigeants" value="yes">
-						<label for="dirigeants"> Sur dirigeants</label><br>
-						<input type="checkbox" name="arbitres" value="yes">
-						<label for="arbitres"> Sur arbitres</label><br>
-						<input type="checkbox" name="délégué" value="yes">
-						<label for="délégué"> Sur délégué</label><br>
-						<input type="checkbox" name="spectateurs" value="yes">
-						<label for="spectateurs"> Sur spectateurs</label><br>
-						<input type="checkbox" name="autres" value="yes">
-						<label for="autres"> Sur autres</label><br>
+						<input type="checkbox" name="victimeConcerneJoueurs" value="yes">
+						<label for="victimeConcerneJoueurs"> Sur joueurs</label><br>
+						<input type="checkbox" name="victimeConcerneEducateur" value="yes">
+						<label for="victimeConcerneEducateur">Sur éducateurs</label><br>
+						<input type="checkbox" name="victimeConcerneDirigeants" value="yes">
+						<label for="victimeConcerneDirigeants"> Sur dirigeants</label><br>
+						<input type="checkbox" name="victimeConcerneArbitres" value="yes">
+						<label for="victimeConcerneArbitres"> Sur arbitres</label><br>
+						<input type="checkbox" name="victimeConcerneDelegue" value="yes">
+						<label for="victimeConcerneDelegue"> Sur délégué</label><br>
+						<input type="checkbox" name="victimeConcerneSpectateurs" value="yes">
+						<label for="victimeConcerneSpectateurs"> Sur spectateurs</label><br>
+						<input type="checkbox" name="victimeConcerneAutre" value="yes">
+						<label for="victimeConcerneAutre"> Sur autres</label><br>
 					</p>
 					<p>
 						<label for="titre">Auteur(s) présumé(s) :</label><br>
 
 						<div class="elements-input">
-							<label for="majeurs">Nombre de majeurs</label>
-							<input type="text" name="majeurs"><br>
+							<label for="auteurPresumeNbMajeurs">Nombre de majeurs</label>
+							<input type="text" name="auteurPresumeNbMajeurs"><br>
 							<div class="ligne-input"></div>
 						</div>
 						
-						<input type="checkbox" name="connu" value="yes">
-						<label for="autres"> Déja connu</label><br>
-						<input type="checkbox" name="membre" value="yes">
-						<label for="membre"> Membre d'un club</label><br>
-						<input type="checkbox" name="joueurs" value="yes">
-						<label for="joueurs">Un joueur</label><br>
-						<input type="checkbox" name="éducateurs" value="yes">
-						<label for="éducateurs">Un éducateur</label><br>
-						<input type="checkbox" name="dirigeants" value="yes">
-						<label for="dirigeants">Un dirigeant</label><br>
-						<input type="checkbox" name="autres" value="yes">
-						<label for="autres">Un autre</label><br>
+						<input type="checkbox" name="auteurPresumeMajeurConnu" value="yes">
+						<label for="auteurPresumeMajeurConnu"> Déja connu</label><br>
+						<input type="checkbox" name="auteurPresumeMajeurMembreClub" value="yes">
+						<label for="auteurPresumeMajeurMembreClub"> Membre d'un club</label><br>
+						<input type="checkbox" name="auteurPresumeMajeurJoueur" value="yes">
+						<label for="auteurPresumeMajeurJoueur">Un joueur</label><br>
+						<input type="checkbox" name="auteurPresumeMajeurEducateur" value="yes">
+						<label for="auteurPresumeMajeurEducateur">Un éducateur</label><br>
+						<input type="checkbox" name="auteurPresumeMajeurDirigeant" value="yes">
+						<label for="auteurPresumeMajeurDirigeant">Un dirigeant</label><br>
+						<input type="checkbox" name="auteurPresumeMajeurAutre" value="yes">
+						<label for="auteurPresumeMajeurAutre">Un autre</label><br>
 
 						<div class="elements-input">
-							<label for="mineurs">Nombre de mineurs</label>
-							<input type="text" name="mineurs"><br>
+							<label for="auteurPresumeNbMineurs">Nombre de mineurs</label>
+							<input type="text" name="auteurPresumeNbMineurs"><br>
 							<div class="ligne-input"></div>
 						</div>
 						
-						<input type="checkbox" name="connu" value="yes">
-						<label for="autres"> Déja connu</label><br>
-						<input type="checkbox" name="membre" value="yes">
-						<label for="membre"> Membre d'un club</label><br>
-						<label for="joueurs">Un joueur</label><br>
-						<input type="checkbox" name="éducateurs" value="yes">
-						<label for="éducateurs">Un éducateur</label><br>
-						<input type="checkbox" name="dirigeants" value="yes">
-						<label for="dirigeants">Un dirigeant</label><br>
-						<input type="checkbox" name="autres" value="yes">
-						<label for="autres">Un autre</label><br>
+						<input type="checkbox" name="auteurPresumeMineurConnu" value="yes">
+						<label for="auteurPresumeMineurConnu"> Déja connu</label><br>
+						<input type="checkbox" name="auteurPresumeMineurMembreClub" value="yes">
+						<label for="auteurPresumeMineurMembreClub"> Membre d'un club</label><br>
+						<input type="checkbox" name="auteurPresumeMineurJoueur" value="yes">
+						<label for="auteurPresumeMineurJoueur">Un joueur</label><br>
+						<input type="checkbox" name="auteurPresumeMineurEducateur" value="yes">
+						<label for="auteurPresumeMineurEducateur">Un éducateur</label><br>
+						<input type="checkbox" name="auteurPresumeMineurDirigeant" value="yes">
+						<label for="auteurPresumeMineurDirigeant">Un dirigeant</label><br>
+						<input type="checkbox" name="auteurPresumeMineurAutre" value="yes">
+						<label for="auteurPresumeMineurAutre">Un autre</label><br>
 					</p>
 					<p>
 						<label for="titre">Mesure(s) prise(s) :</label><br>
 						<label for="titre">Mesure(s) immédiate(s) :</label><br>
-						<input type="checkbox" name="police" value="yes">
-						<label for="police"> Appel de la police</label><br>
-						<input type="checkbox" name="gendarmerie" value="yes">
-						<label for="gendarmerie">Appel de la gendarmerie</label><br>
-						<input type="checkbox" name="municipale" value="yes">
-						<label for="municipale">Appel de la police municipale</label><br>
-						<input type="checkbox" name="mairie" value="yes">
-						<label for="mairie">Appel de la mairie</label><br>
-						<input type="checkbox" name="pompiers" value="yes">
-						<label for="pompiers">Appel des pompiers</label><br>
-						<input type="checkbox" name="SAMU" value="yes">
-						<label for="SAMU">Appel du SAMU</label><br>
-						<input type="checkbox" name="autres" value="yes">
-						<label for="autres">Autre</label><br>
+						<input type="checkbox" name="mesuresImediatesPolice" value="yes">
+						<label for="mesuresImediatesPolice"> Appel de la police</label><br>
+						<input type="checkbox" name="mesuresImediatesGendarmerie" value="yes">
+						<label for="mesuresImediatesGendarmerie">Appel de la gendarmerie</label><br>
+						<input type="checkbox" name="mesuresImediatesPoliceMunicipale" value="yes">
+						<label for="mesuresImediatesPoliceMunicipale">Appel de la police municipale</label><br>
+						<input type="checkbox" name="mesuresImediatesMairie" value="yes">
+						<label for="mesuresImediatesMairie">Appel de la mairie</label><br>
+						<input type="checkbox" name="mesuresImediatesPompiers" value="yes">
+						<label for="mesuresImediatesPompiers">Appel des pompiers</label><br>
+						<input type="checkbox" name="mesuresImediatesSamu" value="yes">
+						<label for="mesuresImediatesSamu">Appel du SAMU</label><br>
+						<input type="checkbox" name="mesuresImediatesAutres" value="yes">
+						<label for="mesuresImediatesAutres">Autre</label><br>
 
 
 						<label for="titre">Mesure(s) ultérieure(s) :</label><br>
-						<input type="checkbox" name="exam" value="yes">
-						<label for="exam">Examen(s) médical(aux)</label><br>
-						<input type="checkbox" name="hospit" value="yes">
-						<label for="hospit">Hospitalisation(s)</label><br>
-						<input type="checkbox" name="maincourante" value="yes">
-						<label for="maincourante">Déposition(s) sur main courante</label><br>
-						<input type="checkbox" name="plainte" value="yes">
-						<label for="plainte">Dépôt(s) de plainte(s)</label><br>
+						<input type="checkbox" name="mesuresUlterieursExamMedical" value="yes">
+						<label for="mesuresUlterieursExamMedical">Examen(s) médical(aux)</label><br>
+						<input type="checkbox" name="mesuresUlterieursHospitalisation" value="yes">
+						<label for="mesuresUlterieursHospitalisation">Hospitalisation(s)</label><br>
+						<input type="checkbox" name="mesuresUlterieursMainCourante" value="yes">
+						<label for="mesuresUlterieursMainCourante">Déposition(s) sur main courante</label><br>
+						<input type="checkbox" name="mesuresUlterieursDepoPlainte" value="yes">
+						<label for="mesuresUlterieursDepoPlainte">Dépôt(s) de plainte(s)</label><br>
 					</p>
 				</div>
 			</fieldset>
@@ -417,8 +418,8 @@
 			</h3>
 			<p>
 				<div class="elements-input">
-					<label for="nomClub">Nom du club :</label>
-					<input type="text" name="nomClub" />
+					<label for="nomClubVisiteur">Nom du club :</label>
+					<input type="text" name="nomClubVisiteur" />
 					<div class="ligne-input"></div>
 				</div>
 			</p>
@@ -436,131 +437,132 @@
 					</p>
 					<p>
 						<label for="titre">Violence à personne(s) :</label><br>
-						<input type="checkbox" name="joueurs" value="joueurs">
-						<label for="joueurs"> Sur joueurs</label><br>
-						<input type="checkbox" name="arbitres" value="arbitres">
-						<label for="arbitres"> Sur arbitres</label><br>
-						<input type="checkbox" name="délégué" value="délégué">
-						<label for="délégué"> Sur délégué</label><br>
-						<input type="checkbox" name="dirigeants" value="dirigeants">
-						<label for="dirigeants"> Sur dirigeants</label><br>
-						<input type="checkbox" name="spectateurs" value="spectateurs">
-						<label for="spectateurs"> Sur spectateurs</label><br>
+						<input type="checkbox" name="violencePersonnesJoueursVisiteur" value="joueurs">
+						<label for="violencePersonnesJoueursVisiteur"> Sur joueurs</label><br>
+						<input type="checkbox" name="violencePersonnesArbitresVisiteur" value="arbitres">
+						<label for="violencePersonnesArbitresVisiteur"> Sur arbitres</label><br>
+						<input type="checkbox" name="violencePersonnesDelegueVisiteur" value="délégué">
+						<label for="violencePersonnesDelegueVisiteur"> Sur délégué</label><br>
+						<input type="checkbox" name="violencePersonnesDirigeantsVisiteur" value="dirigeants">
+						<label for="violencePersonnesDirigeantsVisiteur"> Sur dirigeants</label><br>
+						<input type="checkbox" name="violencePersonnesSpectateursVisiteur" value="spectateurs">
+						<label for="violencePersonnesSpectateursVisiteur"> Sur spectateurs</label><br>
 					</p>
 					<p>
 						<label for="titre">Atteinte aux biens :</label><br>
-						<input type="checkbox" name="joueurs" value="joueurs">
-						<label for="joueurs"> Sur joueurs</label><br>
-						<input type="checkbox" name="arbitres" value="arbitres">
-						<label for="arbitres"> Sur arbitres</label><br>
-						<input type="checkbox" name="dirigeants" value="dirigeants">
-						<label for="dirigeants"> Sur dirigeants</label><br>
-						<input type="checkbox" name="spectateurs" value="spectateurs">
-						<label for="spectateurs"> Sur spectateurs</label><br>
+						<input type="checkbox" name="atteinteBiensJoueursVisiteur" value="joueurs">
+						<label for="atteinteBiensJoueursVisiteur"> Sur joueurs</label><br>
+						<input type="checkbox" name="atteinteBiensArbitresVisiteur" value="arbitres">
+						<label for="atteinteBiensArbitresVisiteur"> Sur arbitres</label><br>
+						<input type="checkbox" name="atteinteBiensDirigeantsVisiteur" value="dirigeants">
+						<label for="atteinteBiensDirigeantsVisiteur"> Sur dirigeants</label><br>
+						<input type="checkbox" name="atteinteBiensSpectateursVisiteur" value="spectateurs">
+						<label for="atteinteBiensSpectateursVisiteur"> Sur spectateurs</label><br>
 					</p>
 					<p>
 						<label for="titre">Agression verbale :</label><br>
-						<input type="checkbox" name="joueurs" value="joueurs">
-						<label for="joueurs"> Sur joueurs</label><br>
-						<input type="checkbox" name="arbitres" value="arbitres">
-						<label for="arbitres"> Sur arbitres</label><br>
-						<input type="checkbox" name="dirigeants" value="dirigeants">
-						<label for="dirigeants"> Sur dirigeants</label><br>
-						<input type="checkbox" name="spectateurs" value="spectateurs">
-						<label for="spectateurs"> Sur spectateurs</label><br>
+						<input type="checkbox" name="agressionVerbaleJoueursVisiteur" value="joueurs">
+						<label for="agressionVerbaleJoueursVisiteur"> Sur joueurs</label><br>
+						<input type="checkbox" name="agressionVerbaleArbitresVisiteur" value="arbitres">
+						<label for="agressionVerbaleArbitresVisiteur"> Sur arbitres</label><br>
+						<input type="checkbox" name="agressionVerbaleDirigeantsVisiteur" value="dirigeants">
+						<label for="agressionVerbaleDirigeantsVisiteur"> Sur dirigeants</label><br>
+						<input type="checkbox" name="agressionVerbaleSpectateursVisiteur" value="spectateurs">
+						<label for="agressionVerbaleSpectateursVisiteur"> Sur spectateurs</label><br>
 					</p>
 					<p>
 						<label for="titre">Envahissement de terrain :</label><br>
-						<input type="checkbox" name="avecviolence" value="avecviolence">
-						<label for="avecviolence">Avec violence</label><br>
-						<input type="checkbox" name="sansviolence" value="sansviolence">
-						<label for="sansviolence">Sans violence</label><br>
+						<input type="checkbox" name="envahissementTerrainViolenceVisiteur" value="avecviolence">
+						<label for="envahissementTerrainViolenceVisiteur">Avec violence</label><br>
+						<input type="checkbox" name="envahissementTerrainViolenceVisiteur" value="sansviolence">
+						<label for="envahissementTerrainViolenceVisiteur">Sans violence</label><br>
 					</p>
 					<p>
 						<label for="titre">Victime(s) concernée(s) :</label><br>
-						<input type="checkbox" name="joueurs" value="joueurs">
-						<label for="joueurs"> Sur joueurs</label><br>
-						<input type="checkbox" name="éducateurs" value="éducateurs">
-						<label for="éducateurs">Sur éducateurs</label><br>
-						<input type="checkbox" name="dirigeants" value="dirigeants">
-						<label for="dirigeants"> Sur dirigeants</label><br>
-						<input type="checkbox" name="arbitres" value="arbitres">
-						<label for="arbitres"> Sur arbitres</label><br>
-						<input type="checkbox" name="délégué" value="délégué">
-						<label for="délégué"> Sur délégué</label><br>
-						<input type="checkbox" name="spectateurs" value="spectateurs">
-						<label for="spectateurs"> Sur spectateurs</label><br>
-						<input type="checkbox" name="autres" value="autres">
-						<label for="autres"> Sur autres</label><br>
+						<input type="checkbox" name="victimeConcerneJoueursVisiteur" value="joueurs">
+						<label for="victimeConcerneJoueursVisiteur"> Sur joueurs</label><br>
+						<input type="checkbox" name="victimeConcerneEducateurVisiteur" value="éducateurs">
+						<label for="victimeConcerneEducateurVisiteur">Sur éducateurs</label><br>
+						<input type="checkbox" name="victimeConcerneDirigeantsVisiteur" value="dirigeants">
+						<label for="victimeConcerneDirigeantsVisiteur"> Sur dirigeants</label><br>
+						<input type="checkbox" name="victimeConcerneArbitresVisiteur" value="arbitres">
+						<label for="victimeConcerneArbitresVisiteur"> Sur arbitres</label><br>
+						<input type="checkbox" name="victimeConcerneDelegueVisiteur" value="délégué">
+						<label for="victimeConcerneDelegueVisiteur"> Sur délégué</label><br>
+						<input type="checkbox" name="victimeConcerneSpectateursVisiteur" value="spectateurs">
+						<label for="victimeConcerneSpectateursVisiteur"> Sur spectateurs</label><br>
+						<input type="checkbox" name="victimeConcerneAutreVisiteur" value="autres">
+						<label for="victimeConcerneAutreVisiteur"> Sur autres</label><br>
 					</p>
 					<p>
 						<label for="titre">Auteur(s) présumé(s) :</label><br>
 						<div class="elements-input">						
-							<label for="majeurs">Nombre de majeurs</label>
-							<input type="text" name="majeurs"><br>
+							<label for="auteurPresumeNbMajeursVisiteur">Nombre de majeurs</label>
+							<input type="text" name="auteurPresumeNbMajeursVisiteur"><br>
 							<div class="ligne-input"></div>
 						</div>
 							
-						<input type="checkbox" name="connu" value="connu">
-						<label for="autres"> Déja connu</label><br>
-						<input type="checkbox" name="membre" value="membre">
-						<label for="membre"> Membre d'un club</label><br>
-						<input type="checkbox" name="joueurs" value="joueurs">
-						<label for="joueurs">Un joueur</label><br>
-						<input type="checkbox" name="éducateurs" value="éducateurs">
-						<label for="éducateurs">Un éducateur</label><br>
-						<input type="checkbox" name="dirigeants" value="dirigeants">
-						<label for="dirigeants">Un dirigeant</label><br>
-						<input type="checkbox" name="autres" value="autres">
-						<label for="autres">Un autre</label><br>
+						<input type="checkbox" name="auteurPresumeMajeurConnuVisiteur" value="connu">
+						<label for="auteurPresumeMajeurConnuVisiteur"> Déja connu</label><br>
+						<input type="checkbox" name="auteurPresumeMajeurMembreClubVisiteur" value="membre">
+						<label for="auteurPresumeMajeurMembreClubVisiteur"> Membre d'un club</label><br>
+						<input type="checkbox" name="auteurPresumeMajeurJoueurVisiteur" value="joueurs">
+						<label for="auteurPresumeMajeurJoueurVisiteur">Un joueur</label><br>
+						<input type="checkbox" name="auteurPresumeMajeurEducateurVisiteur" value="éducateurs">
+						<label for="auteurPresumeMajeurEducateurVisiteur">Un éducateur</label><br>
+						<input type="checkbox" name="auteurPresumeMajeurDirigeantVisiteur" value="dirigeants">
+						<label for="auteurPresumeMajeurDirigeantVisiteur">Un dirigeant</label><br>
+						<input type="checkbox" name="auteurPresumeMajeurAutreVisiteur" value="autres">
+						<label for="auteurPresumeMajeurAutreVisiteur">Un autre</label><br>
 
 
 						<div class="elements-input">
 							<div class="ligne-input"></div>
-							<label for="mineurs">Nombre de mineurs</label>
-							<input type="text" name="mineurs"><br>
+							<label for="auteurPresumeNbMineursVisiteur">Nombre de mineurs</label>
+							<input type="text" name="auteurPresumeNbMineursVisiteur"><br>
 						</div>
 							
-						<input type="checkbox" name="connu" value="connu">
-						<label for="autres"> Déja connu</label><br>
-						<input type="checkbox" name="membre" value="membre">
-						<label for="membre"> Membre d'un club</label><br>
-						<label for="joueurs">Un joueur</label><br>
-						<input type="checkbox" name="éducateurs" value="éducateurs">
-						<label for="éducateurs">Un éducateur</label><br>
-						<input type="checkbox" name="dirigeants" value="dirigeants">
-						<label for="dirigeants">Un dirigeant</label><br>
-						<input type="checkbox" name="autres" value="autres">
-						<label for="autres">Un autre</label><br>
+						<input type="checkbox" name="auteurPresumeMineurConnuVisiteur" value="connu">
+						<label for="auteurPresumeMineurConnuVisiteur"> Déja connu</label><br>
+						<input type="checkbox" name="auteurPresumeMineurMembreClubVisiteur" value="membre">
+						<label for="auteurPresumeMineurMembreClubVisiteur"> Membre d'un club</label><br>
+						<input type="checkbox" name="auteurPresumeMineurJoueurVisiteur" value="joueurs">
+						<label for="auteurPresumeMineurJoueurVisiteur">Un joueur</label><br>
+						<input type="checkbox" name="auteurPresumeMineurEducateurVisiteur" value="éducateurs">
+						<label for="auteurPresumeMineurEducateurVisiteur">Un éducateur</label><br>
+						<input type="checkbox" name="auteurPresumeMineurDirigeantVisiteur" value="dirigeants">
+						<label for="auteurPresumeMineurDirigeantVisiteur">Un dirigeant</label><br>
+						<input type="checkbox" name="auteurPresumeMineurAutreVisiteur" value="autres">
+						<label for="auteurPresumeMineurAutreVisiteur">Un autre</label><br>
 					</p>
 					<p>
 						<label for="titre">Mesure(s) prise(s) :</label><br>
 						<label for="titre">Mesure(s) immédiate(s) :</label><br>
-						<input type="checkbox" name="police" value="police">
-						<label for="police"> Appel de la police</label><br>
-						<input type="checkbox" name="gendarmerie" value="gendarmerie">
-						<label for="gendarmerie">Appel de la gendarmerie</label><br>
-						<input type="checkbox" name="municipale" value="municipale">
-						<label for="municipale">Appel de la police municipale</label><br>
-						<input type="checkbox" name="mairie" value="mairie">
-						<label for="mairie">Appel de la mairie</label><br>
-						<input type="checkbox" name="pompiers" value="pompiers">
-						<label for="pompiers">Appel des pompiers</label><br>
-						<input type="checkbox" name="SAMU" value="SAMU">
-						<label for="SAMU">Appel du SAMU</label><br>
-						<input type="checkbox" name="autres" value="autres">
-						<label for="autres">Autre</label><br>
+						<input type="checkbox" name="mesuresImediatesPoliceVisiteur" value="police">
+						<label for="mesuresImediatesPoliceVisiteur"> Appel de la police</label><br>
+						<input type="checkbox" name="mesuresImediatesGendarmerieVisiteur" value="gendarmerie">
+						<label for="mesuresImediatesGendarmerieVisiteur">Appel de la gendarmerie</label><br>
+						<input type="checkbox" name="mesuresImediatesPoliceMunicipaleVisiteur" value="municipale">
+						<label for="mesuresImediatesPoliceMunicipaleVisiteur">Appel de la police municipale</label><br>
+						<input type="checkbox" name="mesuresImediatesMairieVisiteur" value="mairie">
+						<label for="mesuresImediatesMairieVisiteur">Appel de la mairie</label><br>
+						<input type="checkbox" name="mesuresImediatesPompiersVisiteur" value="pompiers">
+						<label for="mesuresImediatesPompiersVisiteur">Appel des pompiers</label><br>
+						<input type="checkbox" name="mesuresImediatesSamuVisiteur" value="SAMU">
+						<label for="mesuresImediatesSamuVisiteur">Appel du SAMU</label><br>
+						<input type="checkbox" name="mesuresImediatesAutresVisiteur" value="autres">
+						<label for="mesuresImediatesAutresVisiteur">Autre</label><br>
 
 
 						<label for="titre">Mesure(s) ultérieure(s) :</label><br>
-						<input type="checkbox" name="exam" value="exam">
-						<label for="exam">Examen(s) médical(aux)</label><br>
-						<input type="checkbox" name="hospit" value="hospit">
-						<label for="hospit">Hospitalisation(s)</label><br>
-						<input type="checkbox" name="maincourante" value="maincourante">
-						<label for="maincourante">Déposition(s) sur main courante</label><br>
-						<input type="checkbox" name="plainte" value="plainte">
-						<label for="plainte">Dépôt(s) de plainte(s)</label><br>
+						<input type="checkbox" name="mesuresUlterieursExamMedicalVisiteur" value="exam">
+						<label for="mesuresUlterieursExamMedicalVisiteur">Examen(s) médical(aux)</label><br>
+						<input type="checkbox" name="mesuresUlterieursHospitalisationVisiteur" value="hospit">
+						<label for="mesuresUlterieursHospitalisationVisiteur">Hospitalisation(s)</label><br>
+						<input type="checkbox" name="mesuresUlterieursMainCouranteVisiteur" value="maincourante">
+						<label for="mesuresUlterieursMainCouranteVisiteur">Déposition(s) sur main courante</label><br>
+						<input type="checkbox" name="mesuresUlterieursDepoPlainteVisiteur" value="plainte">
+						<label for="mesuresUlterieursDepoPlainteVisiteur">Dépôt(s) de plainte(s)</label><br>
 					</p>
 				</div>
 			</fieldset>
