@@ -1,5 +1,7 @@
 <?php
 
+    //Cette classe President regroupe toutes les données dont un président à besoins
+    //Elle est utiliser pour mieux se repérer lors de l'insersion de données (inscription) au autres requêtes.
     class President
     {
         private $_civilite;

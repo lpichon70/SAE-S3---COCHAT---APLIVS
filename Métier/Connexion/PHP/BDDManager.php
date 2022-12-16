@@ -3,16 +3,21 @@
     class BDDManager
     {
         private $_db;
+
+        //Constructeur de ka classe
         public function __construct($db)
         {
             $this->setDb($db);            
         }
 
+        //Permet d'initialiser la base de données
+        //Paramètre : adresse de la base de données
         public function setDb($db)
         {
             $this->_db = $db;
         }
 
+        //Renvoie true si l'identifiant et le mot de passe envoyé par l'utilisateur concordes (utilisé notament pour une connexion)
         public function get($id, $mdp)
         {
             if ($this->getIdentifiant($id)!=null)
@@ -32,6 +37,8 @@
             }
         }
 
+
+        //Permet de récupérer l'identifiant d'un utilisateur avec son id
         public function getIdentifiant($id){
             $q = $this->_db->query("SELECT Identifiant FROM connexion WHERE Identifiant = '$id'");
             $identifiant = $q->fetch(PDO::FETCH_ASSOC);
@@ -46,6 +53,7 @@
     
         }
         
+        //permet de récupérer le password d'un utilisateur associer à l'identifiant.&
         public function getPasswordById($id)
         {
             $q = $this->_db->query("SELECT Mdp FROM connexion WHERE Identifiant = '$id'");
@@ -60,6 +68,7 @@
             }
         }
 
+        //Permet de connaitre le status d'un utilisateur associé à son ID
         public function getStatutByID($id)
         {
             $q = $this->_db->query("SELECT Statut FROM connexion WHERE Identifiant = '$id'");

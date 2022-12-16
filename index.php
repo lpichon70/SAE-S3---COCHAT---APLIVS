@@ -1,8 +1,22 @@
 <?php
   session_start();
+  $afficheClub = "d-none";
+  $afficheAdmin = "d-none";
+  $afficheRecherche = "d-none";
+
+
   if (@$_SESSION['statut'] == null || @$_SESSION['statut'] == "")
   {
     @$_SESSION['statut'] = "";
+  }
+  else if (@$_SESSION['statut'] != "" && $_SESSION['statut'] != null)
+  {
+    switch($_SESSION['statut'])
+    {
+      case 'CLUB' : $afficheClub = ""; break;
+      case 'ADMIN' : $afficheClub = ""; break;
+    }
+    $afficheRecherche = "";
   }
 ?>
 
@@ -45,10 +59,10 @@
       <p class="lien ombreText">
           <a href="Métier/Inscription/FormulaireInscription.html">Inscription</a>
       </p>
-      <p class="lien ombreText">
-          <a href="Métier/Signalement/formulaire_renseignement.php">Signaler</a>
+      <p class="lien ombreText <?=$afficheClub?>">
+          <a href="Métier/Signalement/formulaire_renseignement.php"  >Signaler</a>
       </p>
-      <p class="lien ombreText">
+      <p class="lien ombreText <?=$afficheRecherche?>">
         <a href="#">Rechercher</a>
 </p>
       <p class="lien ombreText">
