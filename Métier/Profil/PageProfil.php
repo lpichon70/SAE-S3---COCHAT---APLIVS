@@ -4,8 +4,10 @@
     $db = new PDO('mysql:host=localhost;dbname=grp-254_s3_sae', 'grp-254', '0k6zqrrr');
     $manager = new BDDManager($db);
     $id = 129;
+    //on récupère le club
     $club = $manager->get($id);
 
+    //vérifie si on provient de ModifierProfil.php
     if(!empty($_POST))
     {
         $logo = "";
@@ -15,6 +17,7 @@
         }
         else
         {
+            //on change le chemin du logo s'il était vide
             $logo = "../../Images/logo_club/".$_FILES["logoClub"]['name'];
             move_uploaded_file($_FILES['logoClub']['tmp_name'], $logo);
         }
@@ -45,9 +48,11 @@
             $_POST['emailSecretariat'],
             $_POST['telSecretariat']
         ];
+        //si on vient de la modification, lors on change les données
         $manager->set($data, $id);
     }
 
+    //on récupère les données au cas ou elles ont été modifiées
     $club = $manager->get($id);
 ?>
 

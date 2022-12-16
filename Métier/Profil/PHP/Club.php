@@ -25,6 +25,7 @@
         private $_mailSecret;
         private $_telSecret;
 
+        //constructeur de club
         public function __construct($data)
         {
             $this->setNomClub($data['nom_club']);
