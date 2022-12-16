@@ -62,7 +62,7 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-	<script src="./Js./FormulaireRenseignement./formulaire_renseignement.js"></script>
+	<script src="./Js/formulaire_renseignement.js"></script>
 	<link rel="stylesheet" href="./CSS/formulaire_renseignement.css" type="text/css">
 	<title>Fiche de signalement de rencontres à risques</title>
 </head>
@@ -97,7 +97,7 @@
 
 
 
-	<form id="formulaire" action="PHP/formulaire_renseignement.php" method="POST">
+	<form id="formulaire" action="PHP/signalement.php" method="POST">
 
 		<fieldset id="club-receveur" class="<?=$voirClub?>">
 			<h3>
@@ -107,7 +107,7 @@
 					<div class="elements-input">
 						<label class="label-text" for="nomClub">Nom du club :</label>
 						<br>
-						<input type="text" name="nomClub" <?=$requiredClub?> />
+						<input type="text" name="nomClub" <?=$requiredClub?>/>
 						<div class="ligne-input"></div>
 					</div>
 					
@@ -278,61 +278,61 @@
 					</p>
 					<p>
 						<label for="titre">Violence à personne(s) :</label><br>
-						<input type="checkbox" name="joueurs" value="joueurs">
+						<input type="checkbox" name="joueurs" value="yes">
 						<label for="joueurs"> Sur joueurs</label><br>
-						<input type="checkbox" name="arbitres" value="arbitres">
+						<input type="checkbox" name="arbitres" value="yes">
 						<label for="arbitres"> Sur arbitres</label><br>
-						<input type="checkbox" name="délégué" value="délégué">
+						<input type="checkbox" name="délégué" value="yes">
 						<label for="délégué"> Sur délégué</label><br>
-						<input type="checkbox" name="dirigeants" value="dirigeants">
+						<input type="checkbox" name="dirigeants" value="yes">
 						<label for="dirigeants"> Sur dirigeants</label><br>
-						<input type="checkbox" name="spectateurs" value="spectateurs">
+						<input type="checkbox" name="spectateurs" value="yes">
 						<label for="spectateurs"> Sur spectateurs</label><br>
 					</p>
 					<p>
 						<label for="titre">Atteinte aux biens :</label><br>
-						<input type="checkbox" name="joueurs" value="joueurs">
+						<input type="checkbox" name="joueurs" value="yes">
 						<label for="joueurs"> Sur joueurs</label><br>
-						<input type="checkbox" name="arbitres" value="arbitres">
+						<input type="checkbox" name="arbitres" value="yes">
 						<label for="arbitres"> Sur arbitres</label><br>
-						<input type="checkbox" name="dirigeants" value="dirigeants">
+						<input type="checkbox" name="dirigeants" value="yes">
 						<label for="dirigeants"> Sur dirigeants</label><br>
-						<input type="checkbox" name="spectateurs" value="spectateurs">
+						<input type="checkbox" name="spectateurs" value="yes">
 						<label for="spectateurs"> Sur spectateurs</label><br>
 					</p>
 					<p>
 						<label for="titre">Agression verbale :</label><br>
-						<input type="checkbox" name="joueurs" value="joueurs">
+						<input type="checkbox" name="joueurs" value="yes">
 						<label for="joueurs"> Sur joueurs</label><br>
-						<input type="checkbox" name="arbitres" value="arbitres">
+						<input type="checkbox" name="arbitres" value="yes">
 						<label for="arbitres"> Sur arbitres</label><br>
-						<input type="checkbox" name="dirigeants" value="dirigeants">
+						<input type="checkbox" name="dirigeants" value="yes">
 						<label for="dirigeants"> Sur dirigeants</label><br>
-						<input type="checkbox" name="spectateurs" value="spectateurs">
+						<input type="checkbox" name="spectateurs" value="yes">
 						<label for="spectateurs"> Sur spectateurs</label><br>
 					</p>
 					<p>
-						<label for="titre">Envahissement de terrain :</label><br>
-						<input type="checkbox" name="avecviolence" value="avecviolence">
-						<label for="avecviolence">Avec violence</label><br>
-						<input type="checkbox" name="sansviolence" value="sansviolence">
-						<label for="sansviolence">Sans violence</label><br>
+						<label for="titre">Envahissement de terrain avec violence :</label><br>
+						<label name="oui">Oui</label>
+						<input type="radio" name="violence"/>
+						<label name="non">Non</label>
+						<input type="radio" name="violence"/>
 					</p>
 					<p>
 						<label for="titre">Victime(s) concernée(s) :</label><br>
-						<input type="checkbox" name="joueurs" value="joueurs">
+						<input type="checkbox" name="joueurs" value="yes">
 						<label for="joueurs"> Sur joueurs</label><br>
-						<input type="checkbox" name="éducateurs" value="éducateurs">
+						<input type="checkbox" name="éducateurs" value="yes">
 						<label for="éducateurs">Sur éducateurs</label><br>
-						<input type="checkbox" name="dirigeants" value="dirigeants">
+						<input type="checkbox" name="dirigeants" value="yes">
 						<label for="dirigeants"> Sur dirigeants</label><br>
-						<input type="checkbox" name="arbitres" value="arbitres">
+						<input type="checkbox" name="arbitres" value="yes">
 						<label for="arbitres"> Sur arbitres</label><br>
-						<input type="checkbox" name="délégué" value="délégué">
+						<input type="checkbox" name="délégué" value="yes">
 						<label for="délégué"> Sur délégué</label><br>
-						<input type="checkbox" name="spectateurs" value="spectateurs">
+						<input type="checkbox" name="spectateurs" value="yes">
 						<label for="spectateurs"> Sur spectateurs</label><br>
-						<input type="checkbox" name="autres" value="autres">
+						<input type="checkbox" name="autres" value="yes">
 						<label for="autres"> Sur autres</label><br>
 					</p>
 					<p>
@@ -344,17 +344,17 @@
 							<div class="ligne-input"></div>
 						</div>
 						
-						<input type="checkbox" name="connu" value="connu">
+						<input type="checkbox" name="connu" value="yes">
 						<label for="autres"> Déja connu</label><br>
-						<input type="checkbox" name="membre" value="membre">
+						<input type="checkbox" name="membre" value="yes">
 						<label for="membre"> Membre d'un club</label><br>
-						<input type="checkbox" name="joueurs" value="joueurs">
+						<input type="checkbox" name="joueurs" value="yes">
 						<label for="joueurs">Un joueur</label><br>
-						<input type="checkbox" name="éducateurs" value="éducateurs">
+						<input type="checkbox" name="éducateurs" value="yes">
 						<label for="éducateurs">Un éducateur</label><br>
-						<input type="checkbox" name="dirigeants" value="dirigeants">
+						<input type="checkbox" name="dirigeants" value="yes">
 						<label for="dirigeants">Un dirigeant</label><br>
-						<input type="checkbox" name="autres" value="autres">
+						<input type="checkbox" name="autres" value="yes">
 						<label for="autres">Un autre</label><br>
 
 						<div class="elements-input">
@@ -363,45 +363,45 @@
 							<div class="ligne-input"></div>
 						</div>
 						
-						<input type="checkbox" name="connu" value="connu">
+						<input type="checkbox" name="connu" value="yes">
 						<label for="autres"> Déja connu</label><br>
-						<input type="checkbox" name="membre" value="membre">
+						<input type="checkbox" name="membre" value="yes">
 						<label for="membre"> Membre d'un club</label><br>
 						<label for="joueurs">Un joueur</label><br>
-						<input type="checkbox" name="éducateurs" value="éducateurs">
+						<input type="checkbox" name="éducateurs" value="yes">
 						<label for="éducateurs">Un éducateur</label><br>
-						<input type="checkbox" name="dirigeants" value="dirigeants">
+						<input type="checkbox" name="dirigeants" value="yes">
 						<label for="dirigeants">Un dirigeant</label><br>
-						<input type="checkbox" name="autres" value="autres">
+						<input type="checkbox" name="autres" value="yes">
 						<label for="autres">Un autre</label><br>
 					</p>
 					<p>
 						<label for="titre">Mesure(s) prise(s) :</label><br>
 						<label for="titre">Mesure(s) immédiate(s) :</label><br>
-						<input type="checkbox" name="police" value="police">
+						<input type="checkbox" name="police" value="yes">
 						<label for="police"> Appel de la police</label><br>
-						<input type="checkbox" name="gendarmerie" value="gendarmerie">
+						<input type="checkbox" name="gendarmerie" value="yes">
 						<label for="gendarmerie">Appel de la gendarmerie</label><br>
-						<input type="checkbox" name="municipale" value="municipale">
+						<input type="checkbox" name="municipale" value="yes">
 						<label for="municipale">Appel de la police municipale</label><br>
-						<input type="checkbox" name="mairie" value="mairie">
+						<input type="checkbox" name="mairie" value="yes">
 						<label for="mairie">Appel de la mairie</label><br>
-						<input type="checkbox" name="pompiers" value="pompiers">
+						<input type="checkbox" name="pompiers" value="yes">
 						<label for="pompiers">Appel des pompiers</label><br>
-						<input type="checkbox" name="SAMU" value="SAMU">
+						<input type="checkbox" name="SAMU" value="yes">
 						<label for="SAMU">Appel du SAMU</label><br>
-						<input type="checkbox" name="autres" value="autres">
+						<input type="checkbox" name="autres" value="yes">
 						<label for="autres">Autre</label><br>
 
 
 						<label for="titre">Mesure(s) ultérieure(s) :</label><br>
-						<input type="checkbox" name="exam" value="exam">
+						<input type="checkbox" name="exam" value="yes">
 						<label for="exam">Examen(s) médical(aux)</label><br>
-						<input type="checkbox" name="hospit" value="hospit">
+						<input type="checkbox" name="hospit" value="yes">
 						<label for="hospit">Hospitalisation(s)</label><br>
-						<input type="checkbox" name="maincourante" value="maincourante">
+						<input type="checkbox" name="maincourante" value="yes">
 						<label for="maincourante">Déposition(s) sur main courante</label><br>
-						<input type="checkbox" name="plainte" value="plainte">
+						<input type="checkbox" name="plainte" value="yes">
 						<label for="plainte">Dépôt(s) de plainte(s)</label><br>
 					</p>
 				</div>
