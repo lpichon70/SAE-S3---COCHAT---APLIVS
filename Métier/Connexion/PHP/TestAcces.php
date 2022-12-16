@@ -45,7 +45,7 @@
           <a href="../../../Métier/Signalement/formulaire_renseignement.php"  >Signaler</a>
       </p>
       <p class="lien ombreText <?=$afficheRecherche?>">
-        <a href="#">Rechercher</a>
+        <a href="../../Profil/PageProfil.php">Profil</a>
 </p>
     
     </div>

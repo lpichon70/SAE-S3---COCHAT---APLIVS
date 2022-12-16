@@ -53,9 +53,7 @@
     </div>
 
     <div>
-      <p class="lien ombreText">
-          <a href="#">Accueil</a>
-      </p>
+      
       <p class="lien ombreText">
           <a href="Métier/Inscription/FormulaireInscription.html">Inscription</a>
       </p>
@@ -63,7 +61,7 @@
           <a href="Métier/Signalement/formulaire_renseignement.php"  >Signaler</a>
       </p>
       <p class="lien ombreText <?=$afficheRecherche?>">
-        <a href="#">Rechercher</a>
+        <a href="Métier/Profil/PageProfil.php">Profil</a>
 </p>
       <p class="lien ombreText">
         <a href="Métier/Connexion/Connexion.php">Se connecter</a>
