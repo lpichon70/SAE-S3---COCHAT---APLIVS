@@ -19,11 +19,7 @@ a {
     color: #fff;
 }
 
-.logoProfil{
-    position: fixed;
-    width: 100px;
-    height: 100px;
-}
+
 
 h1 {
     text-transform: uppercase;
@@ -144,6 +140,23 @@ h6{
 }
 
 /*Mise en forme du petit logo dépliable*/
+.logoProfil{
+    width: 75px;
+    height: 75px;
+
+    z-index: 100;
+}
+
+.menu-profil{
+    position:fixed;
+
+    margin-left: 180vh;
+    top: 10px;
+
+    z-index: 100;
+}
+
+
 .sub-menu-wrap{
     position: absolute;
     top:100%;
