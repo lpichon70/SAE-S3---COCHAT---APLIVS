@@ -4,10 +4,12 @@
   $afficheAdmin = "d-none";
   $afficheRecherche = "d-none";
 
+  
 
   if (@$_SESSION['statut'] == null || @$_SESSION['statut'] == "")
   {
     @$_SESSION['statut'] = "";
+    $pathLogoConexion = "Images/profilDeconnect.png";
   }
   else if (@$_SESSION['statut'] != "" && $_SESSION['statut'] != null)
   {
@@ -17,9 +19,9 @@
       case 'ADMIN' : $afficheClub = ""; break;
     }
     $afficheRecherche = "";
+    $pathLogoConexion = "Images/profilConnect.png";
   }
 ?>
-
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -35,6 +37,30 @@
   <body>
 
     <div class="row"><hr></div>
+
+    <img src="<?=$pathLogoConexion?>" class="logoProfil" onclick="toggleMenu()"/>
+
+    <div class="sub-menu-wrap" id="subMenu">
+      <div class="sub-menu">
+        <div class="user-info">
+          <h3>Menu</h3>
+        </div>
+        <hr>
+
+        <a href="#" class="sub-menu-link">
+          <p>Mon profil</p>
+          <span></span>
+        </a>
+
+        <a href="#" class="sub-menu-link">
+          <p>Se déconnecter</p>
+          <span></span>
+        </a>
+
+      </div>
+    </div>
+    
+    
 
     <div class="l1">
       <img src="Images/logo.gif" alt="logo DDCS">
@@ -119,5 +145,13 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
   <script src="index/JS/Animation.js"></script>
+  <script>
+    let subMenu = document.getElementById("subMenu");
+
+    function toggleMenu(){
+      subMenu.classList.toggle("open-menu");
+    }
+  </script>
   </body>
 </html>
+
