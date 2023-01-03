@@ -1,0 +1,196 @@
+body{
+    background: #333;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100vh;
+    background: url('../../../Images/stade.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-size: contain;
+    position: relative;
+    overflow-x: hidden;
+}
+
+html {
+    background: linear-gradient(#e0c3fc, #8ec5fc);
+    height: 230%;
+}
+
+a {
+    color: #fff;
+}
+
+h1 {
+    text-transform: uppercase;
+    color: #f1f1f1;
+    font-family: Abril fatface, sans-serif;
+    margin-top: 18%;
+    font-size: 35px;
+    text-shadow: black 0.1em 0.1em 0.2em;
+}
+
+h2 {
+    margin-left: 50px;
+    margin-top: 2%;
+    color: black;
+    font-size: 35px;
+}
+
+.ombreText{
+    text-shadow: black 0.1em 0.1em 0.2em;
+}
+
+.l1 {
+    width: 250px;
+    height: 3px;
+    border-radius: 5px;
+}
+
+.container{
+    position: absolute;
+    top: 10px;
+    left: 5%;
+}
+
+.lien {
+    background-image: linear-gradient(to right, #77A1D3 0%, #79CBCA 51%, #77A1D3 100%);
+    padding: 15px 45px;
+    margin-left: 700px;
+    margin-right: 700px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.25s;
+    background-size: 200% auto;
+    color: white;
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    display: block;
+    font-size: large;
+  }
+
+  #logoDDCS{
+    margin-left: 70%;
+    object-fit: contain;
+    margin-top: 5%;
+    margin-bottom: 9%;
+}
+
+.pagePartie1, .pagePartie2{
+    border-color: black;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 10px 7px 10px 1px black;
+    width: 60%;
+    margin: auto;
+    margin-bottom: 2%;
+}
+
+.row{
+    text-align: center;
+    margin: auto;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.justify{
+    text-align: justify;
+    margin-left: 20px;
+}
+
+.page{
+    margin-top: 11%;
+    margin-left: 30px;
+}
+
+.gras{
+	font-weight: bold;
+}
+
+#menu{
+    background-color: blue;
+}
+
+#centreMenu:hover{
+    background-color: rgb(22, 111, 184);
+}
+
+#centreMenu{
+    height: 2.3em; /* hauteur du parent */
+    line-height: 2.3em; /* hauteur de ligne (identique) */
+    white-space: nowrap; /* interdiction de passer à la ligne */
+}
+
+h3{
+    margin-top: 10px;
+    font-size: 25px;
+}
+
+h4{
+    margin-left: 30px;
+}
+
+h6{
+    margin-left: 30px;
+}
+
+.basPage{
+    background-color: rgb(65, 56, 56);
+    color: white;
+}
+
+
+table {
+    border-collapse: collapse;
+    margin-top: 100px;
+    text-align: center;
+    margin-left:20%;
+  }
+  
+  th, td {
+    border: 1px solid black;
+    padding: 8px;
+  }
+  
+  th {
+    background-color: #dddddd;
+  }
+
+  button {
+    background-color: #0095dd;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+
+  .search-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 300px;
+  }
+  
+  label {
+    margin-right: 0.5em;
+  }
+  
+  input[type="text"] {
+    width: 60%;
+    padding: 0.5em;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  button[type="submit"] {
+    padding: 0.5em 1em;
+    background: #0095dd;
+    color: #fff;
+    border: none
+  }  
+  
+  
+  
