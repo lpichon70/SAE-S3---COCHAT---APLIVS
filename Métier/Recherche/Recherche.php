@@ -1,3 +1,6 @@
+<?php require_once('models/RencontreManager.php'); ?>
+
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -68,6 +71,9 @@
   <td>5 janvier 2023</td>
   <td>Dijon</td>
   <td><button>Signalement</button></td>
+</tr>
+<tr>
+  <?=$valeurtab?>
 </tr>
 </table>
 
