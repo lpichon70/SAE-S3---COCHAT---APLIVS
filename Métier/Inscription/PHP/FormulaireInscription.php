@@ -22,11 +22,11 @@
             require_once("President.php");
             require_once("Secretaria.php");
 
+            require_once("fabriqueMdp.php");
             require_once("FormInscriptionManager.php");
 
-            move_uploaded_file($_FILES['logo']['tmp_name'], "../../../Images/logo_club/".$_FILES["logo"]['name']);
 
-            $club = new Club($_POST["nomClub"], $_POST["sigleClub"],"Images/logo_club/".$_FILES["logo"]['name'],$_POST["adresseClub"],
+            $club = new Club($_POST["nomClub"], $_POST["sigleClub"],$_POST["adresseClub"],
             $_POST["complementAdresseClub"],$_POST["villeClub"],$_POST["codePostalClub"],
             $_POST["numAgrement"],$_POST["fedAffiliation"],$_POST["satutAsso"],$_POST["numSiret"],
             $_POST["mailClub"],$_POST["siteClub"],$_POST["reseauSocialClub"],$_POST["telFixeClub"],
@@ -37,8 +37,11 @@
 
             $secretaria = new Secretaria($_POST["emailSecretaria"], $_POST["telSecretaria"]);
 
-            echo "<img src=../../../".$club->getLogo()." alt=logo>";
-            
+            $fabriqueMdp = new fabriqueMdp($_POST["nomClub"]);
+
+            echo "Votre Identifiant temporaire : " . $fabriqueMdp->getIdentifiant() . "</br> </br>";
+            echo "Votre mot de passe temporaire : " . $fabriqueMdp->getMdp() . "</br> </br>";
+
             echo "</br>"."</br>"."<h2>Informations du club :</h2>"."</br>".$club->__toString();
             
             echo "</br>"."</br>"."<h2>Informations president :</h2>"."</br>".$president->__toString();
@@ -50,21 +53,24 @@
           
             try {
                 $bdd = new PDO('mysql:host=localhost;dbname=grp-254_s3_sae', 'grp-254', '0k6zqrrr');
-                }
-                catch (Exception $e)
-                {
-                    die('Erreur : ' . $e->getMessage());
-                }
+            }
+            catch (Exception $e)
+            {
+                die('Erreur : ' . $e->getMessage());
+            }
 
             $manager = new FormInscriptionManager($bdd);
-            $manager->add($club, $president, $secretaria);
+            $manager->add($club, $president, $secretaria,$fabriqueMdp->getIdentifiant(),$fabriqueMdp->getMdp());
                 
+
+
+
         ?> 
         
         </br>
         </br>
         <div>
-            <a href="../../Index.php" >Retourner au menu</a>                
+            <a href="../../../Index.php" >Retourner au menu</a>                
         </div>
         </br>
         </br>

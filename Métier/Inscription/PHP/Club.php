@@ -13,10 +13,6 @@
         public function setSigleClub($sc) { $this->_sigleClub = $sc; }
         public function getSigleClub() {return  $this->_sigleClub; }
 
-        private $_logo;
-        public function setLogo($nc) { $this->_logo = $nc; }
-        public function getLogo() {return  $this->_logo; }
-
         private $_adresseClub;
         public function setAdresseClub($ac) { $this->_adresseClub = $ac; }
         public function getAdresseClub() {return  $this->_adresseClub; }
@@ -69,13 +65,12 @@
         public function setTelPortable($r) { $this->_telPortable = $r; }
         public function getTelPortable() {return  $this->_telPortable; }
 
-        public function __construct($nomClub, $sigleClub, $logo, $adresseClub, $complementAdresse, 
+        public function __construct($nomClub, $sigleClub,$adresseClub, $complementAdresse, 
         $villeClub, $codePostal, $numAgrement, $fedAffiliation, $statutAsso, 
         $numSiret, $mailClub, $siteClub, $reseauSocialClub, $telFixe, $telPortable) 
         {
             $this->setNomClub($nomClub);
             $this->setSigleClub($sigleClub);
-            $this->setLogo($logo);
             $this->setAdresseClub($adresseClub);
             $this->setComplementAdresse($complementAdresse);
             $this->setVilleClub($villeClub);

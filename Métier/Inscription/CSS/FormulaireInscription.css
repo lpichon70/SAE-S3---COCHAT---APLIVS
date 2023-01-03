@@ -172,8 +172,13 @@ input {
   text-align: center;
 }
 input {
-  border-radius: 5px;
-  border: 3px solid;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  padding: 12px 20px;
+  width: 70%;
+  margin-bottom: 20px;
+  box-sizing: border-box;
 }
 
 .input_text {
@@ -183,8 +188,14 @@ input {
 }
 
 button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
   cursor: pointer;
-  margin-left: 30%;
+  font-size: 16px;
 }
 
 #p3{
