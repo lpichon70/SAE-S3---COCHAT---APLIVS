@@ -1,32 +1,20 @@
 <?php
+    session_start();
     require_once("./PHP/Club.php");  
     require_once("./PHP/BDDManager.php");
     $db = new PDO('mysql:host=localhost;dbname=grp-254_s3_sae', 'grp-254', '0k6zqrrr');
     $manager = new BDDManager($db);
-    $id = 98;
+    $id = $_SESSION['idClub'];
     //on récupère le club
     $club = $manager->get($id);
 
     //vérifie si on provient de ModifierProfil.php
     if(!empty($_POST))
-    {
-        $logo = "";
-        if(empty($_POST['logoClub']))
-        {
-            $logo = $club->getLogo();
-        }
-        else
-        {
-            //on change le chemin du logo s'il était vide
-            $logo = "../../Images/logo_club/".$_FILES["logoClub"]['name'];
-            move_uploaded_file($_FILES['logoClub']['tmp_name'], $logo);
-        }
-        
+    {        
         $data = 
         [
             $_POST['nomClub'],
             $_POST['sigleClub'],
-            $logo,
             $_POST['villeClub'],
             $_POST['adresseClub'],
             $_POST['complementAdresseClub'],
@@ -84,10 +72,6 @@
         <label class="lien">
             <a href="../index.php">Accueil</a>
         </label>
-
-        <label class="lien">
-            <a href="./PHP/ModifierProfil.php">Modifier le profil</a>
-        </label>
     </div>
 
     
@@ -95,10 +79,10 @@
     <br><br><br><br><br><br>
     <div class="info">
         <div id="en-tete">
-            <?php echo '<img class="pp" src="../../'.$club->getLogo().'" alt=logo>' ; ?>
             <br><br><br><br><br><br><br>
             <?php echo '<span id="nomClub">'.$club->getNomClub().'</span>'; ?>
         </div>
+        <a id="modifierProfil" href="./PHP/ModifierProfil.php">Modifier le profil</a>
 
         <div class="resume">
 
