@@ -20,7 +20,9 @@
     /*Permet de vérifier si le mot de passe et l'identifiant sont dans la base de donnée
     et sont cohérents (mot de passe ratacher à l'indentifiant*/
     $conn = $manager->get($identifiant,$mdp);
-    if ($conn == false )
+    $connexionClub = $manager->getClub($identifiant,$mdp);
+
+    if ( $conn == false && $connexionClub == false )
     {
       //Si les informations rentré par l'utilisateur sont érronés, alors on reste sur la page 
       //De connexion et on affiche un message d'erreur
@@ -28,10 +30,17 @@
     }
     else
     {
-      //Dans le cas ou l'utilisateur à réussi à se connecter
-      //On lui attribu un statut
-      $_SESSION['statut']=$manager->getStatutByID($identifiant);
-      header("Location:./PHP/Index.php");
+      if ($conn == true){
+        //Dans le cas ou l'utilisateur à réussi à se connecter
+        //On lui attribu un statut
+        $_SESSION['statut']=$manager->getStatutByID($identifiant);
+        header("Location:./PHP/Index.php");
+      }
+      else if ($connexionClub == true)
+      {
+        $_SESSION['statut']='CLUB';
+        header("Location:./PHP/Index.php");
+      }
     }
   }
 
