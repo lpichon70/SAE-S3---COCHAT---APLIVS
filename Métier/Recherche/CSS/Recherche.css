@@ -157,7 +157,7 @@ table {
   button {
     background-color: #0095dd;
     border: none;
-    color: white;
+    color: linear-gradient(to right, #77A1D3 0%, #79CBCA 51%, #77A1D3 100%);
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
@@ -187,7 +187,7 @@ table {
   
   button[type="submit"] {
     padding: 0.5em 1em;
-    background: #0095dd;
+    background: linear-gradient(to right, #77A1D3 0%, #79CBCA 51%, #77A1D3 100%);
     color: #fff;
     border: none
   }  
