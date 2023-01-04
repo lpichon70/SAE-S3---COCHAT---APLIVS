@@ -159,6 +159,115 @@
 					
 				</p>
 			
+				<p>
+				<label class="label-text" for="Délégués">Envoi de délégués :</label>
+				<label name="oui">Oui</label>
+				<input type="radio" name="Délégués" id="DeleguesOui" <?=$requiredClub?> onchange="showDelegues()" />
+				<label name="non">Non</label>
+				<input type="radio" name="Délégués" <?=$requiredClub?> onchange="showDelegues()" /><br>
+				<div class="d-none" id="deleg">
+				<div class="elements-input">
+					<label class="label-text" for="nomDelegue">Nom du délégué :</label>
+					<input type="text" name="nomDelegue" />
+					<div class="ligne-input"></div>
+				</div>
+				
+				<br>
+				<div class="elements-input">
+					<label class="label-text" for="telDelegue">Téléphone du délégué :</label>
+					<input type="text" name="telDelegue" />
+					<div class="ligne-input"></div>
+				</div>
+				
+			</div>
+			</p>
+
+			<p>
+				<label class="label-text" for="Arbitres">Envoi d'arbitres :</label>
+				<label name="oui">Oui</label>
+				<input type="radio" name="Arbitres" id="ArbitresOui" <?=$requiredClub?> onchange="showArbitres()" />
+				<label name="non">Non</label>
+				<input type="radio" name="Arbitres" <?=$requiredClub?> onchange="showArbitres()" /><br>
+				<div id="arb" class="d-none">
+					<div class="elements-input">
+						<label class="label-text" for="nbArbitre">Nombre d'arbitres :</label>
+						<input type="text" name="nbArbitre" />
+						<div class="ligne-input"></div>
+					</div>
+					
+				</div>
+			</p>
+			<p>
+				<label class="label-text" for="Terrain">Changement de terrain :</label>
+				<label name="oui">Oui</label>
+				<input type="radio" name="Terrain" id="TerrainsOui" <?=$requiredClub?> onchange="showTerrains()" />
+				<label name="non">Non</label>
+				<input type="radio" name="Terrain" <?=$requiredClub?> onchange="showTerrains()" /><br>
+				<div id="terr" class="d-none">
+					<div class="elements-input">
+						<label class="label-text" for="adresseTerrain">Adresse du nouveau terrain :</label>
+						<input type="text" name="adresseTerrain" />
+						<div class="ligne-input"></div>
+					</div>
+					
+				<br>
+					<div class="elements-input">
+						<label class="label-text" for="dateRencontre">Nouvelle date pour la rencontre :</label>
+						<input type="text" name="dateRencontre" />
+						<div class="ligne-input"></div>
+					</div>
+					
+				<br>
+					<div class="elements-input">
+						<label class="label-text" for="heureRencontre">Nouvelle heure de la rencontre :</label>
+						<input type="text" name="heureRencontre" />
+						<div class="ligne-input"></div>
+					</div>
+					
+				</div>
+			</p>
+			<p>
+				<label class="label-text" for="Report">Report du match :</label>
+				<label name="oui">Oui</label>
+				<input type="radio" name="Report" id="ReportOui" <?=$requiredClub?> onchange="showReport()" />
+				<label name="non">Non</label>
+				<input type="radio" name="Report" <?=$requiredClub?> onchange="showReport()" /><br>
+			<div id="rep" class="d-none">
+				<div class="elements-input">
+					<label class="label-text" for="adresseTerrain">Adresse du nouveau terrain :</label>
+					<input type="text" name="adresseTerrain" />
+					<div class="ligne-input"></div>
+				</div>
+				<br>
+				<div class="elements-input">
+					<label class="label-text" for="dateRencontre">Nouvelle date pour la rencontre :</label>
+					<input type="text" name="dateRencontre" />
+					<div class="ligne-input"></div>
+				</div>
+				
+				<br>
+				<div class="elements-input">
+					<label class="label-text" for="heureRencontre">Nouvelle heure de la rencontre :</label>
+					<input type="text" name="heureRencontre" />
+					<div class="ligne-input"></div>
+				</div>
+				
+			</div>
+			</p>
+			<p>
+				<label class="label-text" for="contactDistrict">Contact du district :</label>
+				<label name="oui">Oui</label>
+				<input type="radio" name="contactDistrict" <?=$requiredClub?> />
+				<label name="non">Non</label>
+				<input type="radio" name="contactDistrict" <?=$requiredClub?> />
+			</p>
+			<p>
+				<label class="label-text" for="contactPolice">Contact des forces de l'ordre :</label>
+				<label name="oui">Oui</label>
+				<input type="radio" name="contactPolice" <?=$requiredClub?> />
+				<label name="non">Non</label>
+				<input type="radio" name="contactPolice" <?=$requiredClub?> />
+			</p>
 			<fieldset>
 				<legend>
 					<label for="IncidentRec">Y a-t-il eu un incident ? :</label>
