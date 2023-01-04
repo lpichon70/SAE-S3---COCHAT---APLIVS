@@ -3,7 +3,6 @@
     {
         private $_nomClub;
         private $_sigle;
-        private $_logo;
         private $_ville;
         private $_rue;
         private $_complementRue;
@@ -30,7 +29,6 @@
         {
             $this->setNomClub($data['nom_club']);
             $this->setSigle($data['sigle_club']);
-            $this->setLogo($data['logo']);
             $this->setVille($data['ville']);
             $this->setRue($data['rue']);
             $this->setComplementRue($data['complement_rue']);
@@ -71,16 +69,6 @@
         public function setSigle($var)
         {
             $this->_sigle = $var;
-        }
-
-        public function getLogo()
-        {
-            return $this->_logo;
-        }
-
-        public function setLogo($var)
-        {
-            $this->_logo = $var;
         }
 
         public function getVille()

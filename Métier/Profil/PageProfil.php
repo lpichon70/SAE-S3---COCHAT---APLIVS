@@ -1,32 +1,28 @@
 <?php
+    session_start();
     require_once("./PHP/Club.php");  
     require_once("./PHP/BDDManager.php");
     $db = new PDO('mysql:host=localhost;dbname=grp-254_s3_sae', 'grp-254', '0k6zqrrr');
     $manager = new BDDManager($db);
-    $id = 98;
-    //on récupère le club
-    $club = $manager->get($id);
+    $id = null;
+
+    if(!empty($_SESSION['statut']))
+    {
+        if($_SESSION['statut'] == 'CLUB')
+        {
+            $id = $_SESSION['idClub'];
+            //on récupère le club
+            $club = $manager->get($id);
+        }
+    }     
 
     //vérifie si on provient de ModifierProfil.php
     if(!empty($_POST))
-    {
-        $logo = "";
-        if(empty($_POST['logoClub']))
-        {
-            $logo = $club->getLogo();
-        }
-        else
-        {
-            //on change le chemin du logo s'il était vide
-            $logo = "../../Images/logo_club/".$_FILES["logoClub"]['name'];
-            move_uploaded_file($_FILES['logoClub']['tmp_name'], $logo);
-        }
-        
+    {        
         $data = 
         [
             $_POST['nomClub'],
             $_POST['sigleClub'],
-            $logo,
             $_POST['villeClub'],
             $_POST['adresseClub'],
             $_POST['complementAdresseClub'],
@@ -52,8 +48,14 @@
         $manager->set($data, $id);
     }
 
-    //on récupère les données au cas ou elles ont été modifiées
-    $club = $manager->get($id);
+    if(!empty($_SESSION['statut']))
+    {
+        if($_SESSION['statut'] == 'CLUB')
+        {
+            //on récupère les données au cas ou elles ont été modifiées
+            $club = $manager->get($id);
+        }
+    } 
 ?>
 
 <!DOCTYPE html>
@@ -84,10 +86,6 @@
         <label class="lien">
             <a href="../index.php">Accueil</a>
         </label>
-
-        <label class="lien">
-            <a href="./PHP/ModifierProfil.php">Modifier le profil</a>
-        </label>
     </div>
 
     
@@ -95,41 +93,60 @@
     <br><br><br><br><br><br>
     <div class="info">
         <div id="en-tete">
-            <?php echo '<img class="pp" src="../../'.$club->getLogo().'" alt=logo>' ; ?>
             <br><br><br><br><br><br><br>
-            <?php echo '<span id="nomClub">'.$club->getNomClub().'</span>'; ?>
+            <?php 
+            if(!empty($_SESSION['statut']))
+            {
+                if($_SESSION['statut'] == 'CLUB') echo '<span id="nomClub">'.$club->getNomClub().'</span>'; 
+                else if($_SESSION['statut'] == 'ADMIN') echo '<span id="nomClub">Admin</span>';  
+                else if($_SESSION['statut'] == 'POLICE') echo '<span id="nomClub">Police</span>';  
+                else echo '<span id="nomClub">DDCS</span>';  
+            }            
+            else
+            {
+                echo 'Vous n\'êtes pas connecté.';
+            }
+            ?>
         </div>
+        <a id="modifierProfil" href="./PHP/ModifierProfil.php">Modifier le profil</a>
 
         <div class="resume">
 
-            <?php echo '<p> Sigle : '.$club->getSigle().'<p>'; ?>
-            <?php echo '<p> Localisation : '.$club->getVille().', '.$club->getRue().'<p>'; ?>
-            <?php echo '<p> Complement de rue : '.$club->getComplementRue().'<p>'; ?>
-            <?php echo '<p> Code postal : '.$club->getCodePostal().'<p>'; ?>
-            <br>
-            <?php echo '<p> Numéro d\'agrément : '.$club->getNumAgrement().'<p>'; ?>
-            <?php echo '<p> Fédération : '.$club->getFederation().'<p>'; ?>
-            <?php echo '<p> Statut : '.$club->getStatut().'<p>'; ?>
-            <?php echo '<p> Siret : '.$club->getSiret().'<p>'; ?>
-            <br>
-            <?php echo '<p> Mail du club : '.$club->getMailClub().'<p>'; ?>
-            <?php echo '<p> Site : '.$club->getSiteClub().'<p>'; ?>
-            <?php echo '<p> Réseau social : '.$club->getReseau().'<p>'; ?>
-            <?php echo '<p> Tel fixe du club : '.$club->getTelFixeClub().'<p>'; ?>
-            <?php echo '<p> Tel portable du club : '.$club->getTelPortableClub().'<p>'; ?>
-            <br>
-            <?php echo '<p> Président : '.$club->getCivilitePres()." ".$club->getNomPres()." ".$club->getPrenomPres().'<p>'; ?>
-            <?php echo '<p> Tel du président : '.$club->getTelPres().'<p>'; ?>
-            <?php echo '<p> Mail du président : '.$club->getMailPres().'<p>'; ?>
-            <br>
-            <?php echo '<p> Tel du secrétariat : '.$club->getTelSecret().'<p>'; ?>
-            <?php echo '<p> Mail du secrétariat : '.$club->getMailSecret().'<p>'; ?>
+            <?php 
+                if(!empty($_SESSION['statut']))
+                {
+                    if($_SESSION['statut'] == 'CLUB') 
+                    {
+                        echo '<p> Sigle : '.$club->getSigle().'<p>'; 
+                        echo '<p> Localisation : '.$club->getVille().', '.$club->getRue().'<p>'; 
+                        echo '<p> Complement de rue : '.$club->getComplementRue().'<p>'; 
+                        echo '<p> Code postal : '.$club->getCodePostal().'<p>'; 
+                        echo '<br>';
+                        echo '<p> Numéro d\'agrément : '.$club->getNumAgrement().'<p>'; 
+                        echo '<p> Fédération : '.$club->getFederation().'<p>'; 
+                        echo '<p> Statut : '.$club->getStatut().'<p>'; 
+                        echo '<p> Siret : '.$club->getSiret().'<p>'; 
+                        echo '<br>';
+                        echo '<p> Mail du club : '.$club->getMailClub().'<p>'; 
+                        echo '<p> Site : '.$club->getSiteClub().'<p>'; 
+                        echo '<p> Réseau social : '.$club->getReseau().'<p>'; 
+                        echo '<p> Tel fixe du club : '.$club->getTelFixeClub().'<p>'; 
+                        echo '<p> Tel portable du club : '.$club->getTelPortableClub().'<p>'; 
+                        echo '<br>';
+                        echo '<p> Président : '.$club->getCivilitePres()." ".$club->getNomPres()." ".$club->getPrenomPres().'<p>'; 
+                        echo '<p> Tel du président : '.$club->getTelPres().'<p>'; 
+                        echo '<p> Mail du président : '.$club->getMailPres().'<p>'; 
+                        echo '<br>';
+                        echo '<p> Tel du secrétariat : '.$club->getTelSecret().'<p>'; 
+                        echo '<p> Mail du secrétariat : '.$club->getMailSecret().'<p>';
+                    }                
+                }              
+            ?>
 
         </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
     <script src="../index/Js/Animation.js"></script>
-
 
 </body>
 
