@@ -2,6 +2,7 @@
   require_once('models/RencontreManager.php'); 
   require_once('controllers/mainController.php'); 
   $mainController = new MainController();
+
 ?>
 
 

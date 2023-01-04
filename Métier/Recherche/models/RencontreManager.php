@@ -36,6 +36,24 @@ require_once('Models.php');
             return $rencontreTab;
         }
 
+<<<<<<< HEAD
+        public function getById(int $idRencontre)
+        {
+            if ($this->execRequest("SELECT * FROM rencontre WHERE Id_Rencontre = '$idRencontre'", $this->tab) != null)
+        {
+            $this->tab=$this->execRequest("SELECT * FROM rencontre WHERE Id_Rencontre = '$idRencontre'", $this->tab);
+
+            $rencontre = new Rencontre($this->tab['Id_Rencontre'],$this->tab['Club_receveur'],$this->tab['Club_visiteur'],$this->tab['Date_Rencontre'],
+                    $this->tab['Adresse_stade'],$this->tab['Ville']);
+        }
+        else 
+        {
+            $rencontre = null;
+        }
+        return $rencontre;
+        }
+
+=======
         public function getRencontre($club)
         {
             $id = 1;
@@ -55,5 +73,6 @@ require_once('Models.php');
             } 
             return $rencontreTab;
         }
+>>>>>>> b7ad3bfd7cba0f1b93f8ec7bd94ed330e7660da9
     }
 ?>

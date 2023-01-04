@@ -12,7 +12,7 @@ body{
 
 html {
     background: linear-gradient(#e0c3fc, #8ec5fc);
-    height: 230%;
+    height: 350%;
 }
 
 a {
@@ -137,12 +137,11 @@ h6{
     color: white;
 }
 
-
 table {
     border-collapse: collapse;
     text-align: center;
     margin-left:15%;
-    margin-top: 10px;
+    margin-top: 100px;
   }
   
   th, td {
@@ -191,6 +190,7 @@ table {
     color: #fff;
     border: none
   }  
-  
+
+
   
   
