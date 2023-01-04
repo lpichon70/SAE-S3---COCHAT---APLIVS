@@ -15,6 +15,8 @@
 		switch ($_SESSION['statut']) {
 			case 'POLICE':
 				$voirPolice = "";
+				$voirClub = "";
+				$voirDDCS = "";
 
 				$requiredClub = "";
 				$requiredDDCS = "";
@@ -22,6 +24,8 @@
 			
 			case 'DDCS':
 				$voirDDCS = "";
+				$voirPolice = "";
+				$voirClub = "";
 
 				$requiredPolice = "";
 				$requiredClub = "";
@@ -148,7 +152,7 @@
 
 	<form id="formulaire" action="PHP/signalement.php" method="POST">
 
-		<fieldset id="club-receveur" class="<?=$voirClub?> <?=$voirPolice?> <?=$voirDDCS?>">
+		<fieldset id="club-receveur" class="<?=$voirClub?>">
 			<h3>
 				Partie club receveur
 			</h3>
@@ -204,6 +208,115 @@
 					
 				</p>
 			
+				<p>
+				<label class="label-text" for="Délégués">Envoi de délégués :</label>
+				<label name="oui">Oui</label>
+				<input type="radio" name="Délégués" id="DeleguesOui" <?=$requiredClub?> onchange="showDelegues()" />
+				<label name="non">Non</label>
+				<input type="radio" name="Délégués" <?=$requiredClub?> onchange="showDelegues()" /><br>
+				<div class="d-none" id="deleg">
+				<div class="elements-input">
+					<label class="label-text" for="nomDelegue">Nom du délégué :</label>
+					<input type="text" name="nomDelegue" />
+					<div class="ligne-input"></div>
+				</div>
+				
+				<br>
+				<div class="elements-input">
+					<label class="label-text" for="telDelegue">Téléphone du délégué :</label>
+					<input type="text" name="telDelegue" />
+					<div class="ligne-input"></div>
+				</div>
+				
+			</div>
+			</p>
+
+			<p>
+				<label class="label-text" for="Arbitres">Envoi d'arbitres :</label>
+				<label name="oui">Oui</label>
+				<input type="radio" name="Arbitres" id="ArbitresOui" <?=$requiredClub?> onchange="showArbitres()" />
+				<label name="non">Non</label>
+				<input type="radio" name="Arbitres" <?=$requiredClub?> onchange="showArbitres()" /><br>
+				<div id="arb" class="d-none">
+					<div class="elements-input">
+						<label class="label-text" for="nbArbitre">Nombre d'arbitres :</label>
+						<input type="text" name="nbArbitre" />
+						<div class="ligne-input"></div>
+					</div>
+					
+				</div>
+			</p>
+			<p>
+				<label class="label-text" for="Terrain">Changement de terrain :</label>
+				<label name="oui">Oui</label>
+				<input type="radio" name="Terrain" id="TerrainsOui" <?=$requiredClub?> onchange="showTerrains()" />
+				<label name="non">Non</label>
+				<input type="radio" name="Terrain" <?=$requiredClub?> onchange="showTerrains()" /><br>
+				<div id="terr" class="d-none">
+					<div class="elements-input">
+						<label class="label-text" for="adresseTerrain">Adresse du nouveau terrain :</label>
+						<input type="text" name="adresseTerrain" />
+						<div class="ligne-input"></div>
+					</div>
+					
+				<br>
+					<div class="elements-input">
+						<label class="label-text" for="dateRencontre">Nouvelle date pour la rencontre :</label>
+						<input type="text" name="dateRencontre" />
+						<div class="ligne-input"></div>
+					</div>
+					
+				<br>
+					<div class="elements-input">
+						<label class="label-text" for="heureRencontre">Nouvelle heure de la rencontre :</label>
+						<input type="text" name="heureRencontre" />
+						<div class="ligne-input"></div>
+					</div>
+					
+				</div>
+			</p>
+			<p>
+				<label class="label-text" for="Report">Report du match :</label>
+				<label name="oui">Oui</label>
+				<input type="radio" name="Report" id="ReportOui" <?=$requiredClub?> onchange="showReport()" />
+				<label name="non">Non</label>
+				<input type="radio" name="Report" <?=$requiredClub?> onchange="showReport()" /><br>
+			<div id="rep" class="d-none">
+				<div class="elements-input">
+					<label class="label-text" for="adresseTerrain">Adresse du nouveau terrain :</label>
+					<input type="text" name="adresseTerrain" />
+					<div class="ligne-input"></div>
+				</div>
+				<br>
+				<div class="elements-input">
+					<label class="label-text" for="dateRencontre">Nouvelle date pour la rencontre :</label>
+					<input type="text" name="dateRencontre" />
+					<div class="ligne-input"></div>
+				</div>
+				
+				<br>
+				<div class="elements-input">
+					<label class="label-text" for="heureRencontre">Nouvelle heure de la rencontre :</label>
+					<input type="text" name="heureRencontre" />
+					<div class="ligne-input"></div>
+				</div>
+				
+			</div>
+			</p>
+			<p>
+				<label class="label-text" for="contactDistrict">Contact du district :</label>
+				<label name="oui">Oui</label>
+				<input type="radio" name="contactDistrict" <?=$requiredClub?> />
+				<label name="non">Non</label>
+				<input type="radio" name="contactDistrict" <?=$requiredClub?> />
+			</p>
+			<p>
+				<label class="label-text" for="contactPolice">Contact des forces de l'ordre :</label>
+				<label name="oui">Oui</label>
+				<input type="radio" name="contactPolice" <?=$requiredClub?> />
+				<label name="non">Non</label>
+				<input type="radio" name="contactPolice" <?=$requiredClub?> />
+			</p>
 			<fieldset>
 				<legend>
 					<label for="IncidentRec">Y a-t-il eu un incident ? :</label>
@@ -298,7 +411,7 @@
 		<br>
 
 
-		<fieldset id="club" class="<?=$voirClub?> <?=$voirPolice?> <?=$voirDDCS?>">
+		<fieldset id="club" class="<?=$voirClub?>">
 			<h3>
 				Partie club visiteur
 			</h3>
@@ -311,7 +424,7 @@
 			</p>
 			<fieldset>
 				<legend>
-					<label for="IncidentRec">Si incident :</label>
+					<label for="IncidentRec">Y a-t-il eu un incident ? :</label>
 					<label name="oui">Oui</label>
 					<input type="radio" name="IncidentRec" id="IncidentOui2" <?=$requiredClub?> onchange="showIncident2()" />
 					<label name="non">Non</label>
@@ -405,7 +518,7 @@
 		<br />
 
 
-		<fieldset id="ddcs" class="<?=$voirPolice?> <?=$voirDDCS?>">
+		<fieldset id="ddcs" class="<?=$voirDDCS?> <?=$voirPolice?>">
 			<h3>
 				Partie DDCS
 			</h3>
@@ -441,15 +554,33 @@
 		</br>
 
 
-		<fieldset id="police" class="<?=$voirPolice?> <?=$voirDDCS?>">
+		<fieldset id="police" class="<?=$voirPolice?>">
 			<h3>
 				Partie Force de l'ordre
 			</h3>
 			<p>
-				<label for="Procédure">Moyens mis en oeuvre en cas d'incident :</label><br>
-				<textarea id="Procédure" name="Procédure" rows="5" cols="50"></textarea>
+				<label for="nbrForceOrdre">Combien de membres des force de l'ordre seront présents ?</label><br>
+				<input type="nomber" name="nbrForceOrdre"><br>
+				<label for="Procedure">Moyens mis en oeuvre en cas d'incident :</label><br>
+				<textarea id="Procedure" name="Procedure" rows="5" cols="50"></textarea>
 			</p>
+			<fieldset>
+			<legend>
+				<label for="IncidentFO">Y a-t-il eu un incident ? :</label>
+				<label name="oui">Oui</label>
+				<input type="radio" name="IncidentFO" id="IncidentOui3"/>
+				<label name="non">Non</label>
+				<input type="radio" name="IncidentFO"/>
+			</legend>
+			<div class="incident3" class="d-none">
+				<label for="nbrForceOrdreIncident">Combien de membres des force de l'ordre étaient présents ?</label><br>
+				<input type="nomber" name="nbrForceOrdreIncident"><br>
+				<label for="descFO">Description des évènements qui on eu lieu :</label><br>
+				<textarea id="descFO" name="descFO" rows="5" cols="50"></textarea>
+			</div>
 		</fieldset>
+		</fieldset>
+		
 		<br>
 		<button id="valide">Valider</button>
 	</form>

@@ -5,6 +5,7 @@
   require_once("../../index/PHP/pathLogoUtilisateur.php"); 
   $mainController = new MainController();
 
+<<<<<<< HEAD
 
 
   //Permet d'afficher les bouttons lié au statut et le logo du profil
@@ -22,6 +23,8 @@
     //Permet de gérer le contenu du menu dépliable de l'utilisateur
     $contentLogoManager = new pathLogoUtilisateur($_SESSION['statut']);
 
+=======
+>>>>>>> e5ce442c65c7380561b77a40f001005b061db1ba
 ?>
 
 
@@ -105,7 +108,7 @@
       <a href="../../index.php">Accueil</a>
   </p>
 </p>
-<form class="search-form">
+<form class="search-form" method="POST">
   <label for="search">Rechercher un club :</label>
   <input type="text" id="search" name="search">
   <button type="submit">Rechercher</button>
@@ -121,7 +124,14 @@
     <th>Signalement</th>
 </tr>
 <tr>
-  <?=$mainController->getValeurTab()?>
+  <?php
+    if(isset($_POST["search"]))
+    {
+      if(!empty($_POST["search"])) echo $mainController->getRencontreClub($_POST["search"]);
+      else echo $mainController->getValeurTab(); 
+    }
+    else echo $mainController->getValeurTab();
+  ?>
 </tr>
 </table>
   <script src="../../index/JS/MenuUtilisateur.js"></script>

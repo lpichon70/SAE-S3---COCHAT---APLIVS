@@ -144,7 +144,7 @@
 
     <div>
         <label class="lien">
-            <a href="../index.php">Accueil</a>
+            <a href="../../index.php">Accueil</a>
         </label>
     </div>
 
