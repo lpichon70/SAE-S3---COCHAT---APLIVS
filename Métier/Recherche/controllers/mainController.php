@@ -4,17 +4,22 @@ require_once('models/RencontreManager.php');
 
 class MainController{
 
-    private string $valeurTab;
-    public function getValeurTab(){return $this->valeurTab;}
+
+    private RencontreManager $manager;
+
+    public function getValeurTab()
+    {
+        $listRencontre = $this->manager -> getAll();
+        
+        return $this->generertab($listRencontre);
+    }
 
     ///Fonction index qui permet de générer la vue
     public function __construct()
     {
-        $manager = new RencontreManager();
+        $this->manager = new RencontreManager();
 
-        $listRencontre = $manager -> getAll();
         
-        $this->valeurTab = $this->generertab($listRencontre);
     }
 
     private function generertab($tabRencontre) : string
@@ -27,6 +32,14 @@ class MainController{
         }
 
         return $tableau;
+    }
+
+    public function getRencontreClub($club)
+    {
+
+        $listRencontre = $this->manager -> getRencontre($club);
+        
+        return $this->generertab($listRencontre);
     }
 }
 
