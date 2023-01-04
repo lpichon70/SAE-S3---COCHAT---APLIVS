@@ -47,34 +47,14 @@
   <button type="submit">Rechercher</button>
 </form>
 
-<table id="tabeau">
+<table>
   <tr>
     <th>Club receveur</th>
     <th>Club visiteur</th>
     <th>Date</th>
-    <th>Lieu</th>
+    <th>Adresse du stade</th>
+    <th>Ville</th>
     <th>Signalement</th>
-  </tr>
-  <tr>
-  <td>Union Sportive NOLAYTOISE</td>
-  <td>Centre Leo Lagrance ECHENON</td>
-  <td>3 janvier 2023</td>
-  <td>Nolay</td>
-  <td><button>Signalement</button></td>
-</tr>
-<tr>
-  <td>Dijon Football Côte-d'or</td>
-  <td>Association Sportive BLIGNY SUR OUCHE</td>
-  <td>4 janvier 2023</td>
-  <td>Saint Apollinaire</td>
-  <td><button>Signalement</button></td>
-</tr>
-<tr>
-  <td>JEUNESSE DIJONNAISE FOOTBALL 21</td>
-  <td>Olympique DE MERCEUIL</td>
-  <td>5 janvier 2023</td>
-  <td>Dijon</td>
-  <td><button>Signalement</button></td>
 </tr>
 <tr>
   <?=$mainController->getValeurTab()?>

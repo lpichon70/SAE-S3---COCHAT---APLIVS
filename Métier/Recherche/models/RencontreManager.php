@@ -15,9 +15,9 @@ require_once('Models.php');
     
             while($tableVide != true)
             {
-                if ($this->execRequest("SELECT * FROM rencontre where Id_Rencontre = '$id'", $this->tab) != null)
+                if ($this->execRequest("SELECT * FROM rencontre where Id_Rencontre = '$id' ORDER BY Date_Rencontre ASC", $this->tab) != null)
                 {
-                    $this->tab=$this->execRequest("SELECT * FROM rencontre where Id_Rencontre = '$id'", $this->tab);
+                    $this->tab=$this->execRequest("SELECT * FROM rencontre where Id_Rencontre = '$id' ORDER BY Date_Rencontre ASC", $this->tab);
     
                     
                     $rencontre = new Rencontre($this->tab['Id_Rencontre'],$this->tab['Club_receveur'],$this->tab['Club_visiteur'],$this->tab['Date_Rencontre'],
