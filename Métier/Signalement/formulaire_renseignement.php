@@ -13,6 +13,8 @@
 		switch ($_SESSION['statut']) {
 			case 'POLICE':
 				$voirPolice = "";
+				$voirClub = "";
+				$voirDDCS = "";
 
 				$requiredClub = "";
 				$requiredDDCS = "";
@@ -20,6 +22,8 @@
 			
 			case 'DDCS':
 				$voirDDCS = "";
+				$voirPolice = "";
+				$voirClub = "";
 
 				$requiredPolice = "";
 				$requiredClub = "";
@@ -99,7 +103,7 @@
 
 	<form id="formulaire" action="PHP/signalement.php" method="POST">
 
-		<fieldset id="club-receveur" class="<?=$voirClub?> <?=$voirPolice?> <?=$voirDDCS?>">
+		<fieldset id="club-receveur" class="<?=$voirClub?>">
 			<h3>
 				Partie club receveur
 			</h3>
@@ -249,7 +253,7 @@
 		<br>
 
 
-		<fieldset id="club" class="<?=$voirClub?> <?=$voirPolice?> <?=$voirDDCS?>">
+		<fieldset id="club" class="<?=$voirClub?>">
 			<h3>
 				Partie club visiteur
 			</h3>
@@ -262,7 +266,7 @@
 			</p>
 			<fieldset>
 				<legend>
-					<label for="IncidentRec">Si incident :</label>
+					<label for="IncidentRec">Y a-t-il eu un incident ? :</label>
 					<label name="oui">Oui</label>
 					<input type="radio" name="IncidentRec" id="IncidentOui2" <?=$requiredClub?> onchange="showIncident2()" />
 					<label name="non">Non</label>
@@ -356,7 +360,7 @@
 		<br />
 
 
-		<fieldset id="ddcs" class="<?=$voirPolice?> <?=$voirDDCS?>">
+		<fieldset id="ddcs" class="<?=$voirDDCS?> <?=$voirPolice?>">
 			<h3>
 				Partie DDCS
 			</h3>
@@ -392,15 +396,33 @@
 		</br>
 
 
-		<fieldset id="police" class="<?=$voirPolice?> <?=$voirDDCS?>">
+		<fieldset id="police" class="<?=$voirPolice?>">
 			<h3>
 				Partie Force de l'ordre
 			</h3>
 			<p>
-				<label for="Procédure">Moyens mis en oeuvre en cas d'incident :</label><br>
-				<textarea id="Procédure" name="Procédure" rows="5" cols="50"></textarea>
+				<label for="nbrForceOrdre">Combien de membres des force de l'ordre seront présents ?</label><br>
+				<input type="nomber" name="nbrForceOrdre"><br>
+				<label for="Procedure">Moyens mis en oeuvre en cas d'incident :</label><br>
+				<textarea id="Procedure" name="Procedure" rows="5" cols="50"></textarea>
 			</p>
+			<fieldset>
+			<legend>
+				<label for="IncidentFO">Y a-t-il eu un incident ? :</label>
+				<label name="oui">Oui</label>
+				<input type="radio" name="IncidentFO" id="IncidentOui3"/>
+				<label name="non">Non</label>
+				<input type="radio" name="IncidentFO"/>
+			</legend>
+			<div class="incident3" class="d-none">
+				<label for="nbrForceOrdreIncident">Combien de membres des force de l'ordre étaient présents ?</label><br>
+				<input type="nomber" name="nbrForceOrdreIncident"><br>
+				<label for="descFO">Description des évènements qui on eu lieu :</label><br>
+				<textarea id="descFO" name="descFO" rows="5" cols="50"></textarea>
+			</div>
 		</fieldset>
+		</fieldset>
+		
 		<br>
 		<button id="valide">Valider</button>
 	</form>
