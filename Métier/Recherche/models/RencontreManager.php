@@ -1,6 +1,6 @@
 <?php
 require_once('Rencontre.php');
-require_once('./Models.php');
+require_once('Models.php');
 
     class RencontreManager extends Model
     {
