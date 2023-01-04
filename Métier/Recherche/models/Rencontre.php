@@ -68,7 +68,7 @@ class Rencontre{
         }
     }
 
-    public function ville() : int{
+    public function ville() : string{
         return $this->ville;
     }
 

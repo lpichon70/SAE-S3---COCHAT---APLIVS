@@ -1,4 +1,8 @@
-<?php require_once('models/RencontreManager.php'); ?>
+<?php 
+  require_once('models/RencontreManager.php'); 
+  require_once('controllers/mainController.php'); 
+  $mainController = new MainController();
+?>
 
 
 <!DOCTYPE html>
@@ -73,7 +77,7 @@
   <td><button>Signalement</button></td>
 </tr>
 <tr>
-  <?=$valeurtab?>
+  <?=$mainController->getValeurTab()?>
 </tr>
 </table>
 

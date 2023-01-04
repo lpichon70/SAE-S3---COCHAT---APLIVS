@@ -15,12 +15,13 @@ require_once('Models.php');
     
             while($tableVide != true)
             {
-                if ($this->execRequest("SELECT * FROM rencontre where idRencontre = '$id'", $this->tab) != null)
+                if ($this->execRequest("SELECT * FROM rencontre where Id_Rencontre = '$id'", $this->tab) != null)
                 {
-                    $this->tab=$this->execRequest("SELECT * FROM rencontre where idRencontre = '$id'", $this->tab);
+                    $this->tab=$this->execRequest("SELECT * FROM rencontre where Id_Rencontre = '$id'", $this->tab);
     
-                    $rencontre = new Rencontre($this->tab['idRencontre'],$this->tab['clubReceveur'],$this->tab['clubVisiteur'],$this->tab['dateRencontre'],
-                    $this->tab['adresseStade'],$this->tab['ville']);
+                    
+                    $rencontre = new Rencontre($this->tab['Id_Rencontre'],$this->tab['Club_receveur'],$this->tab['Club_visiteur'],$this->tab['Date_Rencontre'],
+                    $this->tab['Adresse_stade'],$this->tab['Ville']);
        
                     $rencontreTab[$id-1] = $rencontre;
     
