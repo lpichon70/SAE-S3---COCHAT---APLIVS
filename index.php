@@ -1,10 +1,11 @@
 <?php
   session_start();
+  
+  require_once("index/PHP/pathLogoUtilisateur.php");
+
   $afficheClub = "d-none";
   $afficheAdmin = "d-none";
   $afficheRecherche = "d-none";
-
-  
 
   if (@$_SESSION['statut'] == null || @$_SESSION['statut'] == "")
   {
@@ -21,6 +22,9 @@
     $afficheRecherche = "";
     $pathLogoConexion = "Images/profilConnect.png";
   }
+
+  //Permet de gérer le contenu du menu dépliable de l'utilisateur
+  $contentLogoManager = new pathLogoUtilisateur($_SESSION['statut']);
 ?>
 
 <!DOCTYPE html>
@@ -50,12 +54,27 @@
         </div>
         <hr>
 
-        <a href="Métier/Profil/PageProfil.php" class="sub-menu-link">
+        <a href="<?=$contentLogoManager->getPathMyProfil()?>" class="sub-menu-link <?=$contentLogoManager->getLinkMyProfilVisible()?>">
           <p>Mon profil</p>
           <span></span>
         </a>
 
-        <a href="Métier/Deconnexion/deconnexion.php" class="sub-menu-link">
+        <a href="<?=$contentLogoManager->getPathSearch()?>" class="sub-menu-link <?=$contentLogoManager->getLinkSearchVisible()?>">
+          <p>Recherche</p>
+          <span></span>
+        </a>
+
+        <a href="<?=$contentLogoManager->getPathInscription()?>" class="sub-menu-link <?=$contentLogoManager->getLinkInscriptionVisible()?>">
+          <p>Inscription</p>
+          <span></span>
+        </a>
+
+        <a href="<?=$contentLogoManager->getPathConexion()?>" class="sub-menu-link <?=$contentLogoManager->getLinkConexionVisible()?>">
+          <p>Connexion</p>
+          <span></span>
+        </a>
+
+        <a href="<?=$contentLogoManager->getPathDeconexion()?>" class="sub-menu-link <?=$contentLogoManager->getLinkDeconexionVisible()?>">
           <p>Se déconnecter</p>
           <span></span>
         </a>
