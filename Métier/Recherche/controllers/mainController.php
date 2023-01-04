@@ -22,8 +22,8 @@ class MainController{
         $tableau = "";
         foreach ($tabRencontre as $rencontre)
         {
-            $tableau.='</td><br><td>' . $rencontre->clubReceveur() . '</td><br><td>' . $rencontre->clubVisiteur() . '</td><br><td>'
-            . $rencontre->dateRencontre() . '</td><br><td>' . $rencontre->adresseStade() . '</td><br><td>' . $rencontre->ville() . '</td><br><td>' . '<button>Signalement</button>' . '</tr>';
+            $tableau.='</td><td>' . $rencontre->clubReceveur() . '</td><td>' . $rencontre->clubVisiteur() . '</td><td>'
+            . $rencontre->dateRencontre() . '</td><td>' . $rencontre->adresseStade() . '</td><td>' . $rencontre->ville() . '</td><td>' . '<button>Signalement</button>' . '</tr>';
         }
 
         return $tableau;
