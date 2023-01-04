@@ -39,34 +39,21 @@ require_once('Models.php');
         public function getRencontre($club)
         {
             $id = 1;
-            $tableVide = false;
-            $rencontreTab = array(null);
+            $rencontreTab = array();
+            $stmt = null;
     
-            while($tableVide != true)
+            while($stmt = $this->execRequest("SELECT * FROM rencontre where Id_Rencontre = '$id'", null))
             {
-                if ($this->execRequest("SELECT * FROM rencontre where Club_receveur = '$club' or Club_visiteur = '$club' and Id_Rencontre = '$id' ORDER BY Date_Rencontre ASC", $this->tab) != null)
+                if($stmt['Club_receveur'] == $club || $stmt['Club_visiteur'] == $club)
                 {
-                    $this->tab=$this->execRequest("SELECT * FROM rencontre where Club_receveur = '$club' or Club_visiteur = '$club' and Id_Rencontre = '$id' ORDER BY Date_Rencontre ASC", $this->tab);
+                    $rencontre = new Rencontre($stmt['Id_Rencontre'], $stmt['Club_receveur'], $stmt['Club_visiteur'], $stmt['Date_Rencontre'],
+                    $stmt['Adresse_stade'], $stmt['Ville']);
     
-                    
-                    $rencontre = new Rencontre($this->tab['Id_Rencontre'],$this->tab['Club_receveur'],$this->tab['Club_visiteur'],$this->tab['Date_Rencontre'],
-                    $this->tab['Adresse_stade'],$this->tab['Ville']);
-       
-                    $rencontreTab[$id-1] = $rencontre;
-    
-                    $id+=1;
-                } 
-                else 
-                {
-                   $tableVide = true;
-                }
-    
+                    $rencontreTab[] = $rencontre;
+                }                  
+                    $id+=1;    
             } 
             return $rencontreTab;
         }
     }
-
-
-
-
 ?>

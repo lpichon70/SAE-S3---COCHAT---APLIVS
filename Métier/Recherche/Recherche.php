@@ -60,7 +60,8 @@
   <?php
     if(isset($_POST["search"]))
     {
-      echo $mainController->getRencontreClub($_POST["search"]);
+      if(!empty($_POST["search"])) echo $mainController->getRencontreClub($_POST["search"]);
+      else echo $mainController->getValeurTab(); 
     }
     else echo $mainController->getValeurTab();
   ?>

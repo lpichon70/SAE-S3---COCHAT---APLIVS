@@ -9,7 +9,7 @@ class MainController{
 
     public function getValeurTab()
     {
-        $listRencontre = $this->manager -> getAll();
+        $listRencontre = $this->manager->getAll();
         
         return $this->generertab($listRencontre);
     }
@@ -37,8 +37,7 @@ class MainController{
     public function getRencontreClub($club)
     {
 
-        $listRencontre = $this->manager -> getRencontre($club);
-        
+        $listRencontre = $this->manager->getRencontre($club);
         return $this->generertab($listRencontre);
     }
 }
