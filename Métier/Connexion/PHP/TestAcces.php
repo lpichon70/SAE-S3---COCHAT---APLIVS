@@ -40,14 +40,7 @@
     <div>
       <p class="lien ombreText">
           <a href="../../../index.php">Accueil</a>
-      </p>
-      <p class="lien ombreText <?=$afficheClub?>">
-          <a href="../../../Métier/Signalement/formulaire_renseignement.php"  >Signaler</a>
-      </p>
-      <p class="lien ombreText <?=$afficheRecherche?>">
-        <a href="../../Profil/PageProfil.php">Profil</a>
-</p>
-    
+      </p>    
     </div>
     </html>
 </body>

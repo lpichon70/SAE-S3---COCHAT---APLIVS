@@ -3,10 +3,6 @@
   
   require_once("index/PHP/pathLogoUtilisateur.php");
 
-  $afficheClub = "d-none";
-  $afficheAdmin = "d-none";
-  $afficheRecherche = "d-none";
-
   if (@$_SESSION['statut'] == null || @$_SESSION['statut'] == "")
   {
     @$_SESSION['statut'] = "";
@@ -14,17 +10,13 @@
   }
   else if (@$_SESSION['statut'] != "" && $_SESSION['statut'] != null)
   {
-    switch($_SESSION['statut'])
-    {
-      case 'CLUB' : $afficheClub = ""; break;
-      case 'ADMIN' : $afficheClub = ""; break;
-    }
-    $afficheRecherche = "";
     $pathLogoConexion = "Images/profilConnect.png";
   }
 
   //Permet de gérer le contenu du menu dépliable de l'utilisateur
   $contentLogoManager = new pathLogoUtilisateur($_SESSION['statut']);
+
+
 ?>
 
 <!DOCTYPE html>
@@ -36,51 +28,50 @@
     <link rel="icon" type="image/png" sizes="16x16" href="Images/icon_ballon.png">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="index/CSS/Accueil_css.css">
+    <link rel="stylesheet" href="index/CSS/logoProfil.css">
   </head>
 
   <body>
 
     <div class="row"><hr></div>
 
-    <div class="menu-profil">
+    <div class="menu-profil">    
+      <img src="<?=$pathLogoConexion?>" class="logoProfil" onclick="toggleMenu()"/>
 
-    
-    <img src="<?=$pathLogoConexion?>" class="logoProfil" onclick="toggleMenu()"/>
+      <div class="sub-menu-wrap" id="subMenu">
+        <div class="sub-menu">
+          <div class="user-info">
+            <h3>Menu</h3>
+          </div>
+          <hr>
 
-    <div class="sub-menu-wrap" id="subMenu">
-      <div class="sub-menu">
-        <div class="user-info">
-          <h3>Menu</h3>
+          <a href="<?=$contentLogoManager->getPathMyProfil()?>" class="sub-menu-link <?=$contentLogoManager->getLinkMyProfilVisible()?>">
+            <p>Mon profil</p>
+            <span></span>
+          </a>
+
+          <a href="<?=$contentLogoManager->getPathSearch()?>" class="sub-menu-link <?=$contentLogoManager->getLinkSearchVisible()?>">
+            <p>Recherche</p>
+            <span></span>
+          </a>
+
+          <a href="<?=$contentLogoManager->getPathInscription()?>" class="sub-menu-link <?=$contentLogoManager->getLinkInscriptionVisible()?>">
+            <p>Inscription</p>
+            <span></span>
+          </a>
+
+          <a href="<?=$contentLogoManager->getPathConexion()?>" class="sub-menu-link <?=$contentLogoManager->getLinkConexionVisible()?>">
+            <p>Connexion</p>
+            <span></span>
+          </a>
+
+          <a href="<?=$contentLogoManager->getPathDeconexion()?>" class="sub-menu-link <?=$contentLogoManager->getLinkDeconexionVisible()?>">
+            <p>Se déconnecter</p>
+            <span></span>
+          </a>
+
         </div>
-        <hr>
-
-        <a href="<?=$contentLogoManager->getPathMyProfil()?>" class="sub-menu-link <?=$contentLogoManager->getLinkMyProfilVisible()?>">
-          <p>Mon profil</p>
-          <span></span>
-        </a>
-
-        <a href="<?=$contentLogoManager->getPathSearch()?>" class="sub-menu-link <?=$contentLogoManager->getLinkSearchVisible()?>">
-          <p>Recherche</p>
-          <span></span>
-        </a>
-
-        <a href="<?=$contentLogoManager->getPathInscription()?>" class="sub-menu-link <?=$contentLogoManager->getLinkInscriptionVisible()?>">
-          <p>Inscription</p>
-          <span></span>
-        </a>
-
-        <a href="<?=$contentLogoManager->getPathConexion()?>" class="sub-menu-link <?=$contentLogoManager->getLinkConexionVisible()?>">
-          <p>Connexion</p>
-          <span></span>
-        </a>
-
-        <a href="<?=$contentLogoManager->getPathDeconexion()?>" class="sub-menu-link <?=$contentLogoManager->getLinkDeconexionVisible()?>">
-          <p>Se déconnecter</p>
-          <span></span>
-        </a>
-
       </div>
-    </div>
     </div>
     
 
@@ -102,16 +93,16 @@
 
     <div>
       
-      <p class="lien ombreText">
+      <p class="lien ombreText <?=$contentLogoManager->getLinkInscriptionVisible()?>">
           <a href="Métier/Inscription/FormulaireInscription.html">Inscription</a>
       </p>
-      <p class="lien ombreText <?=$afficheClub?>">
-          <a href="Métier/Signalement/formulaire_renseignement.php"  >Signaler</a>
+      <p class="lien ombreText <?=$contentLogoManager->getLinkSignalerVisible()?>">
+          <a href="Métier/Signalement/formulaire_renseignement.php">Signaler</a>
       </p>
-      <p class="lien ombreText <?=$afficheRecherche?>">
+      <p class="lien ombreText <?=$contentLogoManager->getLinkMyProfilVisible()?>">
         <a href="Métier/Profil/PageProfil.php">Profil</a>
 </p>
-      <p class="lien ombreText">
+      <p class="lien ombreText <?=$contentLogoManager->getLinkConexionVisible()?>">
         <a href="Métier/Connexion/Connexion.php">Se connecter</a>
     </p>
     
@@ -135,7 +126,7 @@
 
     <div class="pagePartie2">
       <div class="row">
-          <h3 class="gras">Qu'est-ce que APPLIVS ?</h3>
+          <h3 class="gras">Qu est-ce que APPLIVS ?</h3>
       </div>
 
       <div class="row justify"> 
@@ -157,7 +148,7 @@
 
     <div class="row"><hr></div>
   </div>
-      
+    
 
     
 
@@ -167,13 +158,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
   <script src="index/JS/Animation.js"></script>
-  <script>
-    let subMenu = document.getElementById("subMenu");
-
-    function toggleMenu(){
-      subMenu.classList.toggle("open-menu");
-    }
-  </script>
+  <script src="index/JS/MenuUtilisateur.js"></script>
+  
   </body>
 </html>
-

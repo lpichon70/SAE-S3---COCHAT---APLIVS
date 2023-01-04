@@ -30,6 +30,10 @@ class pathLogoUtilisateur{
     public function getPathDeconexion(){return $this->pathDeconexion;}
     public function setPathDeconexion(string $m){$this->pathDeconexion = $m;}
 
+    private string $pathSignaler;
+    public function getPathSignaler(){return $this->pathSignaler;}
+    public function setPathSignaler(string $m){$this->pathSignaler = $m;}
+
     
     //Concerne la visibilité des liens
     private string $linkMyProfilVisible;
@@ -52,6 +56,10 @@ class pathLogoUtilisateur{
     public function getLinkDeconexionVisible(){return $this->linkDeconexionVisible;}
     public function setLinkDeconexionVisible(string $m){$this->linkDeconexionVisible = $m;}
 
+    private string $linkSignalerVisible;
+    public function getLinkSignalerVisible(){return $this->linkSignalerVisible;}
+    public function setLinkSignalerVisible(string $m){$this->linkSignalerVisible = $m;}
+    
 
     /**
      * Method __construct
@@ -86,12 +94,14 @@ class pathLogoUtilisateur{
                 $this->setPathSearch("Métier/Recherche/Recherche.php");
                 $this->setPathDeconexion("Métier/Deconnexion/deconnexion.php");
                 $this->setPathConexion("");
+                $this->setPathSignaler("Métier/Signalement/formulaire_renseignement.php");
 
                 $this->setLinkMyProfilVisible("d-none");
                 $this->setLinkInscriptionVisible("d-none");
                 $this->setLinkSearchVisible("");
                 $this->setLinkDeconexionVisible("");
                 $this->setLinkConexionVisible("d-none");
+                $this->setLinkSignalerVisible("");
             break;
             case 'DDCS' :
                 $this->setPathMyProfil("");
@@ -99,12 +109,14 @@ class pathLogoUtilisateur{
                 $this->setPathSearch("Métier/Recherche/Recherche.php");
                 $this->setPathDeconexion("Métier/Deconnexion/deconnexion.php");
                 $this->setPathConexion("");
+                $this->setPathSignaler("Métier/Signalement/formulaire_renseignement.php");
 
                 $this->setLinkMyProfilVisible("d-none");
                 $this->setLinkInscriptionVisible("d-none");
                 $this->setLinkSearchVisible("");
                 $this->setLinkDeconexionVisible("");
                 $this->setLinkConexionVisible("d-none");
+                $this->setLinkSignalerVisible("");
             break;
             case 'ADMIN' :
                 $this->setPathMyProfil("");
@@ -112,12 +124,14 @@ class pathLogoUtilisateur{
                 $this->setPathSearch("Métier/Recherche/Recherche.php");
                 $this->setPathDeconexion("Métier/Deconnexion/deconnexion.php");
                 $this->setPathConexion("");
+                $this->setPathSignaler("Métier/Signalement/formulaire_renseignement.php");
 
                 $this->setLinkMyProfilVisible("d-none");
                 $this->setLinkInscriptionVisible("d-none");
                 $this->setLinkSearchVisible("");
                 $this->setLinkDeconexionVisible("");
                 $this->setLinkConexionVisible("d-none");
+                $this->setLinkSignalerVisible("");
             break;
             case 'CLUB' :
                 $this->setPathMyProfil("Métier/Profil/PageProfil.php");
@@ -125,12 +139,14 @@ class pathLogoUtilisateur{
                 $this->setPathDeconexion("Métier/Deconnexion/deconnexion.php");
                 $this->setPathInscription("");
                 $this->setPathConexion("");
+                $this->setPathSignaler("Métier/Signalement/formulaire_renseignement.php");
 
                 $this->setLinkMyProfilVisible("");
                 $this->setLinkInscriptionVisible("d-none");
                 $this->setLinkSearchVisible("");
                 $this->setLinkDeconexionVisible("");
                 $this->setLinkConexionVisible("d-none");
+                $this->setLinkSignalerVisible("");
             break;
             case '' :
                 $this->setPathInscription("Métier/Inscription/FormulaireInscription.html");
@@ -138,12 +154,14 @@ class pathLogoUtilisateur{
                 $this->setPathMyProfil("");
                 $this->setPathSearch("");
                 $this->setPathDeconexion("");
+                $this->setPathSignaler("");
 
                 $this->setLinkMyProfilVisible("d-none");
                 $this->setLinkInscriptionVisible("");
                 $this->setLinkSearchVisible("d-none");
                 $this->setLinkDeconexionVisible("d-none");
                 $this->setLinkConexionVisible("");
+                $this->setLinkSignalerVisible("d-none");
             break;
         }
     }

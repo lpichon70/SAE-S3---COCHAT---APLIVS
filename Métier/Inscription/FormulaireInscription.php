@@ -1,3 +1,27 @@
+<?php
+    session_start();
+    require_once("../../index/PHP/pathLogoUtilisateur.php");
+
+    //Permet d'afficher les bouttons lié au statut et le logo du profil
+    //Donne accès à la page si l'on est connecter ou pas
+    
+    if (@$_SESSION['statut'] == null || @$_SESSION['statut'] == "")
+    {
+        @$_SESSION['statut'] = "";
+        $pathLogoConexion = "Images/profilDeconnect.png";
+    }
+    else if (@$_SESSION['statut'] != "" && $_SESSION['statut'] != null)
+    {
+        header("Location:../../index.php");
+    }
+    
+
+    
+    //Permet de gérer le contenu du menu dépliable de l'utilisateur
+    $contentLogoManager = new pathLogoUtilisateur($_SESSION['statut']);
+?>
+
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -6,12 +30,53 @@
 <head>
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
     <link rel="stylesheet" href="CSS/FormulaireInscription.css" type="text/css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../index/CSS/logoProfil.css">
     <title>Fiche d'inscription à la DDCS</title>
 </head>
 
 
 
 <body>
+
+    <div class="menu-profil">    
+    <img src="../../<?=$pathLogoConexion?>" class="logoProfil" onclick="toggleMenu()"/>
+
+    <div class="sub-menu-wrap" id="subMenu">
+      <div class="sub-menu">
+        <div class="user-info">
+          <h3>Menu</h3>
+        </div>
+        <hr>
+
+        <a href="../../<?=$contentLogoManager->getPathMyProfil()?>" class="sub-menu-link <?=$contentLogoManager->getLinkMyProfilVisible()?>">
+          <p>Mon profil</p>
+          <span></span>
+        </a>
+
+        <a href="../../<?=$contentLogoManager->getPathSearch()?>" class="sub-menu-link <?=$contentLogoManager->getLinkSearchVisible()?>">
+          <p>Recherche</p>
+          <span></span>
+        </a>
+
+        <a href="../../<?=$contentLogoManager->getPathInscription()?>" class="sub-menu-link <?=$contentLogoManager->getLinkInscriptionVisible()?>">
+          <p>Inscription</p>
+          <span></span>
+        </a>
+
+        <a href="../../<?=$contentLogoManager->getPathConexion()?>" class="sub-menu-link <?=$contentLogoManager->getLinkConexionVisible()?>">
+          <p>Connexion</p>
+          <span></span>
+        </a>
+
+        <a href="../../<?=$contentLogoManager->getPathDeconexion()?>" class="sub-menu-link <?=$contentLogoManager->getLinkDeconexionVisible()?>">
+          <p>Se déconnecter</p>
+          <span></span>
+        </a>
+
+      </div>
+    </div>
+    </div>
 
     <div class="lignes">
         <div class="l1"></div>
@@ -357,6 +422,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
     <script src="../../index/JS/Animation.js"></script>
+    <script src="../../index/JS/MenuUtilisateur.js"></script>
 </body>
 
 </html>

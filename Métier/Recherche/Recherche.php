@@ -1,7 +1,27 @@
 <?php 
+  session_start();
   require_once('models/RencontreManager.php'); 
-  require_once('controllers/mainController.php'); 
+  require_once('controllers/mainController.php');
+  require_once("../../index/PHP/pathLogoUtilisateur.php"); 
   $mainController = new MainController();
+
+
+
+  //Permet d'afficher les bouttons lié au statut et le logo du profil
+    //Donne accès à la page si l'on est connecter ou pas
+    if (@$_SESSION['statut'] == null || @$_SESSION['statut'] == "")
+    {
+        header("Location:../../index.php");
+    }
+    else if (@$_SESSION['statut'] != "" && $_SESSION['statut'] != null)
+    {
+        $pathLogoConexion = "Images/profilConnect.png";
+    }
+
+    
+    //Permet de gérer le contenu du menu dépliable de l'utilisateur
+    $contentLogoManager = new pathLogoUtilisateur($_SESSION['statut']);
+
 ?>
 
 
@@ -15,8 +35,52 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>APPLIVS</title>
+    <link rel="stylesheet" href="../../index/CSS/logoProfil.css">
 </head>
 <body>
+
+    <div class="menu-profil">    
+    <img src="../../<?=$pathLogoConexion?>" class="logoProfil" onclick="toggleMenu()"/>
+
+    <div class="sub-menu-wrap" id="subMenu">
+      <div class="sub-menu">
+        <div class="user-info">
+          <h3>Menu</h3>
+        </div>
+        <hr>
+
+        <a href="../../<?=$contentLogoManager->getPathMyProfil()?>" class="sub-menu-link <?=$contentLogoManager->getLinkMyProfilVisible()?>">
+          <p>Mon profil</p>
+          <span></span>
+        </a>
+
+        <a href="../../<?=$contentLogoManager->getPathSearch()?>" class="sub-menu-link <?=$contentLogoManager->getLinkSearchVisible()?>">
+          <p>Recherche</p>
+          <span></span>
+        </a>
+
+        <a href="../../<?=$contentLogoManager->getPathInscription()?>" class="sub-menu-link <?=$contentLogoManager->getLinkInscriptionVisible()?>">
+          <p>Inscription</p>
+          <span></span>
+        </a>
+
+        <a href="../../<?=$contentLogoManager->getPathConexion()?>" class="sub-menu-link <?=$contentLogoManager->getLinkConexionVisible()?>">
+          <p>Connexion</p>
+          <span></span>
+        </a>
+
+        <a href="../../<?=$contentLogoManager->getPathDeconexion()?>" class="sub-menu-link <?=$contentLogoManager->getLinkDeconexionVisible()?>">
+          <p>Se déconnecter</p>
+          <span></span>
+        </a>
+
+      </div>
+    </div>
+    </div>
+
+
+
+
 <div class="row"><hr></div>
 
 <div class="l1">
@@ -60,6 +124,6 @@
   <?=$mainController->getValeurTab()?>
 </tr>
 </table>
-
+  <script src="../../index/JS/MenuUtilisateur.js"></script>
 </body>
 </html>
