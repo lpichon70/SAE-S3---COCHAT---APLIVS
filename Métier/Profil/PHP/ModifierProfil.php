@@ -1,10 +1,11 @@
 <?php
+    session_start();
     require_once("Club.php");  
     require_once("BDDManager.php");
     $db = new PDO('mysql:host=localhost;dbname=grp-254_s3_sae', 'grp-254', '0k6zqrrr');
     $manager = new BDDManager($db);
     //on récupère le club
-    $club = $manager->get(98);
+    $club = $manager->get($_SESSION['idClub']);
 ?>
 
 
@@ -55,11 +56,11 @@
     </div>
 
 
-    
+    <br><br><br><br><br>
 
     <div class="l3"></div>
 
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 
     <form action="../PageProfil.php" method="POST" enctype="multipart/form-data">
@@ -89,15 +90,6 @@
                         <label for="sigleClub">Sigle du club :</label>
                         <?php echo '<input type="text" name="sigleClub" required class="input_text" value="'.$club->getSigle().'"/>'; ?>
                     </p>
-
-                    <p>
-                        <label for="logoClub">Logo du club :</label>
-                        <input type="file" name="logoClub"/>
-                    </p>
-
-                    <div>
-                        <?php echo '<img class="pp" src="../../../'.$club->getLogo().'" alt=logo>' ; ?>
-                    </div>
 
                     <p>
                         <label for="adresseClub">Rue :</label>

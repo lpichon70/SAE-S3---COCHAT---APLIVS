@@ -38,6 +38,9 @@
 
     <div class="row"><hr></div>
 
+    <div class="menu-profil">
+
+    
     <img src="<?=$pathLogoConexion?>" class="logoProfil" onclick="toggleMenu()"/>
 
     <div class="sub-menu-wrap" id="subMenu">
@@ -47,19 +50,19 @@
         </div>
         <hr>
 
-        <a href="#" class="sub-menu-link">
+        <a href="Métier/Profil/PageProfil.php" class="sub-menu-link">
           <p>Mon profil</p>
           <span></span>
         </a>
 
-        <a href="#" class="sub-menu-link">
+        <a href="Métier/Deconnexion/deconnexion.php" class="sub-menu-link">
           <p>Se déconnecter</p>
           <span></span>
         </a>
 
       </div>
     </div>
-    
+    </div>
     
 
     <div class="l1">

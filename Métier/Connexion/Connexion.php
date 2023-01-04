@@ -1,6 +1,7 @@
 <?php
   session_start();
   $_SESSION['statut']='';
+  $_SESSION['idClub']='';
   require_once("PHP/Conn.php");
   require_once("PHP/BDDManager.php");
   
@@ -39,6 +40,7 @@
       else if ($connexionClub == true)
       {
         $_SESSION['statut']='CLUB';
+        $_SESSION['idClub']=$manager->getIdClub($identifiant);
         header("Location:./PHP/Index.php");
       }
     }

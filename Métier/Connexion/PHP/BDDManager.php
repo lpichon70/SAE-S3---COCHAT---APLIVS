@@ -17,6 +17,21 @@
             $this->_db = $db;
         }
 
+        //renvoie l'id primaire associé à l'identifiant
+        public function getIdClub($identifiant)
+        {
+            $q = $this->_db->query("SELECT id_club FROM formulaire_inscription WHERE identifiant = '$identifiant'");
+            $id = $q->fetch(PDO::FETCH_ASSOC);
+            if ($id != false)
+            {
+                return $id['id_club'];
+            }
+            else 
+            {
+                return null;
+            }
+        }
+
         //Renvoie true si l'identifiant et le mot de passe envoyé par l'utilisateur concordes (utilisé notament pour une connexion)
         public function get($id, $mdp)
         {
