@@ -23,18 +23,18 @@ require_once("President.php");
 
         //Permet d'ajouter à la base de données des 3 objets suivants: un club (Club.php), un président (President.php) et un 
         //Secrétariat (secretariat.php);
-        public function add($club,$president,$secretaria)
+        public function add($club,$president,$secretaria,$identifiant,$mdp)
         {
             $req = $this->_db->prepare("INSERT INTO formulaire_inscription (Nom_Club,Sigle_club,Rue,Complement_Rue,Ville,
             Code_Postal,Num_Agrement,fede_affiliation,Statut_asso,num_Siret,Mail_club,web_Site,social_club,
             Tel_Fixe,Tel_Portable,
             Civil_Pres,Nom_Pres,Prenom_Pres,Mail_Pres,Tel_Pres,
-            Mail_Secretariat,Tel_Secretariat,logo) 
+            Mail_Secretariat,Tel_Secretariat,identifiant,mdp) 
             VALUES (:Nom_Club,:Sigle_club,:Rue,:Complement_Rue,:Ville,
             :Code_Postal,:Num_Agrement,:fede_affiliation,:Statut_asso,:num_Siret,:Mail_club,:web_Site,:social_club,
             :Tel_Fixe,:Tel_Portable,
             :Civil_Pres,:Nom_Pres,:Prenom_Pres,:Mail_Pres,:Tel_Pres,
-            :Mail_Secretariat,:Tel_Secretariat,:logo)");
+            :Mail_Secretariat,:Tel_Secretariat,:identifiant,:mdp)");
 
             $req->execute(array(
                 //Les informations liées au club :
@@ -53,7 +53,6 @@ require_once("President.php");
                 'social_club'=> $club-> getResauSocial(),
                 'Tel_Fixe'=> $club-> getTelFixe(),
                 'Tel_Portable'=> $club-> getTelPortable(),
-                'logo'=> $club-> getLogo(),
 
                 //Les informations liées au président
                 'Civil_Pres' => $president->getCivilite(),
@@ -65,7 +64,10 @@ require_once("President.php");
 
                 //Les informations liées au secrétaria
                 'Mail_Secretariat' => $secretaria->getMail(),
-                'Tel_Secretariat' => $secretaria->getTel()
+                'Tel_Secretariat' => $secretaria->getTel(),
+
+                'identifiant' => $identifiant,
+                'mdp' => $mdp,
 
 
             ));
