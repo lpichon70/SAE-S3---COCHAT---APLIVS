@@ -6,13 +6,20 @@ class SignalementController{
 
     private SignalementManager $manager;
 
+    public function getValeurTab()
+    {        
+        return $this->generertab();
+    }
+
     ///Fonction index qui permet de générer la vue
     public function __construct()
     {
-        $this->manager = new SignalementManager(); 
+        $this->manager = new SignalementManager();
+
+ 
     }
 
-    private function genererTab(array $data) : string
+    private function generertab() : string
     {
         $tableau='';
         $tableau.="<form id='formulaire' action='PHP/signalement.php' method='POST'>
@@ -25,7 +32,7 @@ class SignalementController{
 					<div class='elements-input'>
 						<label class='label-text' for='nomClub'>Nom du club :</label>
 						<br>
-						<input type='text' name='nomClub' value=<?= ".$_GET['clubReceveur']." ?> <?=$"."requiredClub?>
+						<input type='text' name='nomClub' <?=$"."requiredClub?>
 						<div class='ligne-input'></div>
 					</div>
 					
@@ -51,23 +58,15 @@ class SignalementController{
 				<p>
 					<div class='elements-input'>
 						<label class='label-text' for='date'>Date :</label>
-						<input type='text' name='date' value=<?= ".$_GET['dateRencontre']." <?=$"."requiredClub?> 
+						<input type='text' name='date' <?=$"."requiredClub?> 
 						<div class='ligne-input'></div>
 					</div>
 					
 				</p>
 				<p>
 					<div class='elements-input'>
-						<label class='label-text' for='adresse'>Lieu :</label>
-						<input type='text' name='adresse' value=<?= ".$_GET['adresseClub']." <?=$"."requiredClub?> 
-						<div class='ligne-input'></div>
-					</div>
-					
-				</p>
-				<p>
-					<div class='elements-input'>
-						<label class='label-text' for='ville'>Lieu :</label>
-						<input type='text' name='ville' value=<?= ".$_GET['ville']." <?=$"."requiredClub?> 
+						<label class='label-text' for='lieu'>Lieu :</label>
+						<input type='text' name='lieu' <?=$"."requiredClub?> 
 						<div class='ligne-input'></div>
 					</div>
 					
@@ -274,7 +273,7 @@ class SignalementController{
 			<p>
 				<div class='elements-input'>
 					<label for='nomClubVisiteur'>Nom du club :</label>
-					<input type='text' name='nomClubVisiteur'  value=<?= ".$_GET['ville'].">
+					<input type='text' name='nomClubVisiteur'
 					<div class='ligne-input'></div>
 				</div>
 			</p>
