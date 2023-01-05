@@ -157,7 +157,7 @@
             <?php 
             if(!empty($_SESSION['statut']))
             {
-                if($_SESSION['statut'] == 'CLUB') echo '<span id="nomClub">'.$club->getNomClub().'</span>'; 
+                if($_SESSION['statut'] == 'CLUB') echo '<div id="nomClub">'.$club->getNomClub().'</div>'; 
                 else if($_SESSION['statut'] == 'ADMIN') echo '<span id="nomClub">Admin</span>';  
                 else if($_SESSION['statut'] == 'POLICE') echo '<span id="nomClub">Police</span>';  
                 else echo '<span id="nomClub">DDCS</span>';  
