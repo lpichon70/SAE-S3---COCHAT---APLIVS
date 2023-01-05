@@ -85,3 +85,4 @@ function showContact2(){
         document.getElementById('contact2').className = "d-none";
     } 
 }
+

@@ -1,6 +1,10 @@
 <?php
 	session_start();
+	require_once("models/SignalementManager.php"); 
+  	require_once("controllers/signalementController.php");
 	require_once("../../index/PHP/pathLogoUtilisateur.php");
+
+	$signalementController = new SignalementController();
 
 	$voirClub = "d-none";
 	$voirPolice = "d-none";
@@ -64,6 +68,7 @@
     
     //Permet de gérer le contenu du menu dépliable de l'utilisateur
     $contentLogoManager = new pathLogoUtilisateur($_SESSION['statut']);
+
 ?>
 
 
@@ -147,9 +152,10 @@
 
 	<div class="l3"></div>
 
-
-
-
+	<?php
+    echo $signalementController->getValeurTab();
+  ?>
+<!--
 	<form id="formulaire" action="PHP/signalement.php" method="POST">
 
 		<fieldset id="club-receveur" class="<?=$voirClub?>">
@@ -580,11 +586,12 @@
 			</div>
 		</fieldset>
 		</fieldset>
-		
+		-->
 		<br>
 		<button id="valide">Valider</button>
 	</form>
 	<script src="../../index/JS/MenuUtilisateur.js"></script>
+
 </body>
 
 </html>
