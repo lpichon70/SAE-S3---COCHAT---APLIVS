@@ -5,7 +5,6 @@
   require_once("../../index/PHP/pathLogoUtilisateur.php"); 
   $mainController = new MainController();
 
-<<<<<<< HEAD
 
 
   //Permet d'afficher les bouttons lié au statut et le logo du profil
@@ -23,8 +22,6 @@
     //Permet de gérer le contenu du menu dépliable de l'utilisateur
     $contentLogoManager = new pathLogoUtilisateur($_SESSION['statut']);
 
-=======
->>>>>>> e5ce442c65c7380561b77a40f001005b061db1ba
 ?>
 
 

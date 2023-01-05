@@ -36,7 +36,6 @@ require_once('Models.php');
             return $rencontreTab;
         }
 
-<<<<<<< HEAD
         public function getById(int $idRencontre)
         {
             if ($this->execRequest("SELECT * FROM rencontre WHERE Id_Rencontre = '$idRencontre'", $this->tab) != null)
@@ -53,7 +52,6 @@ require_once('Models.php');
         return $rencontre;
         }
 
-=======
         public function getRencontre($club)
         {
             $id = 1;
@@ -73,6 +71,5 @@ require_once('Models.php');
             } 
             return $rencontreTab;
         }
->>>>>>> b7ad3bfd7cba0f1b93f8ec7bd94ed330e7660da9
     }
 ?>

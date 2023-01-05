@@ -4,11 +4,6 @@ require_once('models/RencontreManager.php');
 
 class MainController{
 
-<<<<<<< HEAD
-    private string $valeurTab;
-    private int $idactuel;
-    public function getValeurTab(){return $this->valeurTab;}
-=======
 
     private RencontreManager $manager;
 
@@ -18,7 +13,6 @@ class MainController{
         
         return $this->generertab($listRencontre);
     }
->>>>>>> b7ad3bfd7cba0f1b93f8ec7bd94ed330e7660da9
 
     public function loadId()
     {
@@ -39,12 +33,8 @@ class MainController{
         foreach ($tabRencontre as $rencontre)
         {
             $tableau.='</td><td>' . $rencontre->clubReceveur() . '</td><td>' . $rencontre->clubVisiteur() . '</td><td>'
-<<<<<<< HEAD
             . $rencontre->dateRencontre() . '</td><td>' . $rencontre->adresseStade() . '</td><td>' . $rencontre->ville() .
              '</td><td>' . '<a href="../Signalement/formulaire_renseignement.php"><button name="button">Signalement</button>' . '</tr>';
-=======
-            . $rencontre->dateRencontre() . '</td><td>' . $rencontre->adresseStade() . '</td><td>' . $rencontre->ville() . '</td><td>' . '<button>Signalement</button>' . '</tr>';
->>>>>>> b7ad3bfd7cba0f1b93f8ec7bd94ed330e7660da9
         }
 
         return $tableau;
