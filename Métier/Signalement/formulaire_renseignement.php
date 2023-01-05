@@ -49,6 +49,7 @@
 			break;
 				
 		}
+
 	}
 	else {
 		header("Location:../../index.php");
@@ -166,7 +167,7 @@
 					<div class="elements-input">
 						<label class="label-text" for="nomClub">Nom du club :</label>
 						<br>
-						<input type="text" name="nomClub" <?=$requiredClub?>/>
+						<input type="text" name="nomClub" value=<?= $_GET['clubReceveur'] ?> <?=$requiredClub?>/>
 						<div class="ligne-input"></div>
 					</div>
 					
@@ -192,15 +193,23 @@
 				<p>
 					<div class="elements-input">
 						<label class="label-text" for="date">Date :</label>
-						<input type="text" name="date" <?=$requiredClub?> />
+						<input type="text" name="date" value=<?= $_GET['dateRencontre']?> <?=$requiredClub?> />
 						<div class="ligne-input"></div>
 					</div>
 					
 				</p>
 				<p>
 					<div class="elements-input">
-						<label class="label-text" for="lieu">Lieu :</label>
-						<input type="text" name="lieu" <?=$requiredClub?> />
+						<label class="label-text" for="adresse">Adresse :</label>
+						<input type="text" name="adresse" value=<?= $_GET['adresseStade']?> <?=$requiredClub?> />
+						<div class="ligne-input"></div>
+					</div>
+					
+				</p>
+				<p>
+					<div class="elements-input">
+						<label class="label-text" for="ville">Ville :</label>
+						<input type="text" name="ville" value=<?= $_GET['ville']?> <?=$requiredClub?> />
 						<div class="ligne-input"></div>
 					</div>
 					
@@ -424,7 +433,7 @@
 			<p>
 				<div class="elements-input">
 					<label for="nomClubVisiteur">Nom du club :</label>
-					<input type="text" name="nomClubVisiteur" />
+					<input type="text" name="nomClubVisiteur" value=<?= $_GET['clubVisiteur']?>/>
 					<div class="ligne-input"></div>
 				</div>
 			</p>
