@@ -1,6 +1,6 @@
 <?php
 
-require_once('./../Recherche/models/Models.php');
+require_once('./../../Recherche/models/Models.php');
 require_once('Signalement.php');
 
 class SignalementManager extends Model
@@ -29,8 +29,8 @@ class SignalementManager extends Model
 
             $req->execute(array(
                 //Les informations liées au club :
-                'Id_Rencontre' => $signalement->GetIdSignalement(),
-                );
+                'Id_Rencontre' => $signalement->GetIdSignalement()
+                ));
         }
         
     }
