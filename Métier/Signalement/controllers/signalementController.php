@@ -83,9 +83,8 @@ class SignalementController{
 				<p>
 				<label class='label-text' for='Délégués'>Envoi de délégués :</label>
 				<label name='oui'>Oui</label>
-				<input type='radio' name='Délégués' id='DeleguesOui' onchange=showDelegues() <?=$"."requiredClub?>
-                <label name='non'>Non</label>
-				<input type='radio' name='Délégués' onchange=showDelegues() <?=$"."requiredClub?><br>
+				<input type='checkbox' name='Délégués' id='DeleguesOui' onchange=showDelegues() <?=$"."requiredClub?>
+                
 				<div class='d-none' id='deleg'>
                     <div class='elements-input'>
                         <label class='label-text' for='nomDelegue'>Nom du délégué :</label>
@@ -102,9 +101,7 @@ class SignalementController{
 			<p>
 				<label class='label-text' for='Arbitres'>Envoi d'arbitres :</label>
 				<label name='oui'>Oui</label>
-				<input type='radio' name='Arbitres' id='ArbitresOui'  onchange='showArbitres()' <?=$"."requiredClub?> 
-				<label name='non'>Non</label>
-				<input type='radio' name='Arbitres' onchange='showArbitres()' <?=$"."requiredClub?>  <br>
+				<input type='checkbox' name='Arbitres' id='ArbitresOui'  onchange='showArbitres()' <?=$"."requiredClub?> 
 				<div id='arb' class='d-none'>
 					<div class='elements-input'>
 						<label class='label-text' for='nbArbitre'>Nombre d'arbitres :</label>
@@ -117,9 +114,7 @@ class SignalementController{
 			<p>
 				<label class='label-text' for='Terrain'>Changement de terrain :</label>
 				<label name='oui'>Oui</label>
-				<input type='radio' name='Terrain' id='TerrainsOui' onchange='showTerrains()' <?=$"."requiredClub?>  
-				<label name='non'>Non</label>  
-				<input type='radio' name='Terrain' onchange='showTerrains()' <?=$"."requiredClub?>  <br>
+				<input type='checkbox' name='Terrain' id='TerrainsOui' onchange='showTerrains()' <?=$"."requiredClub?>  
 				<div id='terr' class='d-none'>
 					<div class='elements-input'>
 						<label class='label-text' for='adresseTerrain'>Adresse du nouveau terrain :</label>
@@ -139,9 +134,8 @@ class SignalementController{
 			<p>
 				<label class='label-text' for='Report'>Report du match :</label>
 				<label name='oui'>Oui</label>
-				<input type='radio' name='Report' id='ReportOui' onchange='showReport()' <?=$"."requiredClub?>  
-				<label name='non'>Non</label>
-				<input type='radio' name='Report' onchange='showReport()' <?=$"."requiredClub?> <br>
+				<input type='checkbox' name='Report' id='ReportOui' onchange='showReport()' <?=$"."requiredClub?>  
+				
 			<div id='rep' class='d-none'>
 				<div class='elements-input'>
 					<label class='label-text' for='adresseTerrain'>Adresse du nouveau terrain :</label>
@@ -161,24 +155,20 @@ class SignalementController{
 			<p>
 				<label class='label-text' for='contactDistrict'>Contact du district :</label>
 				<label name='oui'>Oui</label>
-				<input type='radio' name='contactDistrict' <?=$"."requiredClub?> 
-				<label name='non'>Non</label>
-				<input type='radio' name='contactDistrict' <?=$"."requiredClub?>
+				<input type='checkbox' name='contactDistrict' <?=$"."requiredClub?> 
+			
 			</p>
 			<p>
 				<label class='label-text' for='contactPolice'>Contact des forces de l'ordre :</label>
 				<label name='oui'>Oui</label>
-				<input type='radio' name='contactPolice' <?=$"."requiredClub?>
-				<label name='non'>Non</label>
-				<input type='radio' name='contactPolice' <?=$"."requiredClub?>
+				<input type='checkbox' name='contactPolice' <?=$"."requiredClub?>
 			</p>
 			<fieldset>
 				<legend>
 					<label for='IncidentRec'>Y a-t-il eu un incident ? :</label>
 					<label name='oui'>Oui</label>
-					<input type='radio' name='IncidentRec' id='IncidentOui1' onchange='showIncident1()' <?=$"."requiredClub?> 
-					<label name='non'>Non</label>
-					<input type='radio' name='IncidentRec' onchange='showIncident1()' <?=$"."requiredClub?> 
+					<input type='checkbox' name='IncidentRec' id='IncidentOui1' onchange='showIncident1()' <?=$"."requiredClub?> 
+					
 				</legend>
 				<div id='incident1' class='d-none'>
 					<h5>
@@ -281,9 +271,8 @@ class SignalementController{
 				<legend>
 					<label for='IncidentRec'>Y a-t-il eu un incident ? :</label>
 					<label name='oui'>Oui</label>
-					<input type='radio' name='IncidentRec' id='IncidentOui2' onchange='showIncident2()' <?=$"."requiredClub?> 
-					<label name='non'>Non</label>
-					<input type='radio' name='IncidentRec' onchange='showIncident2()' <?=$"."requiredClub?> 
+					<input type='checkbox' name='IncidentRec' id='IncidentOui2' onchange='showIncident2()' <?=$"."requiredClub?> 
+					
 				</legend>
 				<div id='incident2' class='d-none'>
 					<h5>
@@ -381,9 +370,8 @@ class SignalementController{
 			<p>
 				<label for='ContactReceveur'>Les personnes responsable du club receveur ont été contactée ? :</label>
 				<label name='oui'>Oui</label>
-				<input type='radio' name='ContactReceveur' id='ContactOui1' onchange='showContact1()' <?=$"."requiredDDCS?> 
-				<label name='non'>Non</label>
-				<input type='radio' name='ContactReceveur' onchange='showContact1()' <?=$"."requiredDDCS?> 
+				<input type='checkbox' name='ContactReceveur' id='ContactOui1' onchange='showContact1()' <?=$"."requiredDDCS?> 
+	
 			</p>
 			<div id='contact1' class='d-none'>
 				<p>
@@ -394,9 +382,8 @@ class SignalementController{
 			<p>
 				<label for='ContactVisiteur'>Les personnes responsable du club visiteur ont été contactée ? :</label>
 				<label name='oui'>Oui</label>
-				<input type='radio' name='ContactVisiteur' id='ContactOui2' onchange='showContact2()' <?=$"."requiredDDCS?> 
-				<label name='non'>Non</label>
-				<input type='radio' name='ContactVisiteur' onchange='showContact2()' <?=$"."requiredDDCS?> 
+				<input type='checkbox' name='ContactVisiteur' id='ContactOui2' onchange='showContact2()' <?=$"."requiredDDCS?> 
+		
 			</p>
 			<div id='contact2' class='d-none'>
 				<p>
@@ -423,9 +410,7 @@ class SignalementController{
 			<legend>
 				<label for='IncidentFO'>Y a-t-il eu un incident ? :</label>
 				<label name='oui'>Oui</label>
-				<input type='radio' name='IncidentFO' id='IncidentOui3'/>
-				<label name='non'>Non</label>
-				<input type='radio' name='IncidentFO'/>
+				<input type='checkbox' name='IncidentFO' id='IncidentOui3'/>
 			</legend>
 			<div class='incident3' class='d-none'>
 				<label for='nbrForceOrdreIncident'>Combien de membres des force de l'ordre étaient présents ?</label><br>

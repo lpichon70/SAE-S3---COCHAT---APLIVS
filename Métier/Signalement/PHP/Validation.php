@@ -12,6 +12,7 @@
         $signalement->setNatureIncident("test");
         $signalement->setAntecedent("oui c'est modifié");
         $manager->insertSignalement($signalement);
+        var_dump($_POST);
     }
     
 ?>
@@ -28,5 +29,6 @@
 </head>
 <body>
     LE FORMULAIRE A BIEN ETE VALIDE
+
 </body>
 </html>
