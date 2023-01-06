@@ -10,70 +10,64 @@
     <body>
 
 
-        <h1>
+        <h1 id="titreRecap">
             Récapitulatif de votre inscription
         </h1>
 
         <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <div class="recap"> 
+            <?php
+                //Permet de faire un récapitulatif suite à l'incription d'un club
+                require_once("Club.php");
+                require_once("President.php");
+                require_once("Secretaria.php");
 
-        <?php
-            //Permet de faire un récapitulatif suite à l'incription d'un club
-            require_once("Club.php");
-            require_once("President.php");
-            require_once("Secretaria.php");
-
-            require_once("fabriqueMdp.php");
-            require_once("FormInscriptionManager.php");
-
-
-            $club = new Club($_POST["nomClub"], $_POST["sigleClub"],$_POST["adresseClub"],
-            $_POST["complementAdresseClub"],$_POST["villeClub"],$_POST["codePostalClub"],
-            $_POST["numAgrement"],$_POST["fedAffiliation"],$_POST["satutAsso"],$_POST["numSiret"],
-            $_POST["mailClub"],$_POST["siteClub"],$_POST["reseauSocialClub"],$_POST["telFixeClub"],
-            $_POST["telPortableClub"]);
-
-            $president = new President($_POST["civilitePresident"],$_POST["nomPresident"],
-            $_POST["prenomPresident"], $_POST["emailPresident"],$_POST["telPresident"]);
-
-            $secretaria = new Secretaria($_POST["emailSecretaria"], $_POST["telSecretaria"]);
-
-            $fabriqueMdp = new fabriqueMdp($_POST["nomClub"]);
-
-            echo "Votre Identifiant temporaire : " . $fabriqueMdp->getIdentifiant() . "</br> </br>";
-            echo "Votre mot de passe temporaire : " . $fabriqueMdp->getMdp() . "</br> </br>";
-
-            echo "</br>"."</br>"."<h2>Informations du club :</h2>"."</br>".$club->__toString();
-            
-            echo "</br>"."</br>"."<h2>Informations president :</h2>"."</br>".$president->__toString();
-            
-            echo "</br>"."</br>"."<h2>Informations secrétariat :</h2>"."</br>".$secretaria->__toString();
+                require_once("fabriqueMdp.php");
+                require_once("FormInscriptionManager.php");
 
 
-            //Connection à la base de données 
-          
-            try {
-                $bdd = new PDO('mysql:host=localhost;dbname=grp-254_s3_sae', 'grp-254', '0k6zqrrr');
-            }
-            catch (Exception $e)
-            {
-                die('Erreur : ' . $e->getMessage());
-            }
+                $club = new Club($_POST["nomClub"], $_POST["sigleClub"],$_POST["adresseClub"],
+                $_POST["complementAdresseClub"],$_POST["villeClub"],$_POST["codePostalClub"],
+                $_POST["numAgrement"],$_POST["fedAffiliation"],$_POST["satutAsso"],$_POST["numSiret"],
+                $_POST["mailClub"],$_POST["siteClub"],$_POST["reseauSocialClub"],$_POST["telFixeClub"],
+                $_POST["telPortableClub"]);
 
-            $manager = new FormInscriptionManager($bdd);
-            $manager->add($club, $president, $secretaria,$fabriqueMdp->getIdentifiant(),$fabriqueMdp->getMdp());
+                $president = new President($_POST["civilitePresident"],$_POST["nomPresident"],
+                $_POST["prenomPresident"], $_POST["emailPresident"],$_POST["telPresident"]);
+
+                $secretaria = new Secretaria($_POST["emailSecretaria"], $_POST["telSecretaria"]);
+
+                $fabriqueMdp = new fabriqueMdp($_POST["nomClub"]);
+
+                echo "<div class=\"recap\"><br>Votre Identifiant temporaire : " . $fabriqueMdp->getIdentifiant() . "</br> </br>";
+                echo "Votre mot de passe temporaire : " . $fabriqueMdp->getMdp() . "</br> </br>";
+
+                echo "</br>"."</br>"."<h2>Informations du club :</h2>"."</br><p class=\"recap\">".$club->__toString()."</p>";
                 
+                echo "</br>"."</br>"."<h2>Informations president :</h2>"."</br><p class=\"recap\">".$president->__toString()."</p>";
+                
+                echo "</br>"."</br>"."<h2>Informations secrétariat :</h2>"."</br><p class=\"recap\">".$secretaria->__toString()."</p>"."</div>";
+
+
+                //Connection à la base de données 
+            
+                try {
+                    $bdd = new PDO('mysql:host=localhost;dbname=grp-254_s3_sae', 'grp-254', '0k6zqrrr');
+                }
+                catch (Exception $e)
+                {
+                    die('Erreur : ' . $e->getMessage());
+                }
+
+                $manager = new FormInscriptionManager($bdd);
+                $manager->add($club, $president, $secretaria,$fabriqueMdp->getIdentifiant(),$fabriqueMdp->getMdp());
+                    
 
 
 
-        ?> 
-        
-        </br>
-        </br>
-        <div>
-            <a href="../../../Index.php" >Retourner au menu</a>                
+            ?> 
+            <a id="retourMenu" href="../../../Index.php" >Retourner au menu</a>  
         </div>
-        </br>
-        </br>
     </body>
 
 
