@@ -24,7 +24,7 @@ class SignalementController{
 					<div class='elements-input'>
 						<label class='label-text' for='nomClub'>Nom du club :</label>
 						<br>
-						<input type='text' name='nomClub' value=".$data['clubReceveur']." ?> <?=$"."requiredClub?>
+						<input type='text' name='nomClubReceveur' value=".$data['clubReceveur']."<?=$"."requiredClub?>
 						<div class='ligne-input'></div>
 					</div>
 					
@@ -116,7 +116,7 @@ class SignalementController{
 				<legend>
 					<label for='IncidentRec'>Y a-t-il eu un incident ? :</label>
 					<label name='oui'>Oui</label>
-					<input type='checkbox' name='IncidentRec' id='IncidentOui1' onchange='showIncident1()' <?=$"."requiredClub?> 
+					<input type='checkbox' name='incidentRec' id='IncidentOui1' onchange='showIncident1()' <?=$"."requiredClub?> 
 					
 				</legend>
 				<div id='incident1' class='d-none'>
@@ -166,12 +166,12 @@ class SignalementController{
 						<label for='mesuresImediatesPolice'> Appel des forces de l'ordre</label><br>
 						<input type='checkbox' name='mesuresImediatesMairie' value='yes'>
 						<label for='mesuresImediatesMairie'>Appel de la mairie</label><br>
-						<input type='checkbox' name='mesuresImediatesPompiers' value='yes'>
+						<input type='checkbox' name='mesuresImediatesPompier' value='yes'>
 						<label for='mesuresImediatesPompiers'>Appel des pompiers</label><br>
 						<input type='checkbox' name='mesuresImediatesSamu' value='yes'>
 						<label for='mesuresImediatesSamu'>Appel du SAMU</label><br>
-						<input type='checkbox' name='mesuresImediatesAutres' value='yes'>
-						<label for='mesuresImediatesAutres'>Autre</label><br>
+						<input type='checkbox' name='mesuresImediatesAutre' value='yes'>
+						<label for='mesuresImediatesAutre'>Autre</label><br>
 
 
 						<label for='titre'>La (les) mesure(s) ultérieure(s) :</label><br>
@@ -210,7 +210,7 @@ class SignalementController{
 				<legend>
 					<label for='IncidentRec'>Y a-t-il eu un incident ? :</label>
 					<label name='oui'>Oui</label>
-					<input type='checkbox' name='IncidentRec' id='IncidentOui2' onchange='showIncident2()' <?=$"."requiredClub?> 
+					<input type='checkbox' name='incidentRecVisiteur' id='IncidentOui2' onchange='showIncident2()' <?=$"."requiredClub?> 
 					
 				</legend>
 				<div id='incident2' class='d-none'>
@@ -260,11 +260,11 @@ class SignalementController{
 						<label for='mesuresImediatesPoliceVisiteur'> Appel des forces de l'ordre</label><br>
 						<input type='checkbox' name='mesuresImediatesMairieVisiteur' value='mairie'>
 						<label for='mesuresImediatesMairieVisiteur'>Appel de la mairie</label><br>
-						<input type='checkbox' name='mesuresImediatesPompiersVisiteur' value='pompiers'>
+						<input type='checkbox' name='mesuresImediatesPompierVisiteur' value='pompiers'>
 						<label for='mesuresImediatesPompiersVisiteur'>Appel des pompiers</label><br>
 						<input type='checkbox' name='mesuresImediatesSamuVisiteur' value='SAMU'>
 						<label for='mesuresImediatesSamuVisiteur'>Appel du SAMU</label><br>
-						<input type='checkbox' name='mesuresImediatesAutresVisiteur' value='autres'>
+						<input type='checkbox' name='mesuresImediatesAutreVisiteur' value='autres'>
 						<label for='mesuresImediatesAutresVisiteur'>Autre</label><br>
 
 
@@ -299,7 +299,7 @@ class SignalementController{
 			<p>
 				<label for='ContactReceveur'>Les personnes responsable du club receveur ont été contactée ? :</label>
 				<label name='oui'>Oui</label>
-				<input type='checkbox' name='ContactReceveur' id='ContactOui1' onchange='showContact1()' <?=$"."requiredDDCS?> 
+				<input type='checkbox' name='contactReceveur' id='ContactOui1' onchange='showContact1()' <?=$"."requiredDDCS?> 
 	
 			</p>
 			<div id='contact1' class='d-none'>
@@ -311,7 +311,7 @@ class SignalementController{
 			<p>
 				<label for='ContactVisiteur'>Les personnes responsable du club visiteur ont été contactée ? :</label>
 				<label name='oui'>Oui</label>
-				<input type='checkbox' name='ContactVisiteur' id='ContactOui2' onchange='showContact2()' <?=$"."requiredDDCS?> 
+				<input type='checkbox' name='contactVisiteur' id='ContactOui2' onchange='showContact2()' <?=$"."requiredDDCS?> 
 		
 			</p>
 			<div id='contact2' class='d-none'>
@@ -331,7 +331,7 @@ class SignalementController{
 			</h3>
 			<p>
 				<label for='nbrForceOrdre'>Combien de membres des force de l'ordre seront présents ?</label><br>
-				<input type='nomber' name='nbrForceOrdre'><br>
+				<input type='number' name='nbForceOrdre'><br>
 				<label for='Procedure'>Moyens mis en oeuvre en cas d'incident :</label><br>
 				<textarea id='Procedure' name='Procedure' rows='5' cols='50'></textarea>
 			</p>
@@ -339,11 +339,9 @@ class SignalementController{
 			<legend>
 				<label for='IncidentFO'>Y a-t-il eu un incident ? :</label>
 				<label name='oui'>Oui</label>
-				<input type='checkbox' name='IncidentFO' id='IncidentOui3'/>
+				<input type='checkbox' name='incidentFO' id='IncidentOui3'/>
 			</legend>
-			<div class='incident3' class='d-none'>
-				<label for='nbrForceOrdreIncident'>Combien de membres des force de l'ordre étaient présents ?</label><br>
-				<input type='nomber' name='nbrForceOrdreIncident'><br>
+			<div class='incident3' class='d-none' onchange=''>
 				<label for='descFO'>Description des évènements qui on eu lieu :</label><br>
 				<textarea id='descFO' name='descFO' rows='5' cols='50'></textarea>
 			</div>

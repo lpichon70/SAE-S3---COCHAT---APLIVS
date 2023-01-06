@@ -1,17 +1,14 @@
 <?php
     require_once("../models/Signalement.php");
     require_once("../models/SignalementManager.php");
-    $manager = new SignalementManager();
-    $signalement = new Signalement();
+    $manager = new SignalementManager();    
     if(!empty($_POST))
     {
-        var_dump($_POST);
-        //$signalement->setidSignalement($_GET["Id_Rencontre"]);
-        //$signalement->setNatureIncident($_POST[""]);
-        //$signalement->setAntecedent($_POST[""]);
-        $signalement->setIdSignalement($_GET["Id_Rencontre"]);
-        $signalement->setNatureIncident("test");
-        $signalement->setAntecedent("oui c'est modifié");
+        $donnees = array(
+            'idSignalement' =>  $_GET["Id_Rencontre"]
+        );
+
+        $signalement = new Signalement($donnees);
         $manager->insertSignalement($signalement);
         var_dump($_POST);
     }
