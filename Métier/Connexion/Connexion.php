@@ -94,6 +94,11 @@
           <span></span>
         </a>
 
+        <a href="../../<?=$contentLogoManager->getPathGestionUser()?>" class="sub-menu-link <?=$contentLogoManager->getLinkGestionUserVisible()?>">
+          <p>Gérer les utilisateurs</p>
+          <span></span>
+        </a>
+
         <a href="../../<?=$contentLogoManager->getPathInscription()?>" class="sub-menu-link <?=$contentLogoManager->getLinkInscriptionVisible()?>">
           <p>Inscription</p>
           <span></span>
