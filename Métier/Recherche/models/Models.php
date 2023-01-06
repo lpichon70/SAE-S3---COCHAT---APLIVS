@@ -23,8 +23,6 @@ abstract class Model{
         return $bdd;
     }
 
-    
-
 
 }
 

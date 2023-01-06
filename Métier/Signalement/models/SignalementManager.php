@@ -19,11 +19,8 @@ class SignalementManager extends Model
             {
                 $this->tab = $this->execRequest("SELECT * FROM incident where Id_Rencontre = '$i'", $this->tab);
                 
-                //Création d'un nouvel animal 
-                $signalement = new Signalement($this->tab['idAnimal'],$this->tab['nom'],$this->tab['proprietaire'],$this->tab['espece'],
-                $this->tab['cri'],$this->tab['age']);
+                $signalement = new Signalement($this->tab['Id_Rencontre'],$this->tab['Nature_Incident'],$this->tab['Antecedent']);
 
-                //Ajout de cette animal dans le tableau d'animals
                 $signalementTab[$positionTab] = $signalement;
                 $positionTab +=1;
                 
@@ -33,6 +30,30 @@ class SignalementManager extends Model
         }
         
         return $signalementTab;
+    }
+
+    public function insererTable(Signalement $signalement) : Signalement
+    {
+        $this->insertSignalement($signalement)
+
+        $this->tab = $this->execRequest("SELECT * FROM incident WHERE Id_Rencontre = $signalement->idSignalement()",$this->tab);
+
+        return $signalement;
+    }
+
+    private function insertSignalement(Signalement $signalement)
+    {
+        if($this->execRequest(""))
+        $req = $this->db->prepare(
+            ("INSERT INTO incident (Id_Rencontre,Nature_Incident,Antecedent)
+        VALUES (:Id_Rencontre,:Nature_Incident,:Antecedent)"));
+
+        $req->execute(array(
+            'Id_Rencontre' => $signalement->iDRencontre(),
+            'Nature_Incident' => $signalement->NatureIncident(),
+            'Antecedent' => $signalement->Antecedent();
+            
+        ));
     }
     
 }

@@ -157,7 +157,7 @@
     	echo $signalementController->genererTab($_GET);
   	?>
 		<br>
-		<button id="valide">Valider</button>
+		<button id="valide" >Valider</button>
 	</form>
 	<script src="../../index/JS/MenuUtilisateur.js"></script>
 
