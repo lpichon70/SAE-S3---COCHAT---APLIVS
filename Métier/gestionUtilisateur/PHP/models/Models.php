@@ -14,6 +14,13 @@ abstract class Model{
         return $param;
     }
 
+    protected function execRequestAll(string $sql, array $param=null) 
+    {
+        $req = $this->bdd->query("$sql");
+        $param = $req->fetchAll(PDO::FETCH_ASSOC);
+        return $param;
+    }
+
     private function getDB() : PDO
     {
         $bdd = new PDO('mysql:host=localhost;dbname=grp-254_s3_sae',

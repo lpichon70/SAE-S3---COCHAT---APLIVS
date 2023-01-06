@@ -2,6 +2,7 @@
 require('PHP/controllers/mainController.php');
 
 $controller = new MainController();
+$tabContent = $controller->getValeurTab();
 
 //Permet de gérer les GET et d'appliquer une fonction ou affichier un message en fonction
 if (@$_GET['action'] != null)
@@ -49,6 +50,16 @@ if (@$_GET['action'] != null)
                 header("Location:gestionUtilisateur.php?error=! Erreur lors de l'ajout de l'utilisateur !");
             }
         break;
+        case 'search':
+            try{
+                $_GET['error'] = "Voici les résultats liés à votre recherche :";
+                $tabContent = $controller->search($_POST['search']);
+            }
+            catch(Exception $e)
+            {
+                header("Location:gestionUtilisateur.php?error=! Echec de la recherche veuillez réessayer !");
+            }
+        break;
     }
 }
 ?>
@@ -73,6 +84,12 @@ if (@$_GET['action'] != null)
         <a href="PHP/addUser.php">Ajouter un utilisateur</a>
     </div>
 
+    <form class="search-form" action="gestionUtilisateur.php?action=search" method="POST">
+        <label for="search"></label>
+        <input type="text" id="search" name="search" placeholder="Nom, Prenom, Nom Club, Nom Comissariat, Statut...">
+        <button>Rechercher</button>
+    </form>
+
     <div class="container-tab">
         <table>
             
@@ -90,7 +107,7 @@ if (@$_GET['action'] != null)
             
             
             <tbody>
-                <?=$controller->getValeurTab()?>  
+                <?=$tabContent?>  
             </tbody>
         </table>
     </div>

@@ -4,7 +4,7 @@ class Utilisateur{
 
     private int $id;
     public function getId(){return $this->id ;}
-    public function setId(int $m){ $this->id = $m;}
+    public function setId(?int $m){ $this->id = $m;}
 
     private ?string $nom;
     public function getNom(){return $this->nom ;}
