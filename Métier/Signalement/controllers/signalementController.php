@@ -28,25 +28,8 @@ class SignalementController{
 						<div class='ligne-input'></div>
 					</div>
 					
-				</p>
-				<p>		
-					
-					<div class='elements-input'>
-						<label class='label-text' for='numMatch'>Numéro du match :</label>
-						<br>
-						<input type='text' name='numMatch' <?=$"."requiredClub?>
-						<div class='ligne-input'></div>
-					</div>
-					
-				</p>
-				<p>
-					<div class='elements-input'>
-						<label class='label-text' for='categorie'>Catégorie :</label>
-						<input type='text' name='categorie' <?=$"."requiredClub?> 
-						<div class='ligne-input'></div>
-					</div>
-					
-				</p>
+				</p>			
+				
 				<p>
 					<div class='elements-input'>
 						<label class='label-text' for='date'>Date :</label>
@@ -70,15 +53,7 @@ class SignalementController{
 						<div class='ligne-input'></div>
 					</div>
 					
-				</p>
-				<p>
-					<div class='elements-input'>
-						<label class='label-text' for='horaires'>Horaires :</label>
-						<input type='text' name='horaires' <?=$"."requiredClub?> 
-						<div class='ligne-input'></div>
-					</div>
-					
-				</p>
+				</p>				
 			
 				<p>
 				<label class='label-text' for='Délégués'>Envoi de délégués :</label>
@@ -115,29 +90,7 @@ class SignalementController{
 				</div>
 			</p>
 			<p>
-				<label class='label-text' for='Terrain'>Changement de terrain :</label>
-				<label name='oui'>Oui</label>
-				<input type='radio' name='Terrain' id='TerrainsOui' onchange='showTerrains()' <?=$"."requiredClub?>  
-				<label name='non'>Non</label>  
-				<input type='radio' name='Terrain' onchange='showTerrains()' <?=$"."requiredClub?>  <br>
-				<div id='terr' class='d-none'>
-					<div class='elements-input'>
-						<label class='label-text' for='adresseTerrain'>Adresse du nouveau terrain :</label>
-						<input type='text' name='adresseTerrain'
-						
-                        <br>
-                        <label class='label-text' for='dateRencontre'>Nouvelle date pour la rencontre :</label>
-						<input type='text' name='dateRencontre'
-						
-                        <br>
-                        <label class='label-text' for='heureRencontre'>Nouvelle heure de la rencontre :</label>
-						<input type='text' name='heureRencontre'
-						<div class='ligne-input'></div>
-					</div>	
-				</div>
-			</p>
-			<p>
-				<label class='label-text' for='Report'>Report du match :</label>
+				<label class='label-text' for='Report'>Report du match / Changement de terrain:</label>
 				<label name='oui'>Oui</label>
 				<input type='radio' name='Report' id='ReportOui' onchange='showReport()' <?=$"."requiredClub?>  
 				<label name='non'>Non</label>
@@ -150,8 +103,6 @@ class SignalementController{
                     <label class='label-text' for='dateRencontre'>Nouvelle date pour la rencontre :</label>
 					<input type='text' name='dateRencontre'
 					
-                    <label class='label-text' for='heureRencontre'>Nouvelle heure de la rencontre :</label>
-					<input type='text' name='heureRencontre'
 					<div class='ligne-input'></div>
 				</div>
 				<br>
@@ -198,11 +149,7 @@ class SignalementController{
 					<p>
 						<label for='titre'>S'il y a eu des victime(s), qui sont elles ? :</label><br>
 						<input type='checkbox' name='victimeConcerneJoueurs' value='yes'>
-						<label for='victimeConcerneJoueurs'>Joueur(s)</label><br>
-						<input type='checkbox' name='victimeConcerneEducateur' value='yes'>
-						<label for='victimeConcerneEducateur'>Éducateur(s)</label><br>
-						<input type='checkbox' name='victimeConcerneDirigeants' value='yes'>
-						<label for='victimeConcerneDirigeants'>Dirigeant(s)</label><br>
+						<label for='victimeConcerneJoueurs'>Joueur(s)</label><br>						
 						<input type='checkbox' name='victimeConcerneArbitres' value='yes'>
 						<label for='victimeConcerneArbitres'>Arbitre(s)</label><br>
 						<input type='checkbox' name='victimeConcerneDelegue' value='yes'>
@@ -218,9 +165,7 @@ class SignalementController{
 						<input type='checkbox' name='auteurPresumeMineurMembreClub' value='yes'>
 						<label for='auteurPresumeMineurMembreClub'>Un membre d'un club</label><br>
 						<input type='checkbox' name='auteurPresumeMineurJoueur' value='yes'>
-						<label for='auteurPresumeMineurJoueur'>Un joueur</label><br>
-						<input type='checkbox' name='auteurPresumeMineurEducateur' value='yes'>
-						<label for='auteurPresumeMineurEducateur'>Un éducateur</label><br>
+						<label for='auteurPresumeMineurJoueur'>Un joueur</label><br>						
 						<input type='checkbox' name='auteurPresumeMineurDirigeant' value='yes'>
 						<label for='auteurPresumeMineurDirigeant'>Un dirigeant</label><br>
 						<input type='checkbox' name='auteurPresumeMineurAutre' value='yes'>
@@ -230,11 +175,7 @@ class SignalementController{
 						<h5><label for='titre'>Qu'elles sont les mesure(s) qui ont été prise(s) ? :</label></h5><br>
 						<label for='titre'>La (les) mesure(s) immédiate(s) :</label><br>
 						<input type='checkbox' name='mesuresImediatesPolice' value='yes'>
-						<label for='mesuresImediatesPolice'> Appel de la police</label><br>
-						<input type='checkbox' name='mesuresImediatesGendarmerie' value='yes'>
-						<label for='mesuresImediatesGendarmerie'>Appel de la gendarmerie</label><br>
-						<input type='checkbox' name='mesuresImediatesPoliceMunicipale' value='yes'>
-						<label for='mesuresImediatesPoliceMunicipale'>Appel de la police municipale</label><br>
+						<label for='mesuresImediatesPolice'> Appel des forces de l'ordre</label><br>
 						<input type='checkbox' name='mesuresImediatesMairie' value='yes'>
 						<label for='mesuresImediatesMairie'>Appel de la mairie</label><br>
 						<input type='checkbox' name='mesuresImediatesPompiers' value='yes'>
@@ -304,10 +245,6 @@ class SignalementController{
 						<label for='titre'>S'il y a eu des victime(s), qui sont elles ? :</label><br>
 						<input type='checkbox' name='victimeConcerneJoueursVisiteur' value='joueurs'>
 						<label for='victimeConcerneJoueursVisiteur'>Joueur(s)</label><br>
-						<input type='checkbox' name='victimeConcerneEducateurVisiteur' value='éducateurs'>
-						<label for='victimeConcerneEducateurVisiteur'>Éducateur(s)</label><br>
-						<input type='checkbox' name='victimeConcerneDirigeantsVisiteur' value='dirigeants'>
-						<label for='victimeConcerneDirigeantsVisiteur'>Dirigeant(s)</label><br>
 						<input type='checkbox' name='victimeConcerneArbitresVisiteur' value='arbitres'>
 						<label for='victimeConcerneArbitresVisiteur'>Arbitre(s)</label><br>
 						<input type='checkbox' name='victimeConcerneDelegueVisiteur' value='délégué'>
@@ -324,8 +261,6 @@ class SignalementController{
 						<label for='auteurPresumeMajeurMembreClubVisiteur'>Un membre d'un club</label><br>
 						<input type='checkbox' name='auteurPresumeMajeurJoueurVisiteur' value='joueurs'>
 						<label for='auteurPresumeMajeurJoueurVisiteur'>Un joueur</label><br>
-						<input type='checkbox' name='auteurPresumeMajeurEducateurVisiteur' value='éducateurs'>
-						<label for='auteurPresumeMajeurEducateurVisiteur'>Un éducateur</label><br>
 						<input type='checkbox' name='auteurPresumeMajeurDirigeantVisiteur' value='dirigeants'>
 						<label for='auteurPresumeMajeurDirigeantVisiteur'>Un dirigeant</label><br>
 						<input type='checkbox' name='auteurPresumeMajeurAutreVisiteur' value='autres'>
@@ -335,11 +270,7 @@ class SignalementController{
 						<h5><label for='titre'>Qu'elles sont les mesure(s) qui ont été prise(s) ? :</label></h5>
 						<label for='titre'>La (les) mesure(s) immédiate(s) :</label><br>
 						<input type='checkbox' name='mesuresImediatesPoliceVisiteur' value='police'>
-						<label for='mesuresImediatesPoliceVisiteur'> Appel de la police</label><br>
-						<input type='checkbox' name='mesuresImediatesGendarmerieVisiteur' value='gendarmerie'>
-						<label for='mesuresImediatesGendarmerieVisiteur'>Appel de la gendarmerie</label><br>
-						<input type='checkbox' name='mesuresImediatesPoliceMunicipaleVisiteur' value='municipale'>
-						<label for='mesuresImediatesPoliceMunicipaleVisiteur'>Appel de la police municipale</label><br>
+						<label for='mesuresImediatesPoliceVisiteur'> Appel des forces de l'ordre</label><br>
 						<input type='checkbox' name='mesuresImediatesMairieVisiteur' value='mairie'>
 						<label for='mesuresImediatesMairieVisiteur'>Appel de la mairie</label><br>
 						<input type='checkbox' name='mesuresImediatesPompiersVisiteur' value='pompiers'>

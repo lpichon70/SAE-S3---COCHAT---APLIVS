@@ -5,6 +5,7 @@
     $signalement = new Signalement();
     if(!empty($_POST))
     {
+        var_dump($_POST);
         //$signalement->setidSignalement($_GET["Id_Rencontre"]);
         //$signalement->setNatureIncident($_POST[""]);
         //$signalement->setAntecedent($_POST[""]);
