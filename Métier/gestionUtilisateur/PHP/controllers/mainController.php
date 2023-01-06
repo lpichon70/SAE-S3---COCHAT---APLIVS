@@ -70,6 +70,13 @@ class MainController{
         $user = new Utilisateur($id,$post['nom'],$post['prenom'],$post['identifiant'],$post['mdp'],$post['statut']);
         $this->manager->editUser($user);
     }
+
+    public function search($request)
+    {
+        $utilisateurManSearch = new UtilisateurManager();
+        $utilisateurManSearch->search($request);
+        return $this->generertab($utilisateurManSearch->getTabUtilisateurSearch());
+    }
 }
 
 
