@@ -40,7 +40,6 @@ require_once('Models.php');
                     $utilisateurTab[$positionTab] = $utilisateur;
                     $positionTab += 1;
                 } 
-                
             } 
             return $utilisateurTab;
         }
@@ -54,6 +53,36 @@ require_once('Models.php');
         public function deleteUser($id)
         {
             $this->tab=$this->execRequest("DELETE FROM connexion where Id = '$id'", $this->tab);
+        }
+
+        public function addUser($user)
+        {
+            $this->insertUser($user);
+        }
+
+        public function getUserById($id)
+        {
+            $this->tab=$this->execRequest("SELECT * FROM connexion where Id = '$id'", $this->tab);
+            
+            $utilisateur = new Utilisateur($this->tab['Id'],$this->tab['nom'],$this->tab['prenom'],$this->tab['Identifiant'],
+            $this->tab['Mdp'],$this->tab['Statut']);
+            
+            return $utilisateur;
+        }
+
+        public function getClubById($id)
+        {
+            $this->tab=$this->execRequest("SELECT * FROM formulaire_inscription where id_club = '$id'", $this->tab);
+
+            $utilisateur = new Utilisateur($this->tab['id_club'],$this->tab['nom_club'],"",$this->tab['identifiant'],
+            $this->tab['mdp'],'CLUB');
+
+            return $utilisateur;
+        }
+
+        public function editUser($user)
+        {
+            $this->tab=$this->execRequest("UPDATE connexion SET Identifiant = '".$user->getIdentifiant()."' , Mdp = '".$user->getMdp()."' , Statut = '".$user->getStatut()."' , nom = '".$user->getNom()."' , prenom = '".$user->getPrenom()."'  where Id = '".$user->getId()."'", $this->tab);
         }
     }
 ?>

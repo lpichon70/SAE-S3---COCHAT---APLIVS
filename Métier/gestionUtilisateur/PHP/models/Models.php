@@ -23,6 +23,21 @@ abstract class Model{
         return $bdd;
     }
 
+    protected function insertUser(Utilisateur $user)
+        {
+            $req = $this->bdd->prepare(
+                ("INSERT INTO connexion (nom,prenom,Identifiant,Mdp,Statut)
+            VALUES (:nom,:prenom,:Identifiant,:Mdp,:Statut)"));
+
+            $req->execute(array(
+                'nom' => $user->getNom(),
+                'prenom' => $user->getPrenom(),
+                'Identifiant' => $user-> getIdentifiant(),
+                'Mdp' => $user-> getMdp(),
+                'Statut' => $user -> getStatut(),
+            ));
+        }
+
     
 
 
