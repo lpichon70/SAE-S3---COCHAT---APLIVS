@@ -86,3 +86,21 @@ function showContact2(){
     } 
 }
 
+function Future(date1){
+    const jour = new Date();
+    if (date1 > jour)
+    {
+
+        document.getElementById('incidentrecev').className = "d-none";
+        document.getElementById('incidentvisit').className = "d-none";
+        document.getElementById('incidentddcs').className = "d-none";
+        document.getElementById('incidentpolice').className = "d-none";
+    }
+    else{
+        document.getElementById('incidentrecev').className = "";
+        document.getElementById('incidentvisit').className = "";
+        document.getElementById('incidentddcs').className = "";
+        document.getElementById('incidentpolice').className = "";
+    }
+}
+

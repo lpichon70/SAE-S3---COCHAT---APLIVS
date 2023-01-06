@@ -40,6 +40,7 @@
         private ?string $mesuresUlterieursHospitalisation;
         private ?string $mesuresUlterieursMainCourante;
         private ?string $mesuresUlterieursDepoPlainte;
+        private ?string $evenementsrecev
         private ?string $nomClubVisiteur;
         private ?string $incidentRecVisiteur;
         private ?string $agressionVerbaleJoueurVisiteur;
@@ -64,10 +65,13 @@
         private ?string $mesuresUlterieursHospitalisationVisiteur;
         private ?string $mesuresUlterieursMainCouranteVisiteur;
         private ?string $mesuresUlterieursDepoPlainteVisiteur;
+        private ?string $vevenement;
         private ?string $contactReceveur;
         private ?string $contactVisiteur;
         private ?string $nbForceOrdre;
+        private ?string $moyPrevPolice
         private ?string $incidentFO;
+        private ?string $evenementPolice
 
         public function hydrate(array $donnees)
         {
@@ -390,12 +394,12 @@
             $this->mesuresUlterieursDepoPlainte $var;
         }
 
-        public function GetMesuresUlterieursDepoPlainte() : string{
-            return $this->mesuresUlterieursDepoPlainte;
+        public function GetMesuresEvenementsRecev() : string{
+            return $this->evenementsrecev;
         }
     
-        public function SetMesuresUlterieursDepoPlainte($var){
-            $this->mesuresUlterieursDepoPlainte $var;
+        public function SetEvenementsRecev($var){
+            $this->evenementsrecev $var;
         }
 
 
@@ -407,42 +411,6 @@
     
         public function SetNomClubReceveur($var){
             $this->nomClubReceveur = $var;
-        }
-    
-        public function SetDate($var){
-            $this->date $var;
-        }
-
-        public function GetAdresse() : string{
-            return $this->adresse;
-        }
-    
-        public function SetAdresse($var){
-            $this->adresse $var;
-        }
-
-        public function GetVille() : string{
-            return $this->ville;
-        }
-    
-        public function SetVille($var){
-            $this->ville $var;
-        }
-
-        public function GetDelegues() : string{
-            return $this->delegues;
-        }
-    
-        public function SetDelegues($var){
-            $this->delegues $var;
-        }
-
-        public function GetNomDelegueVisiteur() : string{
-            return $this->nomDelegueVisiteur;
-        }
-    
-        public function SetNomDelegueVisiteur($var){
-            $this->nomDelegueVisiteur $var;
         }
 
         public function GetIncidentRecVisiteur() : string{
@@ -629,13 +597,14 @@
             $this->mesuresUlterieursDepoPlainte $var;
         }
 
-        public function GetMesuresUlterieursDepoPlainteVisiteur() : string{
-            return $this->mesuresUlterieursDepoPlainte;
+        public function GetVevenementVisit() : string{
+            return $this->vevenement;
         }
     
-        public function SetMesuresUlterieursDepoPlainteVisiteur($var){
-            $this->mesuresUlterieursDepoPlainte $var;
+        public function SetVevenementVisit($var){
+            $this->vevenement $var;
         }
+
 
         public function GetContactReceveur() : string{
             return $this->contactReceveur;
@@ -661,12 +630,28 @@
             $this->nbForceOrdre $var;
         }
 
+        public function GetMoyPrevPolice() : string{
+            return $this->moyPrevPolice;
+        }
+    
+        public function SetMoyPrevPolice($var){
+            $this->moyPrevPolice $var;
+        }
+
         public function GetIncidentFO() : string{
             return $this->incidentFO;
         }
     
         public function SetIncidentFO($var){
             $this->incidentFO $var;
+        }
+
+        public function GetEvenementPolice() : string{
+            return $this->evenementPolice;
+        }
+    
+        public function SetEvenementPolice($var){
+            $this->evenementPolice $var;
         }
     }
 ?>
