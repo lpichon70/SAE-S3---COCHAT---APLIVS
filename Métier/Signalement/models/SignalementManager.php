@@ -1,6 +1,6 @@
 <?php
 
-require_once('./../Recherche/models/Models.php');
+require_once('./../../Recherche/models/Models.php');
 require_once('Signalement.php');
 
 class SignalementManager extends Model

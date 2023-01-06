@@ -224,6 +224,44 @@ legend {
   margin-left: 20px;
 }
 
+/* Style pour la age récapitulative des infomations rentrer lors de l'inscription */
+
+.recap{
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
+  border-color: black;
+  background-color: white;
+  border-radius: 10px;
+  width: 60%;
+  text-align: center;
+  height: auto;
+}
+
+#titreRecap{
+  margin-top: 0%;
+}
+
+#retourMenu{
+  background-color: #4CAF50;
+  cursor: pointer;
+  font-size: 16px;
+  background-image: linear-gradient(to right, #314755 0%, #26a0da 51%, #314755 100%);
+  padding: 15px 45px;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: block;
+  width: 25%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /*Réalisation d'un pop up pour afficher les conditions générales d'utilisations -------------------------------------------------------*/
 
 
@@ -316,3 +354,4 @@ legend {
   max-width : 15%;
   height : auto;
 }
+
