@@ -1,8 +1,11 @@
 <?php
+session_start();
 require('PHP/controllers/mainController.php');
+require_once("../../index/PHP/pathLogoUtilisateur.php");
 
 $controller = new MainController();
 $tabContent = $controller->getValeurTab();
+
 
 //Permet de gérer les GET et d'appliquer une fonction ou affichier un message en fonction
 if (@$_GET['action'] != null)
@@ -62,6 +65,22 @@ if (@$_GET['action'] != null)
         break;
     }
 }
+
+
+//Permet d'afficher les bouttons lié au statut et le logo du profil
+//Donne accès à la page si l'on est connecter ou pas
+if (@$_SESSION['statut'] != 'ADMIN')
+{
+    header("Location:../../index.php");
+}
+else if (@$_SESSION['statut'] == 'ADMIN')
+{
+    $pathLogoConexion = "Images/profilConnect.png";
+}    
+//Permet de gérer le contenu du menu dépliable de l'utilisateur
+$contentLogoManager = new pathLogoUtilisateur($_SESSION['statut']);
+
+
 ?>
 
 
@@ -72,10 +91,59 @@ if (@$_GET['action'] != null)
         <meta charset="UTF-8"/>
         <link rel="stylesheet" href="public/css/main.css"/>
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <title>Gestion Utilisateur</title>
+        <link rel="stylesheet" href="../../index/CSS/logoProfil.css">
     </head>
 
 <body>
+
+    <div class="menu-profil">    
+    <img src="../../<?=$pathLogoConexion?>" class="logoProfil" onclick="toggleMenu()"/>
+
+    <div class="sub-menu-wrap" id="subMenu">
+      <div class="sub-menu">
+        <div class="user-info">
+          <h3>Menu</h3>
+        </div>
+        <hr>
+
+        <a href="../../<?=$contentLogoManager->getPathMyProfil()?>" class="sub-menu-link <?=$contentLogoManager->getLinkMyProfilVisible()?>">
+          <p>Mon profil</p>
+          <span></span>
+        </a>
+
+        <a href="../../<?=$contentLogoManager->getPathSearch()?>" class="sub-menu-link <?=$contentLogoManager->getLinkSearchVisible()?>">
+          <p>Recherche</p>
+          <span></span>
+        </a>
+
+        <a href="../../<?=$contentLogoManager->getPathGestionUser()?>" class="sub-menu-link <?=$contentLogoManager->getLinkGestionUserVisible()?>">
+          <p>Gérer les utilisateurs</p>
+          <span></span>
+        </a>
+
+        <a href="../../<?=$contentLogoManager->getPathInscription()?>" class="sub-menu-link <?=$contentLogoManager->getLinkInscriptionVisible()?>">
+          <p>Inscription</p>
+          <span></span>
+        </a>
+
+        <a href="../../<?=$contentLogoManager->getPathConexion()?>" class="sub-menu-link <?=$contentLogoManager->getLinkConexionVisible()?>">
+          <p>Connexion</p>
+          <span></span>
+        </a>
+
+        <a href="../../<?=$contentLogoManager->getPathDeconexion()?>" class="sub-menu-link <?=$contentLogoManager->getLinkDeconexionVisible()?>">
+          <p>Se déconnecter</p>
+          <span></span>
+        </a>
+
+      </div>
+    </div>
+    </div>
+
+
+
     <h1>Bienvenue dans la partie de gestion des utilisateurs</h1>
 
     <h2><?=@$_GET['error']?></h2>
@@ -105,12 +173,11 @@ if (@$_GET['action'] != null)
                 </tr>
             </thead>
             
-            
             <tbody>
                 <?=$tabContent?>  
             </tbody>
         </table>
     </div>
     
-
+    <script src="../../index/JS/MenuUtilisateur.js"></script>
 </body>

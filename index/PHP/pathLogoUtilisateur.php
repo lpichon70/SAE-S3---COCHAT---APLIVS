@@ -34,6 +34,9 @@ class pathLogoUtilisateur{
     public function getPathSignaler(){return $this->pathSignaler;}
     public function setPathSignaler(string $m){$this->pathSignaler = $m;}
 
+    private string $pathGestionUser;
+    public function getPathGestionUser(){return $this->pathGestionUser;}
+    public function setPathGestionUser(string $m){$this->pathGestionUser = $m;}
     
     //Concerne la visibilité des liens
     private string $linkMyProfilVisible;
@@ -60,6 +63,9 @@ class pathLogoUtilisateur{
     public function getLinkSignalerVisible(){return $this->linkSignalerVisible;}
     public function setLinkSignalerVisible(string $m){$this->linkSignalerVisible = $m;}
     
+    private string $linkGestionUserVisible;
+    public function getLinkGestionUserVisible(){return $this->linkGestionUserVisible;}
+    public function setLinkGestionUserVisible(string $m){$this->linkGestionUserVisible = $m;}
 
     /**
      * Method __construct
@@ -95,6 +101,7 @@ class pathLogoUtilisateur{
                 $this->setPathDeconexion("Métier/Deconnexion/deconnexion.php");
                 $this->setPathConexion("");
                 $this->setPathSignaler("Métier/Signalement/formulaire_renseignement.php");
+                $this->setPathGestionUser("");
 
                 $this->setLinkMyProfilVisible("d-none");
                 $this->setLinkInscriptionVisible("d-none");
@@ -102,6 +109,7 @@ class pathLogoUtilisateur{
                 $this->setLinkDeconexionVisible("");
                 $this->setLinkConexionVisible("d-none");
                 $this->setLinkSignalerVisible("");
+                $this->setLinkGestionUserVisible("d-none");
             break;
             case 'DDCS' :
                 $this->setPathMyProfil("");
@@ -110,6 +118,7 @@ class pathLogoUtilisateur{
                 $this->setPathDeconexion("Métier/Deconnexion/deconnexion.php");
                 $this->setPathConexion("");
                 $this->setPathSignaler("Métier/Signalement/formulaire_renseignement.php");
+                $this->setPathGestionUser("");
 
                 $this->setLinkMyProfilVisible("d-none");
                 $this->setLinkInscriptionVisible("d-none");
@@ -117,6 +126,7 @@ class pathLogoUtilisateur{
                 $this->setLinkDeconexionVisible("");
                 $this->setLinkConexionVisible("d-none");
                 $this->setLinkSignalerVisible("");
+                $this->setLinkGestionUserVisible("d-none");
             break;
             case 'ADMIN' :
                 $this->setPathMyProfil("");
@@ -125,6 +135,7 @@ class pathLogoUtilisateur{
                 $this->setPathDeconexion("Métier/Deconnexion/deconnexion.php");
                 $this->setPathConexion("");
                 $this->setPathSignaler("Métier/Signalement/formulaire_renseignement.php");
+                $this->setPathGestionUser("Métier/gestionUtilisateur/gestionUtilisateur.php");
 
                 $this->setLinkMyProfilVisible("d-none");
                 $this->setLinkInscriptionVisible("d-none");
@@ -132,6 +143,7 @@ class pathLogoUtilisateur{
                 $this->setLinkDeconexionVisible("");
                 $this->setLinkConexionVisible("d-none");
                 $this->setLinkSignalerVisible("");
+                $this->setLinkGestionUserVisible("");
             break;
             case 'CLUB' :
                 $this->setPathMyProfil("Métier/Profil/PageProfil.php");
@@ -140,6 +152,7 @@ class pathLogoUtilisateur{
                 $this->setPathInscription("");
                 $this->setPathConexion("");
                 $this->setPathSignaler("Métier/Signalement/formulaire_renseignement.php");
+                $this->setPathGestionUser("");
 
                 $this->setLinkMyProfilVisible("");
                 $this->setLinkInscriptionVisible("d-none");
@@ -147,6 +160,7 @@ class pathLogoUtilisateur{
                 $this->setLinkDeconexionVisible("");
                 $this->setLinkConexionVisible("d-none");
                 $this->setLinkSignalerVisible("");
+                $this->setLinkGestionUserVisible("d-none");
             break;
             case '' :
                 $this->setPathInscription("Métier/Inscription/FormulaireInscription.html");
@@ -155,6 +169,8 @@ class pathLogoUtilisateur{
                 $this->setPathSearch("");
                 $this->setPathDeconexion("");
                 $this->setPathSignaler("");
+                $this->setPathGestionUser("");
+                $this->setLinkGestionUserVisible("d-none");
 
                 $this->setLinkMyProfilVisible("d-none");
                 $this->setLinkInscriptionVisible("");
