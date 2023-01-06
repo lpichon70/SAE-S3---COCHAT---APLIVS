@@ -14,7 +14,7 @@ abstract class Model{
 
     }
 
-    private function getDB() : PDO
+    public function getDB() : PDO
     {
         $bdd = new PDO('mysql:host=localhost;dbname=grp-254_s3_sae',
                         'grp-254',

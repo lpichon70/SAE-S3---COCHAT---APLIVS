@@ -15,7 +15,7 @@ class SignalementController{
     public function genererTab(array $data) : string
     {
         $tableau='';
-        $tableau.="<form id='formulaire' action='PHP/Validation.php?Id_Rencontre=$data['idRencontre']' method='POST'>
+        $tableau.="<form id='formulaire' action='PHP/Validation.php?Id_Rencontre=".$data['idRencontre']."' method='POST'>
 		<fieldset id='club-receveur' class='<?=$"."voirClub?>'>
 			<h3>
 				Partie club receveur
@@ -436,13 +436,6 @@ class SignalementController{
 		</fieldset>
 		</fieldset>";
         return $tableau;
-    }
-
-    public function getSignalement($signalement)
-    {
-
-        $listSignalement = $this->manager->getSignalement($club);
-        return $this->generertab($listSignalement);
     }
 
 }

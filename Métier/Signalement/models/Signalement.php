@@ -6,17 +6,17 @@
         private ?string $natureIncident;
         private ?string $antecedent;
 
-        public function idSignalement() : int{
+        public function getIdSignalement() : int{
             return $this->idSignalement;
         }
     
-        public function setidSignalement($idSignalement){
+        public function setIdSignalement($idSignalement){
             if ($idSignalement > 0){
                 $this->idSignalement = $idSignalement;
             }
         }
 
-        public function NatureIncident() : string{
+        public function getNatureIncident() : string{
             return $this->NatureIncident;
         }
     
@@ -26,7 +26,7 @@
             }
         }
 
-        public function Antecedent() : string{
+        public function getAntecedent() : string{
             return $this->Antecedent;
         }
     
