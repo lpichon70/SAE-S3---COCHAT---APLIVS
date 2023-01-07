@@ -98,6 +98,9 @@ $contentLogoManager = new pathLogoUtilisateur($_SESSION['statut']);
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <title>Gestion Utilisateur</title>
         <link rel="stylesheet" href="../../index/CSS/logoProfil.css">
+        <link rel="stylesheet" href="./CSS/gestionUtilisateur.css">
+        <link rel="stylesheet" href="./CSS/bouttons.css">
+        <link rel="stylesheet" href="./CSS/tab.css">
     </head>
 
 <body>
@@ -152,19 +155,21 @@ $contentLogoManager = new pathLogoUtilisateur($_SESSION['statut']);
 
     <h2><?=@$_GET['error']?></h2>
 
-    <div class="btn">
+    <div class="btn getAll">
         <a href="gestionUtilisateur.php">Voir tous les utilisateurs</a>
     </div>
 
-    <div class="btn">
+    <div class="btn addUser">
         <a href="PHP/addUser.php">Ajouter un utilisateur</a>
     </div>
 
-    <form class="search-form" action="gestionUtilisateur.php?action=search" method="POST">
-        <label for="search"></label>
-        <input type="text" id="search" name="search" placeholder="Nom, Prenom, Nom Club, Nom Comissariat, Statut...">
-        <button>Rechercher</button>
-    </form>
+    <div class="search-content">
+        <form class="search-form" action="gestionUtilisateur.php?action=search" method="POST">
+            <label for="search"></label>
+            <input type="text" id="search" name="search" placeholder="Nom, Prenom, Nom Club, Nom Comissariat, Statut...">
+            <button>Rechercher</button>
+        </form>
+    </div>
 
     <div class="container-tab">
         <table>
@@ -172,12 +177,12 @@ $contentLogoManager = new pathLogoUtilisateur($_SESSION['statut']);
             <thead>
                 <tr>
                     <th>Id</th>
-                    <th>Nom</th>
-                    <th>Prenom</th>
-                    <th>Identifiant</th>
-                    <th>Mot de passe</th>
-                    <th>Statut</th>
-                    <th>Option</th>
+                    <th class="nom">Nom</th>
+                    <th class="prenom">Prenom</th>
+                    <th class="identifiant">Identifiant</th>
+                    <th class="mdp">Mot de passe</th>
+                    <th class="statut">Statut</th>
+                    <th class="option">Option</th>
                 </tr>
             </thead>
             

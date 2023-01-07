@@ -1,0 +1,57 @@
+form{
+    width: 50vh;
+    margin-left: auto;
+    margin-right: auto;
+
+    text-align: center;
+
+    background-color: rgb(98, 137, 244);
+    border-radius: 10px;
+
+    margin-top: 10vh;
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+
+
+
+input{
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+
+button{
+    width: 100px;
+    height: 40px;
+    margin-top: 30px;
+
+    background-color: rgb(48, 91, 172);
+    border-radius: 10px;
+
+}
+
+button:hover{
+    color: whitesmoke;
+}
+
+.btn{
+    border: solid 2px black;
+    background-color: rgb(48, 91, 172);
+
+    margin-left: 90vh;
+}
+
+.btn a {
+    color: black;
+}
+
+.btn:hover a:hover{
+    color: whitesmoke;
+    text-decoration: none;
+    cursor:pointer;
+}
+
+h1{
+    margin-bottom: 50px;
+}

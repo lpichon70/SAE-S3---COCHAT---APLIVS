@@ -1,0 +1,52 @@
+.container-tab{
+    padding-bottom: 200px;
+}
+
+table{
+    margin-left: auto;
+    margin-right: auto;
+
+    border : solid 1px black;
+
+}
+
+tr{
+    border : solid 1px black;
+    height: 30px;
+}
+
+th{
+    padding: 5px;
+    text-align: center;
+}
+
+td{
+    text-align: center;
+}
+
+.nom{
+   width: 600px;
+}
+
+.identifiant{
+    width: 400px;
+}
+
+.statut{
+    width: 200px;
+}
+
+.option{
+    padding-right: 20px;
+}
+
+#edit{
+    width: 40px;
+    height: 40px;
+}
+
+#dish{
+    width: 40px;
+    height: 40px;
+}
+

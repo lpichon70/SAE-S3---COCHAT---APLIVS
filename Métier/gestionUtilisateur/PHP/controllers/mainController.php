@@ -27,9 +27,9 @@ class MainController{
         foreach ($tabUtilisateur as $utilisateur)
         {
             $res.='<tr>';
-            $res.='<td>' . $utilisateur->getId() . '</td><td>' . $utilisateur->getNom() . '</td><td>'
-            . $utilisateur->getPrenom() . '</td><td>' . $utilisateur->getIdentifiant() . '</td><td>' . $utilisateur->getMdp() .
-            '</td><td>' . $utilisateur->getStatut() . '</td><td> <a href="gestionUtilisateur.php?action=editUser&idUser='.$utilisateur->getId().'&statutUser='.$utilisateur->getStatut().'">Modifier</a> <a href="gestionUtilisateur.php?action=del-user&idUser='.$utilisateur->getId().'&statutUser='.$utilisateur->getStatut().'">Suprimer</a>   </td>';
+            $res.='<td>' . $utilisateur->getId() . '</td><td class="nom">' . $utilisateur->getNom() . '</td><td class="prenom">'
+            . $utilisateur->getPrenom() . '</td><td class="identifiant">' . $utilisateur->getIdentifiant() . '</td><td class="mdp">' . $utilisateur->getMdp() .
+            '</td><td class="statut">' . $utilisateur->getStatut() . '</td><td class="option"> <a href="gestionUtilisateur.php?action=editUser&idUser='.$utilisateur->getId().'&statutUser='.$utilisateur->getStatut().'"><img id="edit" src="../../Images/edit.png"/></a> <a href="gestionUtilisateur.php?action=del-user&idUser='.$utilisateur->getId().'&statutUser='.$utilisateur->getStatut().'"><img id="edit" src="../../Images/dish.png"/></a>   </td>';
             $res.='</tr>';
         }
 
