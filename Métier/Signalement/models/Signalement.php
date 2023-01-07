@@ -40,7 +40,7 @@
         private ?string $mesuresUlterieursHospitalisation;
         private ?string $mesuresUlterieursMainCourante;
         private ?string $mesuresUlterieursDepoPlainte;
-        private ?string $evenementsrecev
+        private ?string $evenementsrecev;
         private ?string $nomClubVisiteur;
         private ?string $incidentRecVisiteur;
         private ?string $agressionVerbaleJoueurVisiteur;
@@ -69,9 +69,9 @@
         private ?string $contactReceveur;
         private ?string $contactVisiteur;
         private ?string $nbForceOrdre;
-        private ?string $moyPrevPolice
+        private ?string $moyPrevPolice;
         private ?string $incidentFO;
-        private ?string $evenementPolice
+        private ?string $evenementPolice;
 
         public function hydrate(array $donnees)
         {
@@ -111,7 +111,7 @@
         }
     
         public function SetDate($var){
-            $this->date $var;
+            $this->date = $var;
         }
 
         public function GetAdresse() : string{
@@ -119,7 +119,7 @@
         }
     
         public function SetAdresse($var){
-            $this->adresse $var;
+            $this->adresse = $var;
         }
 
         public function GetVille() : string{
@@ -127,7 +127,7 @@
         }
     
         public function SetVille($var){
-            $this->ville $var;
+            $this->ville = $var;
         }
 
         public function GetDelegues() : string{
@@ -135,7 +135,7 @@
         }
     
         public function SetDelegues($var){
-            $this->delegues $var;
+            $this->delegues = $var;
         }
 
         public function GetNomDelegue() : string{
@@ -143,7 +143,7 @@
         }
     
         public function SetNomDelegue($var){
-            $this->nomDelegue $var;
+            $this->nomDelegue = $var;
         }
 
         public function GetTelDelegue() : string{
@@ -151,7 +151,7 @@
         }
     
         public function SetTelDelegue($var){
-            $this->telDelegue $var;
+            $this->telDelegue = $var;
         }
 
         public function GetArbitres() : string{
@@ -159,7 +159,7 @@
         }
     
         public function SetArbitres($var){
-            $this->arbitres $var;
+            $this->arbitres = $var;
         }
 
         public function GetNbArbitre() : string{
@@ -167,7 +167,7 @@
         }
     
         public function SetNbArbitre($var){
-            $this->nbArbitre $var;
+            $this->nbArbitre=  $var;
         }
 
         public function GetTerrain() : string{
@@ -175,7 +175,7 @@
         }
     
         public function SetTerrain($var){
-            $this->terrain $var;
+            $this->terrain = $var;
         }
 
         public function GetAdresseTerrain() : string{
@@ -183,7 +183,7 @@
         }
     
         public function SetAdresseTerrain($var){
-            $this->adresseTerrain $var;
+            $this->adresseTerrain=  $var;
         }
 
         public function GetDateRencontre() : string{
@@ -191,7 +191,7 @@
         }
     
         public function SetDateRencontre($var){
-            $this->dateRencontre $var;
+            $this->dateRencontre = $var;
         }
 
         public function GetContactDistrict() : string{
@@ -199,7 +199,7 @@
         }
     
         public function SetContactDistrict($var){
-            $this->contactDistrict $var;
+            $this->contactDistrict = $var;
         }
 
         public function GetContactPolice() : string{
@@ -207,7 +207,7 @@
         }
     
         public function SetContactPolice($var){
-            $this->contactPolice $var;
+            $this->contactPolice = $var;
         }
 
         public function GetIncidentRec() : string{
@@ -215,7 +215,7 @@
         }
     
         public function SetIncidentRec($var){
-            $this->incidentRec $var;
+            $this->incidentRec = $var;
         }
 
         public function GetAgressionVerbaleJoueurs() : string{
@@ -223,7 +223,7 @@
         }
     
         public function SetAgressionVerbaleJoueurs($var){
-            $this->agressionVerbaleJoueurs $var;
+            $this->agressionVerbaleJoueurs = $var;
         }
 
         public function GetAgressionVerbaleArbitres() : string{
@@ -231,7 +231,7 @@
         }
     
         public function SetAgressionVerbaleArbitres($var){
-            $this->agressionVerbaleArbitres $var;
+            $this->agressionVerbaleArbitres = $var;
         }
 
         public function GetAgressionVerbaleDirigeant() : string{
@@ -239,7 +239,7 @@
         }
     
         public function SetAgressionVerbaleDirigeant($var){
-            $this->agressionVerbaleDirigeant $var;
+            $this->agressionVerbaleDirigeant = $var;
         }
 
         public function GetAgressionVerbaleSpectateurs() : string{
@@ -247,7 +247,7 @@
         }
     
         public function SetAgressionVerbaleSpectateurs($var){
-            $this->agressionVerbaleSpectateurs $var;
+            $this->agressionVerbaleSpectateurs = $var;
         }
 
         public function GetVictimeConcerneJoueurs() : string{
@@ -255,7 +255,7 @@
         }
     
         public function SetVictimeConcerneJoueurs($var){
-            $this->agressionVerbaleSpectateurs $var;
+            $this->agressionVerbaleSpectateurs = $var;
         }
 
         public function GetVictimeConcerneArbitres() : string{
@@ -263,7 +263,7 @@
         }
     
         public function SetVictimeConcerneArbitres($var){
-            $this->victimeConcerneArbitres $var;
+            $this->victimeConcerneArbitres = $var;
         }
 
         public function GetVictimeConcerneDelegues() : string{
@@ -271,7 +271,7 @@
         }
     
         public function SetVictimeConcerneDelegues($var){
-            $this->victimeConcerneDelegues $var;
+            $this->victimeConcerneDelegues = $var;
         }
 
         public function GetVictimeConcerneSpectateurs() : string{
@@ -279,7 +279,7 @@
         }
     
         public function SetVictimeConcerneSpectateurs($var){
-            $this->victimeConcerneSpectateurs $var;
+            $this->victimeConcerneSpectateurs = $var;
         }
 
         public function GetVictimeConcerneAutre() : string{
@@ -287,7 +287,7 @@
         }
     
         public function SetVictimeConcerneAutre($var){
-            $this->victimeConcerneAutre $var;
+            $this->victimeConcerneAutre = $var;
         }
 
         public function GetAuteurPresumeMineurMembreClub() : string{
@@ -295,7 +295,7 @@
         }
     
         public function SetAuteurPresumeMineurMembreClub($var){
-            $this->auteurPresumeMineurMembreClub $var;
+            $this->auteurPresumeMineurMembreClub = $var;
         }
 
         public function GetAuteurPresumeMineurJoueur() : string{
@@ -303,7 +303,7 @@
         }
     
         public function SetAuteurPresumeMineurJoueur($var){
-            $this->auteurPresumeMineurJoueur $var;
+            $this->auteurPresumeMineurJoueur = $var;
         }
 
         public function GetAuteurPresumeMineurDirigeant() : string{
@@ -311,7 +311,7 @@
         }
     
         public function SetAuteurPresumeMineurDirigeant($var){
-            $this->auteurPresumeMineurDirigeant $var;
+            $this->auteurPresumeMineurDirigeant = $var;
         }
 
         public function GetAuteurPresumeMineurAutre() : string{
@@ -319,7 +319,7 @@
         }
     
         public function SetAuteurPresumeMineurAutre($var){
-            $this->auteurPresumeMineurAutre $var;
+            $this->auteurPresumeMineurAutre = $var;
         }
 
         public function GetMesuresImediatesPolice() : string{
@@ -327,7 +327,7 @@
         }
     
         public function SetMesuresImediatesPolice($var){
-            $this->mesuresImediatesPolice $var;
+            $this->mesuresImediatesPolice = $var;
         }
 
         public function GetMesuresImediatesMairie() : string{
@@ -335,7 +335,7 @@
         }
     
         public function SetMesuresImediatesMairie($var){
-            $this->mesuresImediatesMairie $var;
+            $this->mesuresImediatesMairie = $var;
         }
 
         public function GetMesuresImediatesPompier() : string{
@@ -343,7 +343,7 @@
         }
     
         public function SetMesuresImediatesPompier($var){
-            $this->mesuresImediatesMairie $var;
+            $this->mesuresImediatesMairie = $var;
         }
 
         public function GetMesuresImediatesSamu() : string{
@@ -351,7 +351,7 @@
         }
     
         public function SetMesuresImediatesSamu($var){
-            $this->mesuresImediatesSamu $var;
+            $this->mesuresImediatesSamu = $var;
         }
 
         public function GetMesuresImediatesAutre() : string{
@@ -359,7 +359,7 @@
         }
     
         public function SetMesuresImediatesAutre($var){
-            $this->mesuresImediatesAutre $var;
+            $this->mesuresImediatesAutre = $var;
         }
 
         public function GetMesuresUlterieursExamMedical() : string{
@@ -367,7 +367,7 @@
         }
     
         public function SetmesuresUlterieursExamMedical($var){
-            $this->mesuresUlterieursExamMedical $var;
+            $this->mesuresUlterieursExamMedical=  $var;
         }
 
         public function GetMesuresUlterieursHospitalisation() : string{
@@ -375,7 +375,7 @@
         }
     
         public function SetMesuresUlterieursHospitalisation($var){
-            $this->mesuresUlterieursHospitalisation $var;
+            $this->mesuresUlterieursHospitalisation= $var;
         }
 
         public function GetMesuresUlterieursMainCourante() : string{
@@ -383,7 +383,7 @@
         }
     
         public function SetMesuresUlterieursMainCourante($var){
-            $this->mesuresUlterieursMainCourante $var;
+            $this->mesuresUlterieursMainCourante = $var;
         }
 
         public function GetMesuresUlterieursDepoPlainte() : string{
@@ -391,7 +391,7 @@
         }
     
         public function SetMesuresUlterieursDepoPlainte($var){
-            $this->mesuresUlterieursDepoPlainte $var;
+            $this->mesuresUlterieursDepoPlainte = $var;
         }
 
         public function GetMesuresEvenementsRecev() : string{
@@ -399,18 +399,18 @@
         }
     
         public function SetEvenementsRecev($var){
-            $this->evenementsrecev $var;
+            $this->evenementsrecev = $var;
         }
 
 
 
 
-        public function GetNomClubReceveur() : string{
-            return $this->nomClubReceveur;
+        public function GetNomClubVisiteur() : string{
+            return $this->nomClubVisiteur;
         }
     
-        public function SetNomClubReceveur($var){
-            $this->nomClubReceveur = $var;
+        public function SetNomClubVisiteur($var){
+            $this->nomClubVisiteur = $var;
         }
 
         public function GetIncidentRecVisiteur() : string{
@@ -418,7 +418,7 @@
         }
     
         public function SetIncidentRecVisiteur($var){
-            $this->incidentRecVisiteur $var;
+            $this->incidentRecVisiteur = $var;
         }
 
         public function GetAgressionVerbaleJoueursVisiteur() : string{
@@ -426,7 +426,7 @@
         }
     
         public function SetAgressionVerbaleJoueursVisiteur($var){
-            $this->agressionVerbaleJoueursVisiteur $var;
+            $this->agressionVerbaleJoueursVisiteur=  $var;
         }
 
         public function GetAgressionVerbaleArbitresVisiteur() : string{
@@ -434,7 +434,7 @@
         }
     
         public function SetAgressionVerbaleArbitresVisiteur($var){
-            $this->agressionVerbaleArbitresVisiteur $var;
+            $this->agressionVerbaleArbitresVisiteur = $var;
         }
 
         public function GetAgressionVerbaleDirigeantVisiteur() : string{
@@ -442,7 +442,7 @@
         }
     
         public function SetAgressionVerbaleDirigeantVisiteur($var){
-            $this->agressionVerbaleDirigeantVisiteur $var;
+            $this->agressionVerbaleDirigeantVisiteur =$var;
         }
 
         public function GetAgressionVerbaleSpectateursVisiteur() : string{
@@ -450,7 +450,7 @@
         }
     
         public function SetAgressionVerbaleSpectateursVisiteur($var){
-            $this->agressionVerbaleSpectateursVisiteur $var;
+            $this->agressionVerbaleSpectateursVisiteur = $var;
         }
 
         public function GetVictimeConcerneJoueursVisiteur() : string{
@@ -458,7 +458,7 @@
         }
     
         public function SetVictimeConcerneJoueursVisiteur($var){
-            $this->agressionVerbaleSpectateursVisiteur $var;
+            $this->agressionVerbaleSpectateursVisiteur = $var;
         }
 
         public function GetVictimeConcerneArbitresVisiteur() : string{
@@ -466,7 +466,7 @@
         }
     
         public function SetVictimeConcerneArbitresVisiteur($var){
-            $this->victimeConcerneArbitresVisiteur $var;
+            $this->victimeConcerneArbitresVisiteur = $var;
         }
 
         public function GetVictimeConcerneDeleguesVisiteur() : string{
@@ -474,7 +474,7 @@
         }
     
         public function SetVictimeConcerneDeleguesVisiteur($var){
-            $this->victimeConcerneDeleguesVisiteur $var;
+            $this->victimeConcerneDeleguesVisiteur = $var;
         }
 
         public function GetVictimeConcerneSpectateursVisiteur() : string{
@@ -482,7 +482,7 @@
         }
     
         public function SetVictimeConcerneSpectateursVisiteur($var){
-            $this->victimeConcerneSpectateursVisiteur $var;
+            $this->victimeConcerneSpectateursVisiteur = $var;
         }
 
         public function GetVictimeConcerneAutreVisiteur() : string{
@@ -490,7 +490,7 @@
         }
     
         public function SetVictimeConcerneAutreVisiteur($var){
-            $this->victimeConcerneAutreVisiteur $var;
+            $this->victimeConcerneAutreVisiteur = $var;
         }
 
         public function GetAuteurPresumeMineurMembreClubVisiteur() : string{
@@ -498,7 +498,7 @@
         }
     
         public function SetAuteurPresumeMineurMembreClubVisiteur($var){
-            $this->auteurPresumeMineurMembreClubVisiteur $var;
+            $this->auteurPresumeMineurMembreClubVisiteur = $var;
         }
 
         public function GetAuteurPresumeMineurJoueurVisiteur() : string{
@@ -506,7 +506,7 @@
         }
     
         public function SetAuteurPresumeMineurJoueurVisiteur($var){
-            $this->auteurPresumeMineurJoueurVisiteur $var;
+            $this->auteurPresumeMineurJoueurVisiteur = $var;
         }
 
         public function GetAuteurPresumeMineurDirigeantVisiteur() : string{
@@ -514,7 +514,7 @@
         }
     
         public function SetAuteurPresumeMineurDirigeantVisiteur($var){
-            $this->auteurPresumeMineurDirigeantVisiteur $var;
+            $this->auteurPresumeMineurDirigeantVisiteur = $var;
         }
 
         public function GetAuteurPresumeMineurAutreVisiteur() : string{
@@ -522,7 +522,7 @@
         }
     
         public function SetAuteurPresumeMineurAutreVisiteur($var){
-            $this->auteurPresumeMineurAutreVisiteur $var;
+            $this->auteurPresumeMineurAutreVisiteur=  $var;
         }
 
         public function GetMesuresImediatesPoliceVisiteur() : string{
@@ -530,7 +530,7 @@
         }
     
         public function SetMesuresImediatesPoliceVisiteur($var){
-            $this->mesuresImediatesPoliceVisiteur $var;
+            $this->mesuresImediatesPoliceVisiteur=  $var;
         }
 
         public function GetMesuresImediatesMairieVisiteur() : string{
@@ -538,7 +538,7 @@
         }
     
         public function SetMesuresImediatesMairieVisiteur($var){
-            $this->mesuresImediatesMairieVisiteur $var;
+            $this->mesuresImediatesMairieVisiteur = $var;
         }
 
         public function GetMesuresImediatesPompierVisiteur() : string{
@@ -546,7 +546,7 @@
         }
     
         public function SetMesuresImediatesPompierVisiteur($var){
-            $this->mesuresImediatesMairie $var;
+            $this->mesuresImediatesMairie = $var;
         }
 
         public function GetMesuresImediatesSamuVisiteur() : string{
@@ -554,7 +554,7 @@
         }
     
         public function SetMesuresImediatesSamuVisiteur($var){
-            $this->mesuresImediatesSamu $var;
+            $this->mesuresImediatesSamu = $var;
         }
 
         public function GetMesuresImediatesAutreVisiteur() : string{
@@ -562,7 +562,7 @@
         }
     
         public function SetMesuresImediatesAutreVisiteur($var){
-            $this->mesuresImediatesAutre $var;
+            $this->mesuresImediatesAutre = $var;
         }
 
         public function GetMesuresUlterieursExamMedicalVisiteur() : string{
@@ -570,7 +570,7 @@
         }
     
         public function SetmesuresUlterieursExamMedicalVisiteur($var){
-            $this->mesuresUlterieursExamMedical $var;
+            $this->mesuresUlterieursExamMedical=  $var;
         }
 
         public function GetMesuresUlterieursHospitalisationVisiteur() : string{
@@ -578,7 +578,7 @@
         }
     
         public function SetMesuresUlterieursHospitalisationVisiteur($var){
-            $this->mesuresUlterieursHospitalisation $var;
+            $this->mesuresUlterieursHospitalisation = $var;
         }
 
         public function GetMesuresUlterieursMainCouranteVisiteur() : string{
@@ -586,7 +586,7 @@
         }
     
         public function SetMesuresUlterieursMainCouranteVisiteur($var){
-            $this->mesuresUlterieursMainCourante $var;
+            $this->mesuresUlterieursMainCourante = $var;
         }
 
         public function GetMesuresUlterieursDepoPlainteVisiteur() : string{
@@ -594,7 +594,7 @@
         }
     
         public function SetMesuresUlterieursDepoPlainteVisiteur($var){
-            $this->mesuresUlterieursDepoPlainte $var;
+            $this->mesuresUlterieursDepoPlainte=  $var;
         }
 
         public function GetVevenementVisit() : string{
@@ -602,7 +602,7 @@
         }
     
         public function SetVevenementVisit($var){
-            $this->vevenement $var;
+            $this->vevenement = $var;
         }
 
 
@@ -611,7 +611,7 @@
         }
     
         public function SetContactReceveur($var){
-            $this->contactReceveur $var;
+            $this->contactReceveur = $var;
         }
 
         public function GetContactVisiteur() : string{
@@ -619,7 +619,7 @@
         }
     
         public function SetContactVisiteur($var){
-            $this->contactVisiteur $var;
+            $this->contactVisiteur = $var;
         }
 
         public function GetNbForceOrdre() : string{
@@ -627,7 +627,7 @@
         }
     
         public function SetNbForceOrdre($var){
-            $this->nbForceOrdre $var;
+            $this->nbForceOrdre=  $var;
         }
 
         public function GetMoyPrevPolice() : string{
@@ -635,7 +635,7 @@
         }
     
         public function SetMoyPrevPolice($var){
-            $this->moyPrevPolice $var;
+            $this->moyPrevPolice = $var;
         }
 
         public function GetIncidentFO() : string{
@@ -643,7 +643,7 @@
         }
     
         public function SetIncidentFO($var){
-            $this->incidentFO $var;
+            $this->incidentFO = $var;
         }
 
         public function GetEvenementPolice() : string{
@@ -651,7 +651,7 @@
         }
     
         public function SetEvenementPolice($var){
-            $this->evenementPolice $var;
+            $this->evenementPolice = $var;
         }
     }
 ?>

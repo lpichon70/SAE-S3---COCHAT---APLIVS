@@ -99,7 +99,7 @@
     <div>
       
       <p class="lien ombreText <?=$contentLogoManager->getLinkInscriptionVisible()?>">
-          <a href="Métier/Inscription/FormulaireInscription.html">Inscription</a>
+          <a href="Métier/Inscription/FormulaireInscription.php">Inscription</a>
       </p>
       <p class="lien ombreText <?=$contentLogoManager->getLinkSignalerVisible()?>">
           <a href="Métier/Signalement/formulaire_renseignement.php">Signaler</a>
