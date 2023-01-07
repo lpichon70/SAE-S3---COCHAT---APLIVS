@@ -88,17 +88,34 @@ require_once('Models.php');
             $this->tab=$this->execRequest("UPDATE connexion SET Identifiant = '".$user->getIdentifiant()."' , Mdp = '".$user->getMdp()."' , Statut = '".$user->getStatut()."' , nom = '".$user->getNom()."' , prenom = '".$user->getPrenom()."'  where Id = '".$user->getId()."'", $this->tab);
         }
 
+        public function editCLub($user)
+        {
+            $this->tab=$this->execRequest("UPDATE formulaire_inscription SET identifiant = '".$user->getIdentifiant()."' , mdp = '".$user->getMdp()."' , nom_club = '".$user->getNom()."' where id_club = '".$user->getId()."'", $this->tab);
+        }
+
         public function search($request)
         {
             
             //Pour les clubs
-            //$this->tab[]=$this->execRequestAll("SELECT * FROM formulaire_inscription where nom_cLub = '$request'", $this->tab);
-            //$this->tab[]=$this->execRequestAll("SELECT * FROM formulaire_inscription where identifiant  = '$request'", $this->tab);
-            //$this->tab[]=$this->execRequestAll("SELECT * FROM formulaire_inscription where mdp = '$request'", $this->tab);
+            if ($this->execRequestAll("SELECT * FROM formulaire_inscription where nom_cLub = '$request'", $this->tab) != null)
+            {
+                $this->fabriqueClub($this->execRequestAll("SELECT * FROM formulaire_inscription where nom_cLub = '$request'", $this->tab));
+            }
+            if ($this->execRequestAll("SELECT * FROM formulaire_inscription where identifiant  = '$request'", $this->tab) != null)
+            {
+                $this->fabriqueClub($this->execRequestAll("SELECT * FROM formulaire_inscription where identifiant  = '$request'", $this->tab));
+            }
+            if ($this->execRequestAll("SELECT * FROM formulaire_inscription where mdp = '$request'", $this->tab) != null)
+            {
+                $this->fabriqueClub($this->execRequestAll("SELECT * FROM formulaire_inscription where mdp = '$request'", $this->tab));
+            }
+            if ($request == 'CLUB' || $request == 'Club' || $request == 'club')
+            {
+                $this->fabriqueClub($this->execRequestAll("SELECT * FROM formulaire_inscription", $this->tab));
+            }
+
 
             //Pour les utilisateurs autre que les clubs
-            //$tabUser = $this->fabriqueUser($this->execRequestAll("SELECT * FROM connexion where Identifiant = '$request'", $this->tab));
-
             if ($this->execRequestAll("SELECT * FROM connexion where Identifiant = '$request'", $this->tab)!=null)
             {
                 $this->fabriqueUser($this->execRequestAll("SELECT * FROM connexion where Identifiant = '$request'", $this->tab));
@@ -125,7 +142,27 @@ require_once('Models.php');
 
         public function fabriqueClub($tabClub)
         {
-
+            $isInsert = false;
+            foreach ($tabClub as $club)
+            {
+                $newUser = new Utilisateur($club['id_club'],$club['nom_club'],"",$club['identifiant'],
+                $club['mdp'],'CLUB');
+                if ($this->tabUtilisateurSearch != null)
+                {
+                    foreach ($this->tabUtilisateurSearch as $userAlreadySearch) 
+                    {
+                        if ($userAlreadySearch->getId() == $newUser->getId())
+                        {
+                            $isInsert = true;
+                        }
+                    }
+                }
+                if ($isInsert == false)
+                {
+                    $this->tabUtilisateurSearch[] = $newUser;
+                }
+                $isInsert = false;                
+            }
         }
 
         public function fabriqueUser($tabUser)

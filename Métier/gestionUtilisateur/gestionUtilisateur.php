@@ -33,7 +33,11 @@ if (@$_GET['action'] != null)
         //Modifie directement un utilisateur dans la base de données
         case 'edit-user' :
             try{
-                $controller->editUser($_GET['idUser'],$_POST);
+                if ($_GET['statut'] == 'CLUB')
+                {
+                    $_POST['statut'] = 'CLUB';
+                }
+                $controller->editUser($_GET['idUser'],$_POST); 
                 header("Location:gestionUtilisateur.php?error=! Modification de l'utilisateur terminé !");
             }
             catch(Exception $e)
@@ -147,6 +151,10 @@ $contentLogoManager = new pathLogoUtilisateur($_SESSION['statut']);
     <h1>Bienvenue dans la partie de gestion des utilisateurs</h1>
 
     <h2><?=@$_GET['error']?></h2>
+
+    <div class="btn">
+        <a href="gestionUtilisateur.php">Voir tous les utilisateurs</a>
+    </div>
 
     <div class="btn">
         <a href="PHP/addUser.php">Ajouter un utilisateur</a>

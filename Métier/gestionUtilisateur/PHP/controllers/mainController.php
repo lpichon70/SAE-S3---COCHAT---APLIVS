@@ -68,7 +68,14 @@ class MainController{
     public function editUser($id,$post)
     {
         $user = new Utilisateur($id,$post['nom'],$post['prenom'],$post['identifiant'],$post['mdp'],$post['statut']);
-        $this->manager->editUser($user);
+        if ($post['statut'] == 'CLUB')
+        {
+            $this->manager->editclub($user);
+        }
+        else{
+            $this->manager->editUser($user);
+        }
+        
     }
 
     public function search($request)
