@@ -80,7 +80,7 @@
     <div class="sub-menu-wrap" id="subMenu">
       <div class="sub-menu">
         <div class="user-info">
-          <h3>Menu</h3>
+          <h3>Menu <?=$_SESSION['statut']?></h3>
         </div>
         <hr>
 
